@@ -1,0 +1,132 @@
+//
+//  LoginView.swift
+//  MyESCParty
+//
+//  Created by Maciej Piechota on 01/03/2025.
+//
+
+import SwiftUI
+
+struct LoginView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var repeatPassword: String = ""
+    
+    @State private var isEmailValid: Bool = true
+    @State private var isPasswordEmpty: Bool = false
+    @State private var isRepeatPasswordEmpty: Bool = false
+    @State private var isPasswordsMatch: Bool = true
+    
+    @State private var showCreateUser = false
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                
+                // TODO: The fields should not move when the keyboard is shown
+                VStack {
+                    Spacer()
+                    VStack {
+                        if let error = authViewModel.error {
+                            Text(error.localizedDescription)
+                        }
+                        TextField("Email", text: $email)
+                            .foregroundStyle(isEmailValid ? .black : .red)
+                            .padding()
+                        
+                        SecureField("Password", text: $password)
+                            .foregroundStyle(isPasswordEmpty ? .red : .black)
+                            .padding()
+                        
+                        if showCreateUser {
+                            SecureField("Repeat password", text: $repeatPassword)
+                                .foregroundStyle(isPasswordEmpty ? .red : .black)
+                                .padding()
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    VStack {
+                        if showCreateUser {
+                            Button("Sign up") {
+                                Task {
+                                    await signUp()
+                                }
+                            }
+                            .foregroundStyle(.black)
+                            .padding()
+                            Button("Already have an account") {
+                                showCreateUser = false
+                            }
+                            .foregroundStyle(.red)
+                        } else {
+                            Button("Sign in") {
+                                Task {
+                                    await signIn()
+                                }
+                            }
+                            .foregroundStyle(.black)
+                            .padding()
+                            Button("Create new user") {
+                                showCreateUser = true
+                            }
+                            .foregroundStyle(.red)
+                        }
+                        
+                        Spacer()
+                    }
+                    .frame(height: geometry.size.height * 0.3)
+                    
+                }
+                
+                if authViewModel.isLoading {
+                    Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+                    ProgressView()
+                        .tint(.white)
+                }
+            }
+        }
+    }
+    
+    func signIn() async {
+        guard email.isEmailValid() && !email.isEmpty else {
+            isEmailValid = email.isEmailValid()
+            isPasswordEmpty = password.isEmpty
+            return
+        }
+        
+        isEmailValid = true
+        isPasswordEmpty = false
+        
+        await authViewModel.signIn(email: email, password: password)
+    }
+    
+    func signUp() async {
+        guard email.isEmailValid(), !email.isEmpty, !password.isEmpty, !repeatPassword.isEmpty else {
+            isEmailValid = email.isEmailValid()
+            isPasswordEmpty = password.isEmpty
+            isRepeatPasswordEmpty = repeatPassword.isEmpty
+            return
+        }
+        
+        isEmailValid = true
+        isPasswordEmpty = false
+        isRepeatPasswordEmpty = false
+        
+        guard password == repeatPassword else {
+            isPasswordsMatch = false
+            return
+        }
+        
+        isPasswordsMatch = true
+        
+        await authViewModel.signUp(email: email, password: password)
+    }
+}
+
+#Preview {
+    LoginView()
+        .environmentObject(AuthViewModel())
+}
