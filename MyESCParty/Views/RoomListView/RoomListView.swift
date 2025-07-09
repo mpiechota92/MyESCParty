@@ -53,8 +53,7 @@ struct RoomListView: View {
                         .fill(.navy)
                         .frame(width: 50, height: 50)
                         .overlay(
-                            Text("+")
-                                .font(.title)
+                            Image(systemName: "plus")
                         )
                 }
             }
