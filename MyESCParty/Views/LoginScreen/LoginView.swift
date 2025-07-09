@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum Field: Hashable {
+    case email, password, repeatPassword
+}
+
 struct LoginView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State private var email: String = ""
@@ -20,6 +24,8 @@ struct LoginView: View {
     
     @State private var showCreateUser = false
     
+    @FocusState private var focusedField: Field?
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -32,17 +38,42 @@ struct LoginView: View {
                             Text(error.localizedDescription)
                         }
                         TextField("Email", text: $email)
+                            .focused($focusedField, equals: .email)
+                            .submitLabel(.next)
+                            .keyboardType(.emailAddress)
+                            .textInputAutocapitalization(.never)
+                            .autocorrectionDisabled()
                             .foregroundStyle(isEmailValid ? .black : .red)
                             .padding()
+                            .onSubmit {
+                                focusedField = .password
+                            }
                         
                         SecureField("Password", text: $password)
+                            .focused($focusedField, equals: .password)
+                            .submitLabel(showCreateUser ? .next : .done)
                             .foregroundStyle(isPasswordEmpty ? .red : .black)
                             .padding()
+                            .onSubmit {
+                                if showCreateUser {
+                                    focusedField = .repeatPassword
+                                } else {
+                                    Task {
+                                        await signIn()
+                                    }
+                                }
+                            }
                         
                         if showCreateUser {
                             SecureField("Repeat password", text: $repeatPassword)
+                                .focused($focusedField, equals: .repeatPassword)
                                 .foregroundStyle(isPasswordEmpty ? .red : .black)
                                 .padding()
+                                .onSubmit {
+                                    Task {
+                                        await signUp()
+                                    }
+                                }
                         }
                     }
                     

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserMenu: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var showAlert = false
     
     var body: some View {
         Menu {
@@ -24,13 +25,10 @@ struct UserMenu: View {
                 print("wybrano 1")
             }
             
-            
             Divider()
             
             Button("Logout") {
-                Task {
-                    await authViewModel.signOut()
-                }
+                showAlert = true
             }
             
         } label: {
@@ -39,6 +37,14 @@ struct UserMenu: View {
                 .foregroundStyle(.navy)
                 .padding()
             
+        }
+        .alert("Do you want to logout?", isPresented: $showAlert) {
+            Button("No", role: .cancel) { }
+            Button("Yes", role: .destructive) {
+                Task {
+                    await authViewModel.signOut()
+                }
+            }
         }
     }
 }

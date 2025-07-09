@@ -44,9 +44,11 @@ class RoomService: RoomServiceProtocol, Cachable {
             return
         }
         
+        #if DEBUG
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             print("Fetching rooms...")
         }
+        #endif
         
         let rooms: [Room] = try await DatabaseManager.shared.client
             .from(.votinRoomsWithUserCount)
@@ -62,7 +64,6 @@ class RoomService: RoomServiceProtocol, Cachable {
             .execute()
             .value
         
-        print(rooms)
         cacheTimestamp = now
         roomCache = rooms
         userRoomsCache = userRooms

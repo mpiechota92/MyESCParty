@@ -14,6 +14,10 @@
 		BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E322E005A9000517B70 /* RoomCell.swift */; };
 		BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E352E005CA400517B70 /* EscButton.swift */; };
 		BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */; };
+		BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */; };
+		BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */; };
+		BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */; };
+		BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */; };
 		BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */; };
 		BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C62DFB25670060E323 /* ContentView.swift */; };
 		BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */; };
@@ -69,6 +73,10 @@
 		BF0B5E322E005A9000517B70 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		BF0B5E352E005CA400517B70 /* EscButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscButton.swift; sourceTree = "<group>"; };
 		BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
+		BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationView.swift; sourceTree = "<group>"; };
+		BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsService.swift; sourceTree = "<group>"; };
+		BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsViewModel.swift; sourceTree = "<group>"; };
+		BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantCell.swift; sourceTree = "<group>"; };
 		BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BF2FF1C62DFB25670060E323 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
@@ -118,7 +126,10 @@
 		BF0B5E1F2E003F8100517B70 /* ContestantsView */ = {
 			isa = PBXGroup;
 			children = (
+				BF1FB9A02E1ECE4600DF1E39 /* Service */,
+				BF1FB99F2E1ECE3F00DF1E39 /* Model */,
 				BF0B5E202E003FA000517B70 /* ContestantsView.swift */,
+				BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */,
 			);
 			path = ContestantsView;
 			sourceTree = "<group>";
@@ -154,6 +165,22 @@
 				BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		BF1FB99F2E1ECE3F00DF1E39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF1FB9A02E1ECE4600DF1E39 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		BF7E3CD92DE09D0B003740BD /* Model */ = {
@@ -254,6 +281,7 @@
 				BF0B5E242E0043AA00517B70 /* Model */,
 				BF0B5E222E00419F00517B70 /* RoomListView.swift */,
 				BF0B5E322E005A9000517B70 /* RoomCell.swift */,
+				BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */,
 			);
 			path = RoomListView;
 			sourceTree = "<group>";
@@ -401,12 +429,14 @@
 				BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */,
 				BF90856A2D7373A500B40537 /* AppUser.swift in Sources */,
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
+				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
 				BF9085582D736F1000B40537 /* Country.swift in Sources */,
 				BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */,
 				BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */,
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
+				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
 				BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */,
@@ -423,8 +453,10 @@
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF0B5E292E00445C00517B70 /* RoomService.swift in Sources */,
+				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
+				BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */,
 				BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */,
 				BF90855C2D73704E00B40537 /* AuthManager.swift in Sources */,
 				BF90857D2D737C5600B40537 /* AppTextField.swift in Sources */,

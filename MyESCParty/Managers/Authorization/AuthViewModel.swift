@@ -60,7 +60,6 @@ class AuthViewModel: ObservableObject {
             self.isSessionActive = false
             self.isLoading = false
         } catch {
-            //print(error.localizedDescription)
             if let error = error as? AuthError {
                 self.error = error
             } else {
