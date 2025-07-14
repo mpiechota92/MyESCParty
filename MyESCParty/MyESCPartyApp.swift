@@ -10,11 +10,17 @@ import SwiftUI
 @main
 struct MyESCPartyApp: App {
     @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var toastManager = ToastManager()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(authViewModel)
+            ZStack {
+                ContentView()
+                    .environmentObject(authViewModel)
+                
+                ToastHostView()
+            }
+            .environmentObject(toastManager)
         }
     }
 }

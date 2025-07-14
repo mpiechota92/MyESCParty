@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RoomCreationView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var toastManager: ToastManager
     @StateObject private var viewModel = RoomCreationViewModel()
     
     @State private var roomName: String = ""
@@ -42,9 +43,11 @@ struct RoomCreationView: View {
                     Task {
                         await viewModel.createRoom(name: roomName, password: password)
                         
-                        if viewModel.error == nil {
+                        if let error = viewModel.error {
+                            toastManager.showToast(message: error.localizedDescription, type: .error)
+                        } else {
                             dismiss()
-                            // Tutaj go wywołam
+                            toastManager.showToast(message: "Room was created", type: .success)
                         }
                     }
                 } label: {

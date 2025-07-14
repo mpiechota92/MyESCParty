@@ -8,11 +8,44 @@
 import SwiftUI
 
 struct ToastView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var toastManager: ToastManager
+    
+    @State private var task: Task<Void, Never>? = nil
+    
+    let toast: Toast
+    
+    var color: Color {
+        switch toast.type {
+        case .info:
+                .yellow
+        case .error:
+                .red
+        case .success:
+                .green
+        }
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            VStack(alignment: .center) {
+                RoundedRectangle(cornerRadius: 12)
+                    .frame(width: geometry.frame(in: .global).width - 50, height: 50)
+                    .padding()
+                    .foregroundStyle(color)
+                    .overlay {
+                        Text(toast.message)
+                            .padding(5)
+                    }
+            }
+            .frame(maxWidth: .infinity)
+            .onTapGesture {
+                toastManager.dismiss()
+            }
+        }
     }
 }
 
 #Preview {
-    ToastView()
+    ToastView(toast: Toast(message: "This is a test message", type: .error))
 }

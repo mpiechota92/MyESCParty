@@ -27,6 +27,7 @@
 		BF557C5B2E25158B0024F48A /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C5A2E25158B0024F48A /* LoadingScreen.swift */; };
 		BF557C602E25197B0024F48A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C5F2E25197B0024F48A /* ToastView.swift */; };
 		BF557C622E2519820024F48A /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C612E2519820024F48A /* ToastManager.swift */; };
+		BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C7A2E253DFB0024F48A /* ToastHostView.swift */; };
 		BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */; };
 		BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */; };
 		BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9085292D73632200B40537 /* MyESCPartyApp.swift */; };
@@ -92,6 +93,7 @@
 		BF557C5A2E25158B0024F48A /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		BF557C5F2E25197B0024F48A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		BF557C612E2519820024F48A /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		BF557C7A2E253DFB0024F48A /* ToastHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHostView.swift; sourceTree = "<group>"; };
 		BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListItem.swift; sourceTree = "<group>"; };
 		BF9085262D73632200B40537 /* MyESCParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyESCParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 			children = (
 				BF557C5F2E25197B0024F48A /* ToastView.swift */,
 				BF557C612E2519820024F48A /* ToastManager.swift */,
+				BF557C7A2E253DFB0024F48A /* ToastHostView.swift */,
 			);
 			path = ToastManager;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */,
 				BF557C602E25197B0024F48A /* ToastView.swift in Sources */,
 				BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */,
+				BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */,
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
