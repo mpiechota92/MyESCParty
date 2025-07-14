@@ -8,6 +8,20 @@
 import Foundation
 import Supabase
 
+enum AuthorizationError: LocalizedError {
+    case profileNotFound
+    case usernameCreationFailed
+    
+    var errorDescription: String? {
+        switch self {
+        case .profileNotFound:
+            "Profile not found."
+        case .usernameCreationFailed:
+            "Username creation failed."
+        }
+    }
+}
+
 class AuthManager {
     private static let instance = AuthManager()
     private let databaseManager: DatabaseManager = DatabaseManager.shared
@@ -29,14 +43,19 @@ class AuthManager {
     func signInWith(email: String, password: String) async throws -> AppUser {
         let session = try await databaseManager.client.auth.signIn(email: email, password: password)
         
-        let username: String = try await databaseManager.client
+        let profiles: [Profile] = try await databaseManager.client
             .from(.profiles)
-            .select("username")
+            .select()
             .eq("id", value: session.user.id.uuidString)
             .execute()
             .value
         
-        return AppUser(uid: session.user.id.uuidString, email: session.user.email, username: username)
+        guard let profile = profiles.first else {
+            try await signOut()
+            throw AuthorizationError.profileNotFound
+        }
+        
+        return AppUser(uid: session.user.id.uuidString, email: session.user.email, username: profile.username)
     }
     
     func signUpWith(email: String, username: String, password: String) async throws -> AppUser {
@@ -47,13 +66,17 @@ class AuthManager {
                 "username": username
             ]
             
-            let profile: Profile = try await databaseManager.client
+            let profiles: [Profile] = try await databaseManager.client
                 .from(.profiles)
                 .insert(insertData)
                 .select()
-                .single()
                 .execute()
                 .value
+            
+            guard let profile = profiles.first else {
+                try await signOut()
+                throw AuthorizationError.usernameCreationFailed
+            }
             
             return AppUser(uid: session.user.id.uuidString, email: session.user.email, username: profile.username)
         }

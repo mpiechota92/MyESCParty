@@ -136,6 +136,8 @@ struct LoginView: View {
         }
     }
     
+    // TODO: move to viewModel + add validators
+    
     func signIn() async {
         guard email.isEmailValid() && !email.isEmpty else {
             isEmailValid = email.isEmailValid()

@@ -35,6 +35,7 @@ class AuthViewModel: ObservableObject {
             self.isLoading = false
         } catch {
             print(error.localizedDescription)
+            print("\(error)")
             if let error = error as? AuthError {
                 self.error = error
             } else {
@@ -64,7 +65,7 @@ class AuthViewModel: ObservableObject {
                 self.error = error
             } else {
                 self.error = .api(
-                    message: "Unknown error while signing up",
+                    message: error.localizedDescription,
                     errorCode: .unknown,
                     underlyingData: Data(),
                     underlyingResponse: HTTPURLResponse()
