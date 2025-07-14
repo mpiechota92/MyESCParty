@@ -51,11 +51,11 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func signUp(email: String, password: String) async {
+    func signUp(email: String, username: String, password: String) async {
         self.isLoading = true
         
         do {
-            let user = try await authManager.signUpWith(email: email, password: password)
+            let user = try await authManager.signUpWith(email: email, username: username, password: password)
             self.user = user
             self.isSessionActive = false
             self.isLoading = false

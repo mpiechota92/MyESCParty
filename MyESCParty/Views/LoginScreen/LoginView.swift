@@ -8,15 +8,17 @@
 import SwiftUI
 
 enum Field: Hashable {
-    case email, password, repeatPassword
+    case email, password, repeatPassword, username
 }
 
 struct LoginView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var repeatPassword: String = ""
     
+    @State private var isUsernameValid: Bool = true
     @State private var isEmailValid: Bool = true
     @State private var isPasswordEmpty: Bool = false
     @State private var isRepeatPasswordEmpty: Bool = false
@@ -37,6 +39,7 @@ struct LoginView: View {
                         if let error = authViewModel.error {
                             Text(error.localizedDescription)
                         }
+                        
                         TextField("Email", text: $email)
                             .focused($focusedField, equals: .email)
                             .submitLabel(.next)
@@ -46,8 +49,22 @@ struct LoginView: View {
                             .foregroundStyle(isEmailValid ? .black : .red)
                             .padding()
                             .onSubmit {
-                                focusedField = .password
+                                focusedField = showCreateUser ? .username : .password
                             }
+                        
+                        if showCreateUser {
+                            TextField("username", text: $username)
+                                .focused($focusedField, equals: .username)
+                                .submitLabel(.next)
+                                .keyboardType(.emailAddress)
+                                .textInputAutocapitalization(.never)
+                                .autocorrectionDisabled()
+                                .foregroundStyle(isUsernameValid ? .black : .red)
+                                .padding()
+                                .onSubmit {
+                                    focusedField = .password
+                                }
+                        }
                         
                         SecureField("Password", text: $password)
                             .focused($focusedField, equals: .password)
@@ -133,10 +150,11 @@ struct LoginView: View {
     }
     
     func signUp() async {
-        guard email.isEmailValid(), !email.isEmpty, !password.isEmpty, !repeatPassword.isEmpty else {
+        guard email.isEmailValid(), !email.isEmpty, !password.isEmpty, !repeatPassword.isEmpty, !username.isEmpty else {
             isEmailValid = email.isEmailValid()
             isPasswordEmpty = password.isEmpty
             isRepeatPasswordEmpty = repeatPassword.isEmpty
+            isUsernameValid = !username.isEmpty
             return
         }
         
@@ -151,7 +169,7 @@ struct LoginView: View {
         
         isPasswordsMatch = true
         
-        await authViewModel.signUp(email: email, password: password)
+        await authViewModel.signUp(email: email, username: username, password: password)
     }
 }
 

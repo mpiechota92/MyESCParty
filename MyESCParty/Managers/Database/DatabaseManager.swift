@@ -29,4 +29,5 @@ enum DBTable: String {
     case userVotingRooms = "user_voting_rooms"
     case roomUserCount = "room_user_count"
     case votingRoomsWithUserCount = "voting_rooms_with_user_count"
+    case profiles = "profiles"
 }

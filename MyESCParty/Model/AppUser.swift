@@ -10,9 +10,16 @@ import Foundation
 struct AppUser {
     let uid: String
     let email: String?
+    let username: String
     
-    init(uid: String, email: String?) {
+    init(uid: String, email: String?, username: String) {
         self.uid = uid
         self.email = email
+        self.username = username
     }
+}
+
+struct Profile: Codable {
+    let id: String
+    let username: String
 }
