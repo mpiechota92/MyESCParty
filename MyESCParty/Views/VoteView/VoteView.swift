@@ -15,8 +15,7 @@ struct VoteView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Vote")
-                List {
+                ScrollView {
                     ForEach(viewModel.items) { item in
                         HStack {
                             Text(item.name)

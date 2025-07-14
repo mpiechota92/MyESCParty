@@ -13,6 +13,7 @@
 		BF0B5E292E00445C00517B70 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E282E00445C00517B70 /* RoomService.swift */; };
 		BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E322E005A9000517B70 /* RoomCell.swift */; };
 		BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E352E005CA400517B70 /* EscButton.swift */; };
+		BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BF1B42E214DDE002F176B /* ContestantView.swift */; };
 		BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */; };
 		BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */; };
 		BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */; };
@@ -21,6 +22,11 @@
 		BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */; };
 		BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C62DFB25670060E323 /* ContentView.swift */; };
 		BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */; };
+		BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C562E22A0A20024F48A /* RoomCreationViewModel.swift */; };
+		BF557C592E22A6070024F48A /* RoomCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C582E22A6070024F48A /* RoomCreationService.swift */; };
+		BF557C5B2E25158B0024F48A /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C5A2E25158B0024F48A /* LoadingScreen.swift */; };
+		BF557C602E25197B0024F48A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C5F2E25197B0024F48A /* ToastView.swift */; };
+		BF557C622E2519820024F48A /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C612E2519820024F48A /* ToastManager.swift */; };
 		BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */; };
 		BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */; };
 		BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9085292D73632200B40537 /* MyESCPartyApp.swift */; };
@@ -48,7 +54,7 @@
 		BF90857D2D737C5600B40537 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90857C2D737C5600B40537 /* AppTextField.swift */; };
 		BF9085802D73809000B40537 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90857F2D73809000B40537 /* ColorPalette.swift */; };
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
-		BFA4EB582E1BDD06006EC79C /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* Security.swift */; };
+		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +78,7 @@
 		BF0B5E282E00445C00517B70 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
 		BF0B5E322E005A9000517B70 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		BF0B5E352E005CA400517B70 /* EscButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscButton.swift; sourceTree = "<group>"; };
+		BF1BF1B42E214DDE002F176B /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
 		BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
 		BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationView.swift; sourceTree = "<group>"; };
 		BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsService.swift; sourceTree = "<group>"; };
@@ -80,6 +87,11 @@
 		BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BF2FF1C62DFB25670060E323 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
+		BF557C562E22A0A20024F48A /* RoomCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationViewModel.swift; sourceTree = "<group>"; };
+		BF557C582E22A6070024F48A /* RoomCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationService.swift; sourceTree = "<group>"; };
+		BF557C5A2E25158B0024F48A /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		BF557C5F2E25197B0024F48A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		BF557C612E2519820024F48A /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListItem.swift; sourceTree = "<group>"; };
 		BF9085262D73632200B40537 /* MyESCParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyESCParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +113,7 @@
 		BF90857C2D737C5600B40537 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		BF90857F2D73809000B40537 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
-		BFA4EB572E1BDD06006EC79C /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +165,9 @@
 		BF0B5E342E005C9300517B70 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BF1B42E214DDE002F176B /* ContestantView.swift */,
 				BF0B5E352E005CA400517B70 /* EscButton.swift */,
+				BF557C5A2E25158B0024F48A /* LoadingScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +195,41 @@
 				BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BF557C532E2293AF0024F48A /* RoomCreationView */ = {
+			isa = PBXGroup;
+			children = (
+				BF557C542E2293C30024F48A /* Service */,
+				BF557C552E2293C80024F48A /* Model */,
+				BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */,
+			);
+			path = RoomCreationView;
+			sourceTree = "<group>";
+		};
+		BF557C542E2293C30024F48A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BF557C582E22A6070024F48A /* RoomCreationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BF557C552E2293C80024F48A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF557C562E22A0A20024F48A /* RoomCreationViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF557C5E2E2519170024F48A /* ToastManager */ = {
+			isa = PBXGroup;
+			children = (
+				BF557C5F2E25197B0024F48A /* ToastView.swift */,
+				BF557C612E2519820024F48A /* ToastManager.swift */,
+			);
+			path = ToastManager;
 			sourceTree = "<group>";
 		};
 		BF7E3CD92DE09D0B003740BD /* Model */ = {
@@ -238,6 +287,7 @@
 				BF1FB99C2E1E9D7700DF1E39 /* MainView */,
 				BF0B5E1F2E003F8100517B70 /* ContestantsView */,
 				BF9085482D73656A00B40537 /* RoomListView */,
+				BF557C532E2293AF0024F48A /* RoomCreationView */,
 				BF9085472D73655B00B40537 /* VoteView */,
 				BF9085462D73654C00B40537 /* LoginScreen */,
 				BF9085452D73653A00B40537 /* Settings */,
@@ -281,7 +331,6 @@
 				BF0B5E242E0043AA00517B70 /* Model */,
 				BF0B5E222E00419F00517B70 /* RoomListView.swift */,
 				BF0B5E322E005A9000517B70 /* RoomCell.swift */,
-				BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */,
 			);
 			path = RoomListView;
 			sourceTree = "<group>";
@@ -299,6 +348,7 @@
 		BF9085542D736E0200B40537 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BF557C5E2E2519170024F48A /* ToastManager */,
 				BF90855A2D73703100B40537 /* Database */,
 				BF9085592D73702800B40537 /* Authorization */,
 			);
@@ -336,7 +386,7 @@
 				BF0B5E342E005C9300517B70 /* Views */,
 				BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */,
 				BF90857F2D73809000B40537 /* ColorPalette.swift */,
-				BFA4EB572E1BDD06006EC79C /* Security.swift */,
+				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
 				BFA4EB592E1BE91E006EC79C /* Cachable.swift */,
 			);
 			path = Common;
@@ -433,6 +483,7 @@
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
 				BF9085582D736F1000B40537 /* Country.swift in Sources */,
 				BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */,
+				BF557C602E25197B0024F48A /* ToastView.swift in Sources */,
 				BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */,
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
@@ -443,19 +494,24 @@
 				BF9085522D736D8400B40537 /* VoteListCell.swift in Sources */,
 				BF90856C2D73755700B40537 /* LoginView.swift in Sources */,
 				BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */,
-				BFA4EB582E1BDD06006EC79C /* Security.swift in Sources */,
+				BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */,
+				BF557C5B2E25158B0024F48A /* LoadingScreen.swift in Sources */,
 				BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */,
 				BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */,
 				BF0B5E232E00419F00517B70 /* RoomListView.swift in Sources */,
 				BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */,
 				BF9085562D736E1F00B40537 /* Contestant.swift in Sources */,
 				BF90854A2D73658800B40537 /* SettingsView.swift in Sources */,
+				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF0B5E292E00445C00517B70 /* RoomService.swift in Sources */,
+				BF557C592E22A6070024F48A /* RoomCreationService.swift in Sources */,
 				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
+				BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */,
+				BF557C622E2519820024F48A /* ToastManager.swift in Sources */,
 				BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */,
 				BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */,
 				BF90855C2D73704E00B40537 /* AuthManager.swift in Sources */,

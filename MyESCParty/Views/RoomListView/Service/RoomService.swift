@@ -13,21 +13,37 @@ enum RoomType {
     case privateRoom
 }
 
-enum RoomServiceError: Error {
+enum RoomServiceError: LocalizedError {
     case invalidPassword
     case roomNotFound
     case hashSaltMissing
     case passwordMissing
     case noPasswordProvided
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidPassword:
+            return "Invalid password."
+        case .roomNotFound:
+            return "We couldn’t process your request due to an internal error."
+        case .hashSaltMissing:
+            return "We couldn’t process your request due to an internal error."
+        case .passwordMissing:
+            return "We couldn’t process your request due to an internal error."
+        case .noPasswordProvided:
+            return "Password is required to join a private room."
+        }
+    }
 }
 
 protocol RoomServiceProtocol {
     func fetchRooms(forceRefresh: Bool) async throws
     func joinRoom(id: Int, password: String?) async throws
-    func createRoom(name: String, type: RoomType) async throws
-    func getRoomType(id: Int) async throws -> RoomType
-    func joinRoomWithPassword(id: Int, password: String) async throws
-    func isUserInRoom(id: Int) async throws -> Bool
+    func isUserInRoom(id: Int) -> Bool
+    func getRoom(id: Int) -> Room?
+    func addUserToRoom(id: Int) async throws
+    
+    var roomCachePublisher: Published<[Room]>.Publisher { get }
 }
 
 class RoomService: RoomServiceProtocol, Cachable {
@@ -36,6 +52,9 @@ class RoomService: RoomServiceProtocol, Cachable {
     
     var cacheTimestamp: Date? =  nil
     
+    var roomCachePublisher: Published<[Room]>.Publisher {
+        $roomCache
+    }
     
     func fetchRooms(forceRefresh: Bool = false) async throws {
         let now = Date()
@@ -51,7 +70,7 @@ class RoomService: RoomServiceProtocol, Cachable {
         #endif
         
         let rooms: [Room] = try await DatabaseManager.shared.client
-            .from(.votinRoomsWithUserCount)
+            .from(.votingRoomsWithUserCount)
             .select()
             .execute()
             .value
@@ -69,86 +88,32 @@ class RoomService: RoomServiceProtocol, Cachable {
         userRoomsCache = userRooms
     }
     
-    private func addUserToRoom(id: Int) async throws {
+    func addUserToRoom(id: Int) async throws {
         guard let userId = AuthManager.shared.getUserId() else { return }
         
-        let _ = try await DatabaseManager.shared.client
+        let insertData: [String: String] = [
+            "user_id": userId,
+            "room_id": String(id)
+        ]
+        
+        try await DatabaseManager.shared.client
             .from(.userVotingRooms)
-            .insert(["user_id": userId, "room_id": String(id)])
+            .insert(insertData)
             .select()
             .execute()
-        
-    }
-    
-    func joinRoomWithPassword(id: Int, password: String) async throws {
-        
-    }
-    
-    func createRoom(name: String, type: RoomType = .publicRoom) async throws {
-        
     }
     
     func joinRoom(id: Int, password: String? = nil) async throws {
-        let type = try await getRoomType(id: id)
+        try await fetchRooms(forceRefresh: true)
         
-        switch type {
-        case .publicRoom:
-            try await addUserToRoom(id: id)
-        case .privateRoom:
-            guard let password, !password.isEmpty else {
-                print("No password provided")
-                throw RoomServiceError.noPasswordProvided
-            }
-            
-            let room = try await getRoom(id: id)
-            
-            guard let room else {
-                print("Room not found")
-                throw RoomServiceError.roomNotFound
-            }
-            
-            guard let salt = room.salt else {
-                print("Room has no salt")
-                throw RoomServiceError.hashSaltMissing
-            }
-            
-            guard let roomHash = room.passwordHash else {
-                print("Room has no password")
-                throw RoomServiceError.passwordMissing
-            }
-            
-            let hashedPassword = Security.hashPassword(password, salt: salt)
-            
-            if hashedPassword != roomHash {
-                print("Passwords don't match")
-                throw RoomServiceError.invalidPassword
-            }
-            
-            try await addUserToRoom(id: id)
-        }
     }
     
-    func getRoomType(id: Int) async throws -> RoomType {
-        let room = try await getRoom(id: id)
-        
-        if let room, room.passwordHash != nil {
-            return .privateRoom
-        }
-        
-        return .publicRoom
-    }
-    
-    func getRoom(id: Int) async throws -> Room? {
-        try await fetchRooms()
+    func getRoom(id: Int) -> Room? {
         return roomCache.first(where: { $0.id == id })
     }
     
     func isUserInRoom(id: Int) -> Bool {
-        if let _ = userRoomsCache.first(where: { $0.id == id }) {
-            return true
-        }
-        
-        return false
+        userRoomsCache.contains { $0.id == id }
     }
     
 }

@@ -13,10 +13,10 @@ class ContestantsViewModel: ObservableObject {
     @Published var contestants: [Contestant] = []
     @Published var filteredContestants: [Contestant] = []
     
-    init(service: ContestantsService = .init()) {
+    init(service: ContestantsServiceProtocol = ContestantsService()) {
         self.service = service
         
-        service.$contestantsCache
+        service.contestantsCachePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$contestants)
     }

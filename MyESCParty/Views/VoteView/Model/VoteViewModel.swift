@@ -6,8 +6,22 @@
 //
 
 import Foundation
+import Combine
 
 class VoteViewModel: ObservableObject {
+    @Published var allContestants: [Contestant] = []
+    private let service: ContestantsServiceProtocol
+    
+    init(service: ContestantsServiceProtocol = ContestantsService()) {
+        self.service = service
+        
+        service.contestantsCachePublisher
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$allContestants)
+        
+        // TODO: fetch the contestants on init in view
+    }
+    
     @Published var items: [VoteListItem]  = [
         VoteListItem(name: "Poland"),
         VoteListItem(name: "England"),
@@ -21,5 +35,4 @@ class VoteViewModel: ObservableObject {
     func move(from sourceIndex: IndexSet, to destination: Int) {
         items.move(fromOffsets: sourceIndex, toOffset: destination)
     }
-    
 }

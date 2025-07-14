@@ -21,12 +21,12 @@ class DatabaseManager {
 }
 
 enum DBTable: String {
-    case votingRoom = "voting_room"
+    case votingRoom = "voting_rooms"
     case votes = "votes"
     case votesPerRoom = "votes_per_room"
     case contests = "contests"
     case contestants = "contestants"
     case userVotingRooms = "user_voting_rooms"
     case roomUserCount = "room_user_count"
-    case votinRoomsWithUserCount = "voting_rooms_with_user_count"
+    case votingRoomsWithUserCount = "voting_rooms_with_user_count"
 }

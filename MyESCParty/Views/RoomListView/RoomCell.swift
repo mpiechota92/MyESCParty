@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RoomCell: View {
     
-    private let service = RoomService()
+    @ObservedObject var viewModel: RoomListViewModel
     
     var roomName: String
     var roomId: Int
@@ -37,7 +37,7 @@ struct RoomCell: View {
                 if !isUserInRoom {
                     Button {
                         Task {
-                            try await service.joinRoom(id: roomId)
+                            await viewModel.joinRoom(id: roomId)
                         }
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
@@ -45,6 +45,7 @@ struct RoomCell: View {
                             .foregroundStyle(.navy)
                             .overlay(
                                 Text("Join")
+                                    .foregroundStyle(.white)
                             )
                     }
                 }
@@ -55,5 +56,5 @@ struct RoomCell: View {
 }
 
 #Preview {
-    RoomCell(roomName: "Pokój 1", roomId: 1, participants: 10, isUserInRoom: true)
+    RoomCell(viewModel: RoomListViewModel(), roomName: "Pokój 1", roomId: 1, participants: 10, isUserInRoom: true)
 }

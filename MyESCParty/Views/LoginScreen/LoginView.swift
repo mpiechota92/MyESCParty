@@ -113,9 +113,7 @@ struct LoginView: View {
                 }
                 
                 if authViewModel.isLoading {
-                    Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
-                    ProgressView()
-                        .tint(.white)
+                    LoadingScreen()
                 }
             }
         }

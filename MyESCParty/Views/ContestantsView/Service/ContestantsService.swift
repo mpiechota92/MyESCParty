@@ -10,14 +10,26 @@ import Combine
 
 protocol ContestantsServiceProtocol {
     func fetchContestants(forceRefresh: Bool) async throws
+    
+    var contestantsCachePublisher: Published<[Contestant]>.Publisher { get }
 }
 
 class ContestantsService: ContestantsServiceProtocol, Cachable {
     @Published private(set) var contestantsCache: [Contestant] = []
     var cacheTimestamp: Date?
+    var isFetching: Bool = false
     
+    var contestantsCachePublisher: Published<[Contestant]>.Publisher {
+        $contestantsCache
+    }
     
     func fetchContestants(forceRefresh: Bool = false) async throws {
+        if isFetching {
+            return
+        }
+        
+        isFetching = true
+        
         let now = Date()
         
         if !forceRefresh, let timestamp = cacheTimestamp, now.timeIntervalSince(timestamp) < cacheTTL {
@@ -32,5 +44,7 @@ class ContestantsService: ContestantsServiceProtocol, Cachable {
         
         cacheTimestamp = now
         contestantsCache = contestants
+        
+        isFetching = false
     }
 }
