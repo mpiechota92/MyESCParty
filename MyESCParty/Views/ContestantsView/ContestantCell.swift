@@ -17,12 +17,8 @@ struct ContestantCell: View {
         .onTapGesture {
             showDetails = true
         }
-        .background {
-            // TODO: deprecrated func
-            NavigationLink(destination: Text("Kupa"), isActive: $showDetails) {
-                EmptyView()
-            }
-            .hidden()
+        .navigationDestination(isPresented: $showDetails) {
+            Text("Kupa")
         }
         
         

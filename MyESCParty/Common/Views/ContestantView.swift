@@ -56,6 +56,7 @@ struct ContestantView: View {
                 Image(systemName: cellType.rawValue)
                     .padding()
             }
+            .background(.white)
             
             Image(contestant.country)
                 .resizable()
@@ -64,7 +65,6 @@ struct ContestantView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 60)
         }
-        
     }
 }
 

@@ -74,6 +74,8 @@ struct ContestantsView: View {
         }
     }
     
+    //TODO: swipe
+    
     func selectGroup(_ group: ContestantsGroup) {
         selectedGroup = group
         viewModel.contestantsFor(group: group)

@@ -10,7 +10,7 @@
 		BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E202E003FA000517B70 /* ContestantsView.swift */; };
 		BF0B5E232E00419F00517B70 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E222E00419F00517B70 /* RoomListView.swift */; };
 		BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E252E0043CB00517B70 /* RoomListViewModel.swift */; };
-		BF0B5E292E00445C00517B70 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E282E00445C00517B70 /* RoomService.swift */; };
+		BF0B5E292E00445C00517B70 /* RoomListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E282E00445C00517B70 /* RoomListService.swift */; };
 		BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E322E005A9000517B70 /* RoomCell.swift */; };
 		BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E352E005CA400517B70 /* EscButton.swift */; };
 		BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BF1B42E214DDE002F176B /* ContestantView.swift */; };
@@ -30,6 +30,13 @@
 		BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C7A2E253DFB0024F48A /* ToastHostView.swift */; };
 		BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */; };
 		BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */; };
+		BF8E449C2E2695630064E6A5 /* Bundle+decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */; };
+		BF8E449E2E26B7C80064E6A5 /* Supabase.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8E449D2E26B7C80064E6A5 /* Supabase.plist */; };
+		BF8E44A32E26B8DD0064E6A5 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44A22E26B8DD0064E6A5 /* RoomView.swift */; };
+		BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44A42E26BA530064E6A5 /* RoomViewModel.swift */; };
+		BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44A82E26BB9B0064E6A5 /* RoomType.swift */; };
+		BF8E44AB2E26BBAF0064E6A5 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44AA2E26BBAF0064E6A5 /* Room.swift */; };
+		BF8E44AD2E26BBCD0064E6A5 /* UserRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44AC2E26BBCD0064E6A5 /* UserRoom.swift */; };
 		BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9085292D73632200B40537 /* MyESCPartyApp.swift */; };
 		BF90852E2D73632300B40537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF90852D2D73632300B40537 /* Assets.xcassets */; };
 		BF9085312D73632300B40537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9085302D73632300B40537 /* Preview Assets.xcassets */; };
@@ -76,7 +83,7 @@
 		BF0B5E202E003FA000517B70 /* ContestantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsView.swift; sourceTree = "<group>"; };
 		BF0B5E222E00419F00517B70 /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		BF0B5E252E0043CB00517B70 /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
-		BF0B5E282E00445C00517B70 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
+		BF0B5E282E00445C00517B70 /* RoomListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListService.swift; sourceTree = "<group>"; };
 		BF0B5E322E005A9000517B70 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		BF0B5E352E005CA400517B70 /* EscButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscButton.swift; sourceTree = "<group>"; };
 		BF1BF1B42E214DDE002F176B /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
@@ -96,6 +103,13 @@
 		BF557C7A2E253DFB0024F48A /* ToastHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHostView.swift; sourceTree = "<group>"; };
 		BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListItem.swift; sourceTree = "<group>"; };
+		BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+decode.swift"; sourceTree = "<group>"; };
+		BF8E449D2E26B7C80064E6A5 /* Supabase.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Supabase.plist; sourceTree = "<group>"; };
+		BF8E44A22E26B8DD0064E6A5 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		BF8E44A42E26BA530064E6A5 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		BF8E44A82E26BB9B0064E6A5 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
+		BF8E44AA2E26BBAF0064E6A5 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		BF8E44AC2E26BBCD0064E6A5 /* UserRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoom.swift; sourceTree = "<group>"; };
 		BF9085262D73632200B40537 /* MyESCParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyESCParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9085292D73632200B40537 /* MyESCPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyESCPartyApp.swift; sourceTree = "<group>"; };
 		BF90852D2D73632300B40537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,7 +173,7 @@
 		BF0B5E272E00445200517B70 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				BF0B5E282E00445C00517B70 /* RoomService.swift */,
+				BF0B5E282E00445C00517B70 /* RoomListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -244,6 +258,52 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BF8E449F2E26B8C40064E6A5 /* RoomView */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E44A12E26B8D10064E6A5 /* Service */,
+				BF8E44A02E26B8CD0064E6A5 /* Model */,
+				BF8E44A22E26B8DD0064E6A5 /* RoomView.swift */,
+			);
+			path = RoomView;
+			sourceTree = "<group>";
+		};
+		BF8E44A02E26B8CD0064E6A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E44A42E26BA530064E6A5 /* RoomViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF8E44A12E26B8D10064E6A5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BF8E44A62E26BB5B0064E6A5 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E44A72E26BB720064E6A5 /* Model */,
+				BF8E449F2E26B8C40064E6A5 /* RoomView */,
+				BF557C532E2293AF0024F48A /* RoomCreationView */,
+				BF9085482D73656A00B40537 /* RoomListView */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
+		BF8E44A72E26BB720064E6A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E44A82E26BB9B0064E6A5 /* RoomType.swift */,
+				BF8E44AA2E26BBAF0064E6A5 /* Room.swift */,
+				BF8E44AC2E26BBCD0064E6A5 /* UserRoom.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BF90851D2D73632200B40537 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +330,7 @@
 				BF9085442D73653100B40537 /* Views */,
 				BF9085292D73632200B40537 /* MyESCPartyApp.swift */,
 				BF90852D2D73632300B40537 /* Assets.xcassets */,
+				BF8E449D2E26B7C80064E6A5 /* Supabase.plist */,
 				BF90852F2D73632300B40537 /* Preview Content */,
 				BF9085672D7372B200B40537 /* DependencyResolver.swift */,
 			);
@@ -289,8 +350,7 @@
 			children = (
 				BF1FB99C2E1E9D7700DF1E39 /* MainView */,
 				BF0B5E1F2E003F8100517B70 /* ContestantsView */,
-				BF9085482D73656A00B40537 /* RoomListView */,
-				BF557C532E2293AF0024F48A /* RoomCreationView */,
+				BF8E44A62E26BB5B0064E6A5 /* Rooms */,
 				BF9085472D73655B00B40537 /* VoteView */,
 				BF9085462D73654C00B40537 /* LoginScreen */,
 				BF9085452D73653A00B40537 /* Settings */,
@@ -391,6 +451,7 @@
 				BF90857F2D73809000B40537 /* ColorPalette.swift */,
 				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
 				BFA4EB592E1BE91E006EC79C /* Cachable.swift */,
+				BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -467,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8E449E2E26B7C80064E6A5 /* Supabase.plist in Resources */,
 				BF9085312D73632300B40537 /* Preview Assets.xcassets in Resources */,
 				BF90852E2D73632300B40537 /* Assets.xcassets in Resources */,
 			);
@@ -480,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */,
+				BF8E44A32E26B8DD0064E6A5 /* RoomView.swift in Sources */,
 				BF90856A2D7373A500B40537 /* AppUser.swift in Sources */,
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
 				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
@@ -490,6 +553,7 @@
 				BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */,
 				BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */,
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,
+				BF8E44AB2E26BBAF0064E6A5 /* Room.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
@@ -497,6 +561,7 @@
 				BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */,
 				BF9085522D736D8400B40537 /* VoteListCell.swift in Sources */,
 				BF90856C2D73755700B40537 /* LoginView.swift in Sources */,
+				BF8E44AD2E26BBCD0064E6A5 /* UserRoom.swift in Sources */,
 				BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */,
 				BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */,
 				BF557C5B2E25158B0024F48A /* LoadingScreen.swift in Sources */,
@@ -509,13 +574,16 @@
 				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
-				BF0B5E292E00445C00517B70 /* RoomService.swift in Sources */,
+				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
+				BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */,
+				BF0B5E292E00445C00517B70 /* RoomListService.swift in Sources */,
 				BF557C592E22A6070024F48A /* RoomCreationService.swift in Sources */,
 				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
 				BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */,
 				BF557C622E2519820024F48A /* ToastManager.swift in Sources */,
+				BF8E449C2E2695630064E6A5 /* Bundle+decode.swift in Sources */,
 				BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */,
 				BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */,
 				BF90855C2D73704E00B40537 /* AuthManager.swift in Sources */,
