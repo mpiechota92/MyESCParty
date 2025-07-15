@@ -8,14 +8,23 @@
 import Foundation
 import Supabase
 
-class DatabaseManager {
-    private let supabaseKey = "REMOVED"
+struct SupabaseAPI: Decodable {
+    let url: String
+    let key: String
     
+    enum CodingKeys: String, CodingKey {
+        case url = "SUPABASE_URL"
+        case key = "SUPABASE_ANON_KEY"
+    }
+}
+
+class DatabaseManager {
     public static let shared = DatabaseManager()
     public var client: SupabaseClient
     
     private init() {
-        self.client = SupabaseClient(supabaseURL: URL(string: "REMOVED")!, supabaseKey: supabaseKey)
+        let supabaseAPI: SupabaseAPI = Bundle.main.decode("Supabase")
+        self.client = SupabaseClient(supabaseURL: URL(string: supabaseAPI.url)!, supabaseKey: supabaseAPI.key)
     }
     
 }
