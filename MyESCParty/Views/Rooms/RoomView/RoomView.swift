@@ -13,6 +13,8 @@ struct RoomView: View {
     var roomName: String
     var roomType: RoomType
     
+    @State private var userIsAdmin: Bool = false
+    
     init(roomName: String, roomType: RoomType, roomId: Int) {
         self.roomName = roomName
         self.roomType = roomType
@@ -21,24 +23,60 @@ struct RoomView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text(roomName)
-                    .foregroundStyle(.black)
-                    .font(.title)
-                    .padding(.horizontal, 10)
-                Image(systemName: roomType.rawValue)
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(roomName)
+                        .foregroundStyle(.black)
+                        .font(.title)
+                        .padding(.horizontal, 10)
+                    Image(systemName: roomType.rawValue)
+                    
+                    Spacer()
+                    
+                    Menu {
+                        Button {
+                            
+                        } label: {
+                            Text("Leave room")
+                        }
+                        
+                        if viewModel.isAdmin {
+                            Button {
+                                
+                            } label: {
+                                Text("Delete the room")
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
+                            .foregroundStyle(.black)
+                            .padding()
+                    }
+                }
                 
-                Spacer()
-                
-                Text("\(viewModel.userCount)")
-                Image(systemName: "person.2.fill")
-                    .padding(.trailing, 10)
+                HStack {
+                    Image(systemName: "person.2.fill")
+                        .padding(.leading, 10)
+                    Text("\(viewModel.users.count)")
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.users) { user in
+                        HStack {
+                            RoomParticipantCell(roomParticipant: user)
+                        }
+                    }
+                }
+            }
         }
         .task {
-            await viewModel.fetchUserCount()
+            await viewModel.fetchUsers(forceRefresh: true)
         }
     }
 }

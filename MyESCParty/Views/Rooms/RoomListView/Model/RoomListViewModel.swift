@@ -19,13 +19,15 @@ class RoomListViewModel: ObservableObject {
     init(service: RoomListServiceProtocol = RoomListService()) {
         self.service = service
         
-        service.roomCachePublisher
+        service.roomListCachePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$rooms)
     }
     
     @MainActor
     func fetchRooms() async {
+        guard !isLoading else { return }
+        
         isLoading = true
         defer { isLoading = false }
         

@@ -37,6 +37,9 @@
 		BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44A82E26BB9B0064E6A5 /* RoomType.swift */; };
 		BF8E44AB2E26BBAF0064E6A5 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44AA2E26BBAF0064E6A5 /* Room.swift */; };
 		BF8E44AD2E26BBCD0064E6A5 /* UserRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44AC2E26BBCD0064E6A5 /* UserRoom.swift */; };
+		BF8E44AF2E277B040064E6A5 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44AE2E277B040064E6A5 /* RoomService.swift */; };
+		BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44B02E278D5D0064E6A5 /* RoomParticipant.swift */; };
+		BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */; };
 		BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9085292D73632200B40537 /* MyESCPartyApp.swift */; };
 		BF90852E2D73632300B40537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF90852D2D73632300B40537 /* Assets.xcassets */; };
 		BF9085312D73632300B40537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9085302D73632300B40537 /* Preview Assets.xcassets */; };
@@ -110,6 +113,9 @@
 		BF8E44A82E26BB9B0064E6A5 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		BF8E44AA2E26BBAF0064E6A5 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BF8E44AC2E26BBCD0064E6A5 /* UserRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoom.swift; sourceTree = "<group>"; };
+		BF8E44AE2E277B040064E6A5 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
+		BF8E44B02E278D5D0064E6A5 /* RoomParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomParticipant.swift; sourceTree = "<group>"; };
+		BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomParticipantCell.swift; sourceTree = "<group>"; };
 		BF9085262D73632200B40537 /* MyESCParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyESCParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9085292D73632200B40537 /* MyESCPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyESCPartyApp.swift; sourceTree = "<group>"; };
 		BF90852D2D73632300B40537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +270,7 @@
 				BF8E44A12E26B8D10064E6A5 /* Service */,
 				BF8E44A02E26B8CD0064E6A5 /* Model */,
 				BF8E44A22E26B8DD0064E6A5 /* RoomView.swift */,
+				BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */,
 			);
 			path = RoomView;
 			sourceTree = "<group>";
@@ -279,6 +286,7 @@
 		BF8E44A12E26B8D10064E6A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BF8E44AE2E277B040064E6A5 /* RoomService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				BF8E44A82E26BB9B0064E6A5 /* RoomType.swift */,
 				BF8E44AA2E26BBAF0064E6A5 /* Room.swift */,
 				BF8E44AC2E26BBCD0064E6A5 /* UserRoom.swift */,
+				BF8E44B02E278D5D0064E6A5 /* RoomParticipant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -555,9 +564,11 @@
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,
 				BF8E44AB2E26BBAF0064E6A5 /* Room.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
+				BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
+				BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */,
 				BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */,
 				BF9085522D736D8400B40537 /* VoteListCell.swift in Sources */,
 				BF90856C2D73755700B40537 /* LoginView.swift in Sources */,
@@ -583,6 +594,7 @@
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
 				BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */,
 				BF557C622E2519820024F48A /* ToastManager.swift in Sources */,
+				BF8E44AF2E277B040064E6A5 /* RoomService.swift in Sources */,
 				BF8E449C2E2695630064E6A5 /* Bundle+decode.swift in Sources */,
 				BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */,
 				BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */,

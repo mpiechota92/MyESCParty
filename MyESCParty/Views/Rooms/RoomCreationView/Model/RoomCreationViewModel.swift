@@ -26,6 +26,8 @@ class RoomCreationViewModel: ObservableObject {
     
     @MainActor
     func createRoom(name: String, password: String) async {
+        guard !isLoading else { return }
+        
         isLoading = true
         defer { isLoading = false }
         

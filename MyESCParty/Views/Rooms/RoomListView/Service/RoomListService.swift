@@ -38,7 +38,7 @@ protocol RoomListServiceProtocol {
     func getRoom(id: Int) -> Room?
     func addUserToRoom(id: Int, isAdmin: Bool) async throws
     
-    var roomCachePublisher: Published<[Room]>.Publisher { get }
+    var roomListCachePublisher: Published<[Room]>.Publisher { get }
 }
 
 extension RoomListServiceProtocol {
@@ -61,7 +61,7 @@ class RoomListService: RoomListServiceProtocol, Cachable {
     
     var cacheTimestamp: Date? =  nil
     
-    var roomCachePublisher: Published<[Room]>.Publisher {
+    var roomListCachePublisher: Published<[Room]>.Publisher {
         $roomCache
     }
     
