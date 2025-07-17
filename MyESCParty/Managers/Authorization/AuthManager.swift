@@ -88,9 +88,9 @@ class AuthManager {
         try await databaseManager.client.auth.signOut()
     }
     
-    func getUserId() -> String? {
+    func getUserUUID() -> UUID? {
         guard isSessionActive else { return nil }
         
-        return databaseManager.client.auth.currentUser?.id.uuidString
+        return databaseManager.client.auth.currentUser?.id
     }
 }

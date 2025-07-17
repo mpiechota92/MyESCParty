@@ -19,6 +19,7 @@
 		BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */; };
 		BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */; };
 		BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */; };
+		BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */; };
 		BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */; };
 		BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C62DFB25670060E323 /* ContentView.swift */; };
 		BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */; };
@@ -40,6 +41,7 @@
 		BF8E44AF2E277B040064E6A5 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44AE2E277B040064E6A5 /* RoomService.swift */; };
 		BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44B02E278D5D0064E6A5 /* RoomParticipant.swift */; };
 		BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */; };
+		BF8E44B52E29274B0064E6A5 /* RoomOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E44B42E29274B0064E6A5 /* RoomOptionsView.swift */; };
 		BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9085292D73632200B40537 /* MyESCPartyApp.swift */; };
 		BF90852E2D73632300B40537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF90852D2D73632300B40537 /* Assets.xcassets */; };
 		BF9085312D73632300B40537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9085302D73632300B40537 /* Preview Assets.xcassets */; };
@@ -95,6 +97,7 @@
 		BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsService.swift; sourceTree = "<group>"; };
 		BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsViewModel.swift; sourceTree = "<group>"; };
 		BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantCell.swift; sourceTree = "<group>"; };
+		BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BF2FF1C62DFB25670060E323 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		BF8E44AE2E277B040064E6A5 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
 		BF8E44B02E278D5D0064E6A5 /* RoomParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomParticipant.swift; sourceTree = "<group>"; };
 		BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomParticipantCell.swift; sourceTree = "<group>"; };
+		BF8E44B42E29274B0064E6A5 /* RoomOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomOptionsView.swift; sourceTree = "<group>"; };
 		BF9085262D73632200B40537 /* MyESCParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyESCParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9085292D73632200B40537 /* MyESCPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyESCPartyApp.swift; sourceTree = "<group>"; };
 		BF90852D2D73632300B40537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				BF8E44A02E26B8CD0064E6A5 /* Model */,
 				BF8E44A22E26B8DD0064E6A5 /* RoomView.swift */,
 				BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */,
+				BF8E44B42E29274B0064E6A5 /* RoomOptionsView.swift */,
 			);
 			path = RoomView;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				BF9085552D736E1F00B40537 /* Contestant.swift */,
 				BF9085572D736F1000B40537 /* Country.swift */,
 				BF9085692D7373A500B40537 /* AppUser.swift */,
+				BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				BF9085562D736E1F00B40537 /* Contestant.swift in Sources */,
 				BF90854A2D73658800B40537 /* SettingsView.swift in Sources */,
 				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
+				BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */,
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
@@ -596,6 +603,7 @@
 				BF557C622E2519820024F48A /* ToastManager.swift in Sources */,
 				BF8E44AF2E277B040064E6A5 /* RoomService.swift in Sources */,
 				BF8E449C2E2695630064E6A5 /* Bundle+decode.swift in Sources */,
+				BF8E44B52E29274B0064E6A5 /* RoomOptionsView.swift in Sources */,
 				BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */,
 				BF90852A2D73632200B40537 /* MyESCPartyApp.swift in Sources */,
 				BF90855C2D73704E00B40537 /* AuthManager.swift in Sources */,
