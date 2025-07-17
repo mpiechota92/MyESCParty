@@ -33,5 +33,5 @@ struct RoomParticipantCell: View {
 }
 
 #Preview {
-    RoomParticipantCell(roomParticipant: RoomParticipant(id: "18923798237187", roomId: 1, username: "Pjeszi", isAdmin: true))
+    RoomParticipantCell(roomParticipant: RoomParticipant(id: UUID(), roomId: 1, username: "Pjeszi", isAdmin: true))
 }

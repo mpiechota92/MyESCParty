@@ -16,3 +16,10 @@ struct UserRoom: Decodable {
         case isAdmin = "is_admin"
     }
 }
+
+#if DEBUG
+extension UserRoom {
+    static let adminMock: UserRoom = UserRoom(id: 1, isAdmin: true)
+    static let mock: UserRoom = UserRoom(id: 2, isAdmin: false)
+}
+#endif

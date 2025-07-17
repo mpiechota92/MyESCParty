@@ -7,19 +7,18 @@
 
 import Foundation
 
-class RoomViewModel: ObservableObject {
+class RoomViewModel: BaseViewModel {
     private let service: RoomServiceProtocol
     private let roomId: Int
     
     @Published var userCount: Int = 0
-    @Published var error: Error?
-    @Published var isLoading: Bool = false
     @Published var users: [RoomParticipant] = []
     @Published var isAdmin: Bool = false
     
     init(service: RoomServiceProtocol = RoomService(), roomId: Int) {
         self.service = service
         self.roomId = roomId
+        super.init()
         
         service.usersCachePublisher
             .receive(on: DispatchQueue.main)
@@ -28,39 +27,36 @@ class RoomViewModel: ObservableObject {
     
     @MainActor
     func fetchUsers(forceRefresh: Bool = false) async {
-        guard !isLoading else { return }
-        
-        isLoading = true
-        defer { isLoading = false }
-        
-        do {
-            try await service.fetchUsers(roomId: roomId, forceRefresh: forceRefresh)
+        performWithLoading(type: .inline) { [weak self] in
+            guard let self = self else { return }
             
-            guard let userId = AuthManager.shared.getUserId() else {
+            try await self.service.fetchUsers(roomId: self.roomId, forceRefresh: forceRefresh)
+            
+            guard let userId = AuthManager.shared.getUserUUID() else {
                 return
             }
             
-            let user = users.first { $0.id == userId }
+            let user = self.users.first { $0.id == userId }
             
             if let isAdmin = user?.isAdmin {
                 self.isAdmin = isAdmin
             }
-        } catch {
-            self.error = error
         }
     }
     
-    func isUserAdmin() -> Bool {
-        guard let userId = AuthManager.shared.getUserId() else {
-            return false
+    @MainActor
+    func leaveRoom() async {
+        performWithLoading(type: .fullScreen) { [weak self] in
+            guard let self = self else { return }
+            try await self.service.leaveRoom(roomId: self.roomId)
         }
-        
-        let user = users.first { $0.id == userId }
-        
-        if let isAdmin = user?.isAdmin {
-            return isAdmin
+    }
+    
+    @MainActor
+    func deleteRoom() async {
+        performWithLoading(type: .fullScreen) { [weak self] in
+            guard let self = self else { return }
+            try await self.service.deleteRoom(roomId: self.roomId)
         }
-        
-        return false
     }
 }

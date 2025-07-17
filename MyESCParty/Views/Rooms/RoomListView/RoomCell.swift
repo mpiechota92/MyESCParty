@@ -13,11 +13,9 @@ struct RoomCell: View {
     
     @State private var showDetails: Bool = false
     
-    var roomName: String
-    var roomId: Int
-    var participants: Int
+    var room: Room
     var isUserInRoom: Bool
-    var roomType: RoomType
+    var onTap: (() -> Void)
     
     var body: some View {
         ZStack {
@@ -28,10 +26,10 @@ struct RoomCell: View {
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("\(roomName)")
+                    Text("\(room.name)")
                     HStack {
                         Image(systemName: "person.2.fill")
-                        Text("\(participants)")
+                        Text("\(room.userCount ?? 0)")
                     }
                 }
                 
@@ -40,7 +38,7 @@ struct RoomCell: View {
                 if !isUserInRoom {
                     Button {
                         Task {
-                            await viewModel.joinRoom(id: roomId)
+                            await viewModel.joinRoom(id: room.id)
                         }
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
@@ -56,14 +54,14 @@ struct RoomCell: View {
             .padding()
         }
         .onTapGesture {
-            showDetails = true
-        }
-        .navigationDestination(isPresented: $showDetails) {
-            RoomView(roomName: roomName, roomType: roomType, roomId: roomId)
+            onTap()
         }
     }
 }
 
 #Preview {
-    RoomCell(viewModel: RoomListViewModel(), roomName: "Pokój 1", roomId: 1, participants: 10, isUserInRoom: true, roomType: .publicRoom)
+    RoomCell(viewModel: RoomListViewModel(),
+             room: Room.publicRoomMock,
+             isUserInRoom: false
+    ) { }
 }

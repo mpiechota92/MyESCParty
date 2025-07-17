@@ -84,7 +84,7 @@ class RoomListService: RoomListServiceProtocol, Cachable {
             .execute()
             .value
         
-        let userId = AuthManager.shared.getUserId() ?? ""
+        let userId = AuthManager.shared.getUserUUID()?.uuidString ?? ""
         let userRooms: [UserRoom] = try await DatabaseManager.shared.client
             .from(.userVotingRooms)
             .select()
@@ -98,7 +98,7 @@ class RoomListService: RoomListServiceProtocol, Cachable {
     }
     
     func addUserToRoom(id: Int, isAdmin: Bool = false) async throws {
-        guard let userId = AuthManager.shared.getUserId() else { return }
+        guard let userId = AuthManager.shared.getUserUUID()?.uuidString else { return }
         
         let insertData: [String: String] = [
             "user_id": userId,

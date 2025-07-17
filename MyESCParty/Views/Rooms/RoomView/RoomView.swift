@@ -33,28 +33,7 @@ struct RoomView: View {
                     
                     Spacer()
                     
-                    Menu {
-                        Button {
-                            
-                        } label: {
-                            Text("Leave room")
-                        }
-                        
-                        if viewModel.isAdmin {
-                            Button {
-                                
-                            } label: {
-                                Text("Delete the room")
-                            }
-                        }
-                    } label: {
-                        Image(systemName: "ellipsis")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25)
-                            .foregroundStyle(.black)
-                            .padding()
-                    }
+                    RoomOptionsView(viewModel: viewModel)
                 }
                 
                 HStack {

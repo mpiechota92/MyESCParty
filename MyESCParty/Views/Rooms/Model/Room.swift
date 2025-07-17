@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Room: Identifiable, Decodable {
+struct Room: Identifiable, Decodable, Hashable {
     let id: Int
     let name: String
     let passwordHash: String?
@@ -32,3 +32,26 @@ struct Room: Identifiable, Decodable {
         case uuid = "room_uuid"
     }
 }
+
+#if DEBUG
+extension Room {
+    static let publicRoomMock: Room = Room(
+        id: 1,
+        name: "Public room",
+        passwordHash: nil,
+        salt: nil,
+        userCount: 2,
+        uuid: UUID()
+    )
+    
+    // password: testpassword
+    static let privateRoomMock: Room = Room(
+        id: 2,
+        name: "Private room",
+        passwordHash: "b2e76d91fd61a39e1dc84bba1bbf8fc7efb7b30311b2b6a3b35cc3753f1be201",
+        salt: "c7e82a43-2bcd-470f-9ba7-3d8ea758eafe",
+        userCount: 2,
+        uuid: UUID()
+    )
+}
+#endif

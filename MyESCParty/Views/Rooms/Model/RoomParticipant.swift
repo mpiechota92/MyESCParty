@@ -8,7 +8,7 @@
 import Foundation
 
 struct RoomParticipant: Identifiable, Decodable {
-    var id: String
+    var id: UUID
     var roomId: Int
     var username: String
     var isAdmin: Bool?
@@ -20,3 +20,11 @@ struct RoomParticipant: Identifiable, Decodable {
         case isAdmin = "is_admin"
     }
 }
+
+#if DEBUG
+extension RoomParticipant {
+    static let room1AdminMock: RoomParticipant = RoomParticipant(id: UUID(), roomId: 2, username: "Admin User", isAdmin: true)
+    static let room1UserMock: RoomParticipant = RoomParticipant(id: UUID(), roomId: 2, username: "Normal User", isAdmin: nil)
+    static let room2UserMock: RoomParticipant = RoomParticipant(id: UUID(), roomId: 1, username: "Normal User 2", isAdmin: nil)
+}
+#endif

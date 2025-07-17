@@ -10,6 +10,7 @@ import SwiftUI
 struct RoomListView: View {
     @StateObject private var viewModel: RoomListViewModel = .init()
     @State private var createRoomMode: Bool = false
+    @State private var selectedRoom: Room?
     
     var body: some View {
         NavigationStack {
@@ -23,13 +24,12 @@ struct RoomListView: View {
                             let isUserInRoom = viewModel.isUserInRoom(room.id)
                             RoomCell(
                                 viewModel: viewModel,
-                                roomName: room.name,
-                                roomId: room.id,
-                                participants: room.userCount ?? 0,
+                                room: room,
                                 isUserInRoom: isUserInRoom,
-                                roomType: room.roomType
-                            )
-                                .padding(.horizontal, 10)
+                            ) {
+                                selectedRoom = room
+                            }
+                            .padding(.horizontal, 10)
                         }
                         
                         if viewModel.isLoading {
@@ -77,6 +77,13 @@ struct RoomListView: View {
             }
             .navigationDestination(isPresented: $createRoomMode) {
                 RoomCreationView()
+            }
+            .navigationDestination(item: $selectedRoom) { room in
+                RoomView(
+                    roomName: room.name,
+                    roomType: room.roomType,
+                    roomId: room.id
+                )
             }
         }
     }

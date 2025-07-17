@@ -9,6 +9,8 @@ import Foundation
 
 protocol RoomServiceProtocol {
     func fetchUsers(roomId: Int, forceRefresh: Bool) async throws
+    func leaveRoom(roomId: Int) async throws
+    func deleteRoom(roomId: Int) async throws
     
     var usersCachePublisher: Published<[RoomParticipant]>.Publisher { get }
 }
@@ -50,5 +52,31 @@ class RoomService: RoomServiceProtocol, Cachable {
         
         cacheTimestamp = now
         usersCache = users
+    }
+    
+    func leaveRoom(roomId: Int) async throws {
+        guard let userId = AuthManager.shared.getUserUUID() else {
+            return
+        }
+        
+        #if DEBUG
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            print("Leaving room: \(roomId) by user: \(userId)...")
+        }
+        #endif
+        
+        try await DatabaseManager.shared.client
+            .from(.userVotingRooms)
+            .delete()
+            .eq("user_id", value: userId.uuidString)
+            .execute()
+    }
+    
+    func deleteRoom(roomId: Int) async throws {
+        try await DatabaseManager.shared.client
+            .from(.votingRoom)
+            .delete()
+            .eq(Room.CodingKeys.id.rawValue, value: String(roomId))
+            .execute()
     }
 }
