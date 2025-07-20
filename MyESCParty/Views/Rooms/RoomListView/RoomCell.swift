@@ -36,19 +36,12 @@ struct RoomCell: View {
                 Spacer()
                 
                 if !isUserInRoom {
-                    Button {
+                    BaseButton(title: "Join") {
                         Task {
                             await viewModel.joinRoom(id: room.id)
                         }
-                    } label: {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 100, height: 50)
-                            .foregroundStyle(.navy)
-                            .overlay(
-                                Text("Join")
-                                    .foregroundStyle(.white)
-                            )
                     }
+                    .frame(width: 100)
                 }
             }
             .padding()

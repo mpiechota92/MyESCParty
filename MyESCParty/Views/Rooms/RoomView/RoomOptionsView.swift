@@ -14,7 +14,7 @@ struct RoomOptionsView: View {
         Menu {
             if !viewModel.isAdmin {
                 Button {
-                    viewModel.leave
+                    
                 } label: {
                     Text("Leave room")
                 }

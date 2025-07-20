@@ -7,34 +7,27 @@
 
 import Foundation
 
-class RoomListViewModel: ObservableObject {
+class RoomListViewModel: BaseViewModel {
     
     private let service: RoomListServiceProtocol
     
     @Published var rooms: [Room] = []
-    @Published var isLoading: Bool = false
     @Published var searchText: String = ""
-    @Published var error: Error?
     
     init(service: RoomListServiceProtocol = RoomListService()) {
         self.service = service
+        super.init()
         
-        service.roomListCachePublisher
+        self.service.roomListCachePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$rooms)
     }
     
     @MainActor
     func fetchRooms() async {
-        guard !isLoading else { return }
-        
-        isLoading = true
-        defer { isLoading = false }
-        
-        do {
-            try await service.fetchRooms(forceRefresh: true)
-        } catch {
-            print(error)
+        performWithLoading(type: .inline) { [weak self] in
+            guard let self = self else { return }
+            try await self.service.fetchRooms(forceRefresh: true)
         }
     }
     

@@ -129,8 +129,8 @@ struct LoginView: View {
                     
                 }
                 
-                if authViewModel.isLoading {
-                    LoadingScreen()
+                if authViewModel.loadingType == .fullScreen {
+                    FullScreenLoadingView()
                 }
             }
         }

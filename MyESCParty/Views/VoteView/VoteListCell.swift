@@ -8,21 +8,38 @@
 import SwiftUI
 
 struct VoteListCell: View {
-    @State var data: String
+    let contestant: Contestant
+    let points: Int
+    
+    var color: Color {
+        switch points {
+        case 12:
+            return .gold
+        case 10:
+            return .silver
+        case 8:
+            return .bronze
+        default:
+            return .black
+        }
+    }
     
     var body: some View {
-        ZStack {
-            HStack {
-                Text(data)
-                
-                Image(systemName: "line.3.horizontal")
-                    .foregroundColor(.gray)
+        ZStack(alignment: .trailing) {
+            ContestantView(contestant: contestant, cellType: .dragAndDrop)
+            
+            if points > 0 {
+                Text("\(points)")
+                    .foregroundStyle(color)
+                    .font(.title)
+                    .bold()
+                    .padding(.trailing, 50)
             }
         }
     }
 }
 
 #Preview {
-    VoteListCell(data: "Poland")
+    VoteListCell(contestant: Contestant.mockSweeden, points: 12)
 }
 

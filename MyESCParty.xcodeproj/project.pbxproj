@@ -20,15 +20,19 @@
 		BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */; };
 		BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */; };
 		BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */; };
+		BF2A09C12E296540001AC071 /* InLineLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09C02E296540001AC071 /* InLineLoadingView.swift */; };
+		BF2A09C32E29654C001AC071 /* FullScreenLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09C22E29654C001AC071 /* FullScreenLoadingView.swift */; };
+		BF2A09C62E296F75001AC071 /* ValidatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09C52E296F75001AC071 /* ValidatorManager.swift */; };
 		BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */; };
 		BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C62DFB25670060E323 /* ContentView.swift */; };
 		BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */; };
 		BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C562E22A0A20024F48A /* RoomCreationViewModel.swift */; };
 		BF557C592E22A6070024F48A /* RoomCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C582E22A6070024F48A /* RoomCreationService.swift */; };
-		BF557C5B2E25158B0024F48A /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C5A2E25158B0024F48A /* LoadingScreen.swift */; };
 		BF557C602E25197B0024F48A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C5F2E25197B0024F48A /* ToastView.swift */; };
 		BF557C622E2519820024F48A /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C612E2519820024F48A /* ToastManager.swift */; };
 		BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C7A2E253DFB0024F48A /* ToastHostView.swift */; };
+		BF637D582E2D0F5A00B828E7 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF637D572E2D0F5A00B828E7 /* BaseButton.swift */; };
+		BF637D5A2E2D0FEF00B828E7 /* BaseCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF637D592E2D0FEF00B828E7 /* BaseCircleButton.swift */; };
 		BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */; };
 		BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */; };
 		BF8E449C2E2695630064E6A5 /* Bundle+decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */; };
@@ -69,6 +73,8 @@
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
 		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
+		BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */; };
+		BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,15 +104,19 @@
 		BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsViewModel.swift; sourceTree = "<group>"; };
 		BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantCell.swift; sourceTree = "<group>"; };
 		BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		BF2A09C02E296540001AC071 /* InLineLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InLineLoadingView.swift; sourceTree = "<group>"; };
+		BF2A09C22E29654C001AC071 /* FullScreenLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoadingView.swift; sourceTree = "<group>"; };
+		BF2A09C52E296F75001AC071 /* ValidatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorManager.swift; sourceTree = "<group>"; };
 		BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BF2FF1C62DFB25670060E323 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		BF557C562E22A0A20024F48A /* RoomCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationViewModel.swift; sourceTree = "<group>"; };
 		BF557C582E22A6070024F48A /* RoomCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationService.swift; sourceTree = "<group>"; };
-		BF557C5A2E25158B0024F48A /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		BF557C5F2E25197B0024F48A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		BF557C612E2519820024F48A /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 		BF557C7A2E253DFB0024F48A /* ToastHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHostView.swift; sourceTree = "<group>"; };
+		BF637D572E2D0F5A00B828E7 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		BF637D592E2D0FEF00B828E7 /* BaseCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCircleButton.swift; sourceTree = "<group>"; };
 		BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListItem.swift; sourceTree = "<group>"; };
 		BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+decode.swift"; sourceTree = "<group>"; };
@@ -141,6 +151,8 @@
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
+		BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppableList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,16 +200,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		BF0B5E342E005C9300517B70 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BF1BF1B42E214DDE002F176B /* ContestantView.swift */,
-				BF0B5E352E005CA400517B70 /* EscButton.swift */,
-				BF557C5A2E25158B0024F48A /* LoadingScreen.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		BF1FB99C2E1E9D7700DF1E39 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +223,28 @@
 				BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BF2A09BF2E296527001AC071 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BF637D562E2D0F4700B828E7 /* Buttons */,
+				BFFD10782E2A978C00D7EC57 /* Delegates */,
+				BF1BF1B42E214DDE002F176B /* ContestantView.swift */,
+				BF0B5E352E005CA400517B70 /* EscButton.swift */,
+				BF2A09C02E296540001AC071 /* InLineLoadingView.swift */,
+				BF2A09C22E29654C001AC071 /* FullScreenLoadingView.swift */,
+				BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BF2A09C42E296F5F001AC071 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				BF2A09C52E296F75001AC071 /* ValidatorManager.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		BF557C532E2293AF0024F48A /* RoomCreationView */ = {
@@ -257,6 +281,15 @@
 				BF557C7A2E253DFB0024F48A /* ToastHostView.swift */,
 			);
 			path = ToastManager;
+			sourceTree = "<group>";
+		};
+		BF637D562E2D0F4700B828E7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				BF637D572E2D0F5A00B828E7 /* BaseButton.swift */,
+				BF637D592E2D0FEF00B828E7 /* BaseCircleButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		BF7E3CD92DE09D0B003740BD /* Model */ = {
@@ -362,6 +395,7 @@
 		BF9085442D73653100B40537 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF2A09BF2E296527001AC071 /* Common */,
 				BF1FB99C2E1E9D7700DF1E39 /* MainView */,
 				BF0B5E1F2E003F8100517B70 /* ContestantsView */,
 				BF8E44A62E26BB5B0064E6A5 /* Rooms */,
@@ -461,7 +495,7 @@
 		BF90857E2D73808200B40537 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BF0B5E342E005C9300517B70 /* Views */,
+				BF2A09C42E296F5F001AC071 /* Validators */,
 				BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */,
 				BF90857F2D73809000B40537 /* ColorPalette.swift */,
 				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
@@ -469,6 +503,14 @@
 				BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		BFFD10782E2A978C00D7EC57 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,24 +606,29 @@
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
 				BF9085582D736F1000B40537 /* Country.swift in Sources */,
 				BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */,
+				BF2A09C32E29654C001AC071 /* FullScreenLoadingView.swift in Sources */,
 				BF557C602E25197B0024F48A /* ToastView.swift in Sources */,
 				BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */,
 				BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */,
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,
 				BF8E44AB2E26BBAF0064E6A5 /* Room.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
+				BF2A09C12E296540001AC071 /* InLineLoadingView.swift in Sources */,
 				BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
+				BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
+				BF2A09C62E296F75001AC071 /* ValidatorManager.swift in Sources */,
 				BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */,
 				BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */,
+				BF637D5A2E2D0FEF00B828E7 /* BaseCircleButton.swift in Sources */,
 				BF9085522D736D8400B40537 /* VoteListCell.swift in Sources */,
 				BF90856C2D73755700B40537 /* LoginView.swift in Sources */,
 				BF8E44AD2E26BBCD0064E6A5 /* UserRoom.swift in Sources */,
 				BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */,
+				BF637D582E2D0F5A00B828E7 /* BaseButton.swift in Sources */,
 				BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */,
-				BF557C5B2E25158B0024F48A /* LoadingScreen.swift in Sources */,
 				BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */,
 				BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */,
 				BF0B5E232E00419F00517B70 /* RoomListView.swift in Sources */,
@@ -596,6 +643,7 @@
 				BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */,
 				BF0B5E292E00445C00517B70 /* RoomListService.swift in Sources */,
 				BF557C592E22A6070024F48A /* RoomCreationService.swift in Sources */,
+				BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */,
 				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,

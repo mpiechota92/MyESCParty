@@ -32,40 +32,20 @@ struct RoomListView: View {
                             .padding(.horizontal, 10)
                         }
                         
-                        if viewModel.isLoading {
-                            HStack {
-                                Spacer()
-                                ProgressView()
-                                Spacer()
-                            }
+                        if viewModel.loadingType == .inline {
+                            InLineLoadingView()
                         }
                     }
                     .padding(.vertical, 10)
                 }
                 
                 HStack {
-                    Button {
+                    BaseButton(title: "Join a room") {
                         
-                    } label: {
-                        Text("Join a Room")
-                            .foregroundStyle(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(.navy)
-                            .cornerRadius(10)
                     }
-                    .padding(.trailing, 20)
                     
-                    Button {
+                    BaseCircleButton(imageName: "plus") {
                         createRoomMode = true
-                    } label: {
-                        Circle()
-                            .fill(.navy)
-                            .frame(width: 50, height: 50)
-                            .overlay(
-                                Image(systemName: "plus")
-                                    .foregroundStyle(.white)
-                            )
                     }
                 }
                 .padding([.horizontal, .bottom], 20)

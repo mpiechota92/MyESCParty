@@ -22,36 +22,45 @@ struct RoomView: View {
     }
     
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(roomName)
-                        .foregroundStyle(.black)
-                        .font(.title)
-                        .padding(.horizontal, 10)
-                    Image(systemName: roomType.rawValue)
+        ZStack {
+            VStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(roomName)
+                            .foregroundStyle(.black)
+                            .font(.title)
+                            .padding(.horizontal, 10)
+                        Image(systemName: roomType.rawValue)
+                        
+                        Spacer()
+                        
+                        RoomOptionsView(viewModel: viewModel)
+                    }
                     
-                    Spacer()
-                    
-                    RoomOptionsView(viewModel: viewModel)
+                    HStack {
+                        Image(systemName: "person.2.fill")
+                            .padding(.leading, 10)
+                        Text("\(viewModel.users.count)")
+                    }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
-                HStack {
-                    Image(systemName: "person.2.fill")
-                        .padding(.leading, 10)
-                    Text("\(viewModel.users.count)")
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.users) { user in
-                        HStack {
-                            RoomParticipantCell(roomParticipant: user)
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.users) { user in
+                            HStack {
+                                RoomParticipantCell(roomParticipant: user)
+                            }
+                        }
+                        if viewModel.loadingType == .inline {
+                            InLineLoadingView()
                         }
                     }
                 }
+            }
+            
+            if viewModel.loadingType == .fullScreen {
+                FullScreenLoadingView()
             }
         }
         .task {

@@ -11,10 +11,7 @@ enum RoomCreationError: Error {
     
 }
 
-class RoomCreationViewModel: ObservableObject {
-    @Published var isLoading: Bool = false
-    @Published var error: Error? = nil
-    
+class RoomCreationViewModel: BaseViewModel {
     private var roomCreationService: RoomCreationServiceProtocol
     private var roomService: RoomListServiceProtocol
     
@@ -26,17 +23,12 @@ class RoomCreationViewModel: ObservableObject {
     
     @MainActor
     func createRoom(name: String, password: String) async {
-        guard !isLoading else { return }
-        
-        isLoading = true
-        defer { isLoading = false }
-        
-        do {
-            let roomId = try await roomCreationService.createRoom(name: name, password: password)
-            try await roomService.fetchRooms(forceRefresh: true)
-            try await roomService.addUserToRoom(id: roomId, isAdmin: true)
-        } catch {
-            self.error = error
+        performWithLoading(type: .fullScreen) { [weak self] in
+            guard let self = self else { return }
+            
+            let roomId = try await self.roomCreationService.createRoom(name: name, password: password)
+            try await self.roomService.fetchRooms(forceRefresh: true)
+            try await self.roomService.addUserToRoom(id: roomId, isAdmin: true)
         }
     }
 }

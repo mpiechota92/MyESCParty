@@ -58,8 +58,8 @@ struct RoomCreationView: View {
             }
             .padding()
             
-            if viewModel.isLoading {
-                LoadingScreen()
+            if viewModel.loadingType == .fullScreen {
+                FullScreenLoadingView()
             }
         }
     }

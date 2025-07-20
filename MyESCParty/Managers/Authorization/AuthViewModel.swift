@@ -8,16 +8,15 @@
 import Foundation
 import Supabase
 
-@MainActor
-class AuthViewModel: ObservableObject {
+class AuthViewModel: BaseViewModel {
     @Published var isSessionActive: Bool = false
-    @Published var isLoading: Bool = false
     @Published var user: AppUser? = nil
-    @Published var error: AuthError? = nil
     
     private let authManager = AuthManager.shared
+    //private let validatorManager = ValidatorManager.shared
     
-    init() {
+    override init() {
+        super.init()
         refreshSession()
     }
     
@@ -25,80 +24,36 @@ class AuthViewModel: ObservableObject {
         isSessionActive = authManager.isSessionActive
     }
     
+    @MainActor
     func signIn(email: String, password: String) async {
-        self.isLoading = true
-        
-        do {
-            let user = try await authManager.signInWith(email: email, password: password)
+        performWithLoading(type: .fullScreen) { [weak self] in
+            guard let self = self else { return }
+            
+            let user = try await self.authManager.signInWith(email: email, password: password)
             self.user = user
             self.isSessionActive = true
-            self.isLoading = false
-        } catch {
-            print(error.localizedDescription)
-            print("\(error)")
-            if let error = error as? AuthError {
-                self.error = error
-            } else {
-                self.error = .api(
-                    message: "Unknown error while signing in",
-                    errorCode: .unknown,
-                    underlyingData: Data(),
-                    underlyingResponse: HTTPURLResponse()
-                )
-            }
-            
-            self.isSessionActive = false
-            self.isLoading = false
         }
     }
     
+    @MainActor
     func signUp(email: String, username: String, password: String) async {
-        self.isLoading = true
-        
-        do {
-            let user = try await authManager.signUpWith(email: email, username: username, password: password)
+        performWithLoading(type: .fullScreen) { [weak self] in
+            guard let self = self else { return }
+            
+            let user = try await self.authManager.signUpWith(email: email, username: username, password: password)
             self.user = user
             self.isSessionActive = false
-            self.isLoading = false
-        } catch {
-            if let error = error as? AuthError {
-                self.error = error
-            } else {
-                self.error = .api(
-                    message: error.localizedDescription,
-                    errorCode: .unknown,
-                    underlyingData: Data(),
-                    underlyingResponse: HTTPURLResponse()
-                )
-            }
-            
-            self.isSessionActive = false
-            self.isLoading = false
         }
     }
     
+    @MainActor
     func signOut() async {
-        self.isLoading = true
-        
-        do {
-            try await authManager.signOut()
+        performWithLoading(type: .fullScreen) { [weak self] in
+            guard let self = self else { return }
+            
+            try await self.authManager.signOut()
             self.isSessionActive = false
             self.user = nil
-            self.isLoading = false
-        } catch {
-            print(error.localizedDescription)
-            if let error = error as? AuthError {
-                self.error = error
-            } else {
-                self.error = .api(
-                    message: "Unknown error while signing out",
-                    errorCode: .unknown,
-                    underlyingData: Data(),
-                    underlyingResponse: HTTPURLResponse()
-                )
-            }
-            
-            self.isLoading = false
         }
     }
 }

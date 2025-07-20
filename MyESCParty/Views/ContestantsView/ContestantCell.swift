@@ -26,5 +26,5 @@ struct ContestantCell: View {
 }
 
 #Preview {
-    ContestantCell(contestant: .mock)
+    ContestantCell(contestant: .mockSweeden)
 }

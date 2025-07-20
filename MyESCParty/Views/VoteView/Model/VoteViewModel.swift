@@ -8,31 +8,37 @@
 import Foundation
 import Combine
 
-class VoteViewModel: ObservableObject {
+class VoteViewModel: BaseViewModel {
     @Published var allContestants: [Contestant] = []
     private let service: ContestantsServiceProtocol
     
     init(service: ContestantsServiceProtocol = ContestantsService()) {
         self.service = service
+        super.init()
         
         service.contestantsCachePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$allContestants)
-        
-        // TODO: fetch the contestants on init in view
     }
     
-    @Published var items: [VoteListItem]  = [
-        VoteListItem(name: "Poland"),
-        VoteListItem(name: "England"),
-        VoteListItem(name: "Slovenia"),
-        VoteListItem(name: "Poland"),
-        VoteListItem(name: "Poland"),
-        VoteListItem(name: "Poland"),
-        VoteListItem(name: "Poland")
-    ]
+    @MainActor
+    func fetchContestants() async {
+        performWithLoading(type: .inline) { [weak self] in
+            guard let self = self else { return }
+            
+            try await self.service.fetchContestants(forceRefresh: true)
+        }
+    }
     
-    func move(from sourceIndex: IndexSet, to destination: Int) {
-        items.move(fromOffsets: sourceIndex, toOffset: destination)
+    func moveItem(from source: IndexSet, to destination: Int) {
+        allContestants.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    func saveVote() {
+        
+    }
+    
+    func loadVote() {
+        
     }
 }

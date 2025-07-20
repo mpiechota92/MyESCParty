@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContestGroup: OptionSet, Codable {
+struct ContestGroup: OptionSet, Codable, Hashable {
     let rawValue: Int
     
     static let firstSemi = ContestGroup(rawValue: 1 << 0)  // 1
@@ -15,7 +15,7 @@ struct ContestGroup: OptionSet, Codable {
     static let grandFinal = ContestGroup(rawValue: 1 << 2) // 4
 }
 
-struct Contestant: Codable, Identifiable {
+struct Contestant: Codable, Identifiable, Hashable {
     let id: Int
     let country: String
     let artist: String?
@@ -36,9 +36,39 @@ struct Contestant: Codable, Identifiable {
 }
 
 extension Contestant {
-    static let mock: Contestant = Contestant(
+    static let mockSweeden: Contestant = Contestant(
         id: 1,
         country: "Sweden",
+        artist: "Loreen",
+        song: "Tattoo",
+        songUrl: "https://www.youtube.com/watch?v=BE2Fj0W4jP4",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg/330px-Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg",
+        groups: [.firstSemi, .grandFinal]
+    )
+    
+    static let mockPoland: Contestant = Contestant(
+        id: 2,
+        country: "Poland",
+        artist: "Loreen",
+        song: "Tattoo",
+        songUrl: "https://www.youtube.com/watch?v=BE2Fj0W4jP4",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg/330px-Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg",
+        groups: [.firstSemi, .grandFinal]
+    )
+    
+    static let mockGermany: Contestant = Contestant(
+        id: 3,
+        country: "Germany",
+        artist: "Loreen",
+        song: "Tattoo",
+        songUrl: "https://www.youtube.com/watch?v=BE2Fj0W4jP4",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg/330px-Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg",
+        groups: [.firstSemi, .grandFinal]
+    )
+    
+    static let mockFrance: Contestant = Contestant(
+        id: 4,
+        country: "France",
         artist: "Loreen",
         song: "Tattoo",
         songUrl: "https://www.youtube.com/watch?v=BE2Fj0W4jP4",

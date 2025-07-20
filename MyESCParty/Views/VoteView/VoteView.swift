@@ -7,33 +7,34 @@
 
 import SwiftUI
 
-
-
 struct VoteView: View {
     @StateObject private var viewModel = VoteViewModel()
     
+    @State private var draggedItem: Contestant?
+    @State private var draggedFromTopList: Bool = false
+    
+    let points: [Int] = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1]
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView {
-                    ForEach(viewModel.items) { item in
-                        HStack {
-                            Text(item.name)
-                                .font(.title2)
-                            Spacer()
-                            Image(systemName: "line.3.horizontal")
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.vertical, 5)
-                    }
-                    .onMove(perform: viewModel.move)
+        VStack {
+            List {
+                ForEach(Array(viewModel.allContestants.enumerated()), id: \.element.id) { index, contestant in
                     
+                    let points = index < 10 ? points[index] : 0
+                    
+                    VoteListCell(contestant: contestant, points: points)
+                        .listRowInsets(EdgeInsets())
                 }
+                .onMove(perform: viewModel.moveItem)
             }
+            .listStyle(.plain)
+            
+            
+        }
+        .task {
+            await viewModel.fetchContestants()
         }
     }
-    
-    
 }
 
 #Preview {

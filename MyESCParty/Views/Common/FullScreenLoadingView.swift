@@ -1,13 +1,13 @@
 //
-//  LoadingScreen.swift
+//  FullScreenLoadingView.swift
 //  MyESCParty
 //
-//  Created by Maciej Piechota on 14/07/2025.
+//  Created by Maciej Piechota on 17/07/2025.
 //
 
 import SwiftUI
 
-struct LoadingScreen: View {
+struct FullScreenLoadingView: View {
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
@@ -20,5 +20,5 @@ struct LoadingScreen: View {
 }
 
 #Preview {
-    LoadingScreen()
+    FullScreenLoadingView()
 }
