@@ -13,6 +13,7 @@
 		BF0B5E292E00445C00517B70 /* RoomListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E282E00445C00517B70 /* RoomListService.swift */; };
 		BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E322E005A9000517B70 /* RoomCell.swift */; };
 		BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E352E005CA400517B70 /* EscButton.swift */; };
+		BF14B8F02E2E497500FB7253 /* RevealOverlayScrollObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */; };
 		BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BF1B42E214DDE002F176B /* ContestantView.swift */; };
 		BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */; };
 		BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */; };
@@ -33,6 +34,8 @@
 		BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF557C7A2E253DFB0024F48A /* ToastHostView.swift */; };
 		BF637D582E2D0F5A00B828E7 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF637D572E2D0F5A00B828E7 /* BaseButton.swift */; };
 		BF637D5A2E2D0FEF00B828E7 /* BaseCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF637D592E2D0FEF00B828E7 /* BaseCircleButton.swift */; };
+		BF637D5C2E2D146900B828E7 /* ListOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF637D5B2E2D146900B828E7 /* ListOffsetKey.swift */; };
+		BF637D5F2E2D2C0200B828E7 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = BF637D5E2E2D2C0200B828E7 /* SwiftUIIntrospect */; };
 		BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */; };
 		BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */; };
 		BF8E449C2E2695630064E6A5 /* Bundle+decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */; };
@@ -97,6 +100,7 @@
 		BF0B5E282E00445C00517B70 /* RoomListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListService.swift; sourceTree = "<group>"; };
 		BF0B5E322E005A9000517B70 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		BF0B5E352E005CA400517B70 /* EscButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscButton.swift; sourceTree = "<group>"; };
+		BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealOverlayScrollObserver.swift; sourceTree = "<group>"; };
 		BF1BF1B42E214DDE002F176B /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
 		BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
 		BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		BF557C7A2E253DFB0024F48A /* ToastHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHostView.swift; sourceTree = "<group>"; };
 		BF637D572E2D0F5A00B828E7 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		BF637D592E2D0FEF00B828E7 /* BaseCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCircleButton.swift; sourceTree = "<group>"; };
+		BF637D5B2E2D146900B828E7 /* ListOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOffsetKey.swift; sourceTree = "<group>"; };
 		BF7E3CDC2DE09D31003740BD /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
 		BF7E3CDE2DE09D4C003740BD /* VoteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListItem.swift; sourceTree = "<group>"; };
 		BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+decode.swift"; sourceTree = "<group>"; };
@@ -167,6 +172,7 @@
 				BF9085392D73634400B40537 /* Auth in Frameworks */,
 				BF9085412D73634400B40537 /* Storage in Frameworks */,
 				BF90853F2D73634400B40537 /* Realtime in Frameworks */,
+				BF637D5F2E2D2C0200B828E7 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +204,15 @@
 				BF0B5E282E00445C00517B70 /* RoomListService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		BF14B8EE2E2E495500FB7253 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
+				BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		BF1FB99C2E1E9D7700DF1E39 /* MainView */ = {
@@ -371,6 +386,7 @@
 		BF9085282D73632200B40537 /* MyESCParty */ = {
 			isa = PBXGroup;
 			children = (
+				BF14B8EE2E2E495500FB7253 /* Utils */,
 				BF90857E2D73808200B40537 /* Common */,
 				BF9085542D736E0200B40537 /* Managers */,
 				BF9085532D736DFD00B40537 /* Model */,
@@ -498,9 +514,9 @@
 				BF2A09C42E296F5F001AC071 /* Validators */,
 				BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */,
 				BF90857F2D73809000B40537 /* ColorPalette.swift */,
-				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
 				BFA4EB592E1BE91E006EC79C /* Cachable.swift */,
 				BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */,
+				BF637D5B2E2D146900B828E7 /* ListOffsetKey.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -538,6 +554,9 @@
 				BF9085402D73634400B40537 /* Storage */,
 				BF90855E2D73709A00B40537 /* Supabase */,
 				BF9085742D737AC300B40537 /* Swinject */,
+				BF637D5E2E2D2C0200B828E7 /* SwiftUIIntrospect */,
+				BF637D602E2D2C0200B828E7 /* SwiftUIIntrospect-Dynamic */,
+				BF637D622E2D2C0200B828E7 /* SwiftUIIntrospect-Static */,
 			);
 			productName = MyESCParty;
 			productReference = BF9085262D73632200B40537 /* MyESCParty.app */;
@@ -570,6 +589,7 @@
 			packageReferences = (
 				BF9085372D73634400B40537 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				BF9085732D737AC300B40537 /* XCRemoteSwiftPackageReference "Swinject" */,
+				BF637D5D2E2D2C0200B828E7 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = BF9085272D73632200B40537 /* Products */;
 			projectDirPath = "";
@@ -646,6 +666,8 @@
 				BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */,
 				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
+				BF14B8F02E2E497500FB7253 /* RevealOverlayScrollObserver.swift in Sources */,
+				BF637D5C2E2D146900B828E7 /* ListOffsetKey.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
 				BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */,
 				BF557C622E2519820024F48A /* ToastManager.swift in Sources */,
@@ -877,6 +899,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF637D5D2E2D2C0200B828E7 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 		BF9085372D73634400B40537 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
@@ -896,6 +926,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF637D5E2E2D2C0200B828E7 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF637D5D2E2D2C0200B828E7 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+		BF637D602E2D2C0200B828E7 /* SwiftUIIntrospect-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF637D5D2E2D2C0200B828E7 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Dynamic";
+		};
+		BF637D622E2D2C0200B828E7 /* SwiftUIIntrospect-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF637D5D2E2D2C0200B828E7 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Static";
+		};
 		BF9085382D73634400B40537 /* Auth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF9085372D73634400B40537 /* XCRemoteSwiftPackageReference "supabase-swift" */;
