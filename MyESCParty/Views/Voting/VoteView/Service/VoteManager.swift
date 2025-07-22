@@ -9,21 +9,40 @@ import Foundation
 
 protocol VoteManagerProtocol {
     func saveVote(forStage voteStage: VoteStage, _ contestants: [Contestant]) async throws
+    func loadVote(forStage voteStage: VoteStage, contestants: [Contestant]) async throws -> [Contestant]
 }
 
 class VoteManager: VoteManagerProtocol {
     private var service: VoteServiceProtocol
     
+    @Published private var votes: [Vote] = []
+    
     init(service: VoteServiceProtocol = VoteService()) {
         self.service = service
+        
+        service.votesCachePublisher
+            .subscribe(on: DispatchQueue.main)
+            .assign(to: &$votes)
     }
+    
+    // MARK: - Public methods
     
     func saveVote(forStage voteStage: VoteStage, _ contestants: [Contestant]) async throws {
         guard let vote = createVote(forStage: voteStage, contestants) else { return }
         
-        saveVoteToUserDefaults(vote)
-        try await saveVoteToDatabase(vote)
+        try await service.saveVote(vote)
     }
+    
+    func loadVote(forStage voteStage: VoteStage, contestants: [Contestant]) async throws -> [Contestant] {
+        
+        guard let vote = try await service.loadVote(forStage: voteStage) else {
+            return contestants
+        }
+        
+        return getListFromVote(vote: vote, contestants: contestants)
+    }
+
+    // MARK: - Private methods
     
     private func createVote(forStage voteStage: VoteStage, _ contestants: [Contestant]) -> Vote? {
         guard let userId = AuthManager.shared.getUserUUID()?.uuidString else { return nil }
@@ -37,7 +56,7 @@ class VoteManager: VoteManagerProtocol {
         return Vote(userId: userId, voteStage: voteStage, ranking: ranking)
     }
     
-    func getListFromVote(vote: Vote, contestants: [Contestant]) -> [Contestant] {
+    private func getListFromVote(vote: Vote, contestants: [Contestant]) -> [Contestant] {
         let sortedRanking = vote.ranking.sorted { $0.value < $1.value }
         
         let sortedList = sortedRanking.compactMap { _, contestantId in
@@ -45,21 +64,5 @@ class VoteManager: VoteManagerProtocol {
         }
         
         return sortedList
-    }
-    
-    
-    private func saveVoteToUserDefaults(_ vote: Vote) {
-        let defaults = UserDefaults.standard
-        let key = "vote_\(vote.voteStage.rawValue)"
-        
-        let ranking = Dictionary(uniqueKeysWithValues: vote.ranking.map {
-            (String($0.key), $0.value)
-        })
-        
-        defaults.set(ranking, forKey: key)
-    }
-    
-    private func saveVoteToDatabase(_ vote: Vote) async throws {
-        try await service.saveVoteToDatabase(vote)
     }
 }

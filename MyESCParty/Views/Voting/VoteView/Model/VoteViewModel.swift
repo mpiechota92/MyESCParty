@@ -27,11 +27,12 @@ class VoteViewModel: BaseViewModel {
     }
     
     @MainActor
-    func fetchContestants() async {
+    func fetchContestants(stage: VoteStage) async {
         performWithLoading(type: .inline) { [weak self] in
             guard let self = self else { return }
             
             try await self.service.fetchContestants(forceRefresh: true)
+            self.allContestants = try await self.voteManager.loadVote(forStage: stage, contestants: allContestants)
         }
     }
     
@@ -45,9 +46,5 @@ class VoteViewModel: BaseViewModel {
             guard let self = self else { return }
             try await self.voteManager.saveVote(forStage: stage, self.allContestants)
         }
-    }
-    
-    func loadVote() {
-        
     }
 }

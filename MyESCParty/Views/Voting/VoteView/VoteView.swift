@@ -57,7 +57,7 @@ struct VoteView: View {
             }
         }
         .task {
-            await viewModel.fetchContestants()
+            await viewModel.fetchContestants(stage: .favorite)
         }
         .animation(.easeInOut(duration: 0.2), value: shouldRevealOverlay)
     }

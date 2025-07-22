@@ -18,7 +18,7 @@ class BaseViewModel: ObservableObject {
     @Published var loadingType: LoadingType = .none
     
     @MainActor // @MainActor for closure?
-    func performWithLoading(type: LoadingType, _ operation: @escaping () async throws -> Void) {
+    func performWithLoading(type: LoadingType, _ operation: @MainActor @escaping () async throws -> Void) {
         guard loadingType == .none else { return }
         self.loadingType = type
         error = nil
