@@ -22,14 +22,11 @@ struct Toast: Equatable {
 
 class ToastManager: ObservableObject {
     @Published var currentToast: Toast?
+    var currentWorkItem: DispatchWorkItem?
     
     func showToast(message: String, type: ToastType) {
-        currentToast = Toast(message: message, type: type)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
-            withAnimation {
-                self?.currentToast = nil
-            }
-        }
+        let toast = Toast(message: message, type: type)
+        displayToast(toast)
     }
     
     func showErrorToast(error: any Error) {
@@ -37,11 +34,31 @@ class ToastManager: ObservableObject {
         print(error)
         #endif
         
-        currentToast = Toast(message: error.localizedDescription, type: .error)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+        let toast = Toast(message: error.localizedDescription, type: .error)
+        displayToast(toast)
+    }
+    
+    private func displayToast(_ toast: Toast) {
+        let delay: CGFloat = currentWorkItem == nil ? 0 : 0.2
+        
+        currentWorkItem?.cancel()
+        withAnimation {
+            currentToast = nil
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
             withAnimation {
-                self?.currentToast = nil
+                self?.currentToast = toast
             }
+            
+            let workItem = DispatchWorkItem { [weak self] in
+                withAnimation {
+                    self?.currentToast = nil
+                }
+            }
+            
+            self?.currentWorkItem = workItem
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: workItem)
         }
     }
     
