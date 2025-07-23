@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct MainTabBarView: View {
+    @EnvironmentObject var toastManager: ToastManager
+    @StateObject private var viewModel: MainTabBarViewModel = MainTabBarViewModel()
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 
-                UserMenu()
+                UserMenu(parentViewModel: viewModel)
             }
             TabView {
                 RoomListView()
@@ -36,9 +39,14 @@ struct MainTabBarView: View {
             }
             .tint(.navy)
         }
+        .onReceive(viewModel.$error) { error in
+            guard let error else { return }
+            toastManager.showErrorToast(error: error)
+        }
     }
 }
 
 #Preview {
     MainTabBarView()
+        .environmentObject(ToastManager())
 }

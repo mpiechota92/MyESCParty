@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RoomListView: View {
+    @EnvironmentObject var toastManager: ToastManager
+    
     @StateObject private var viewModel: RoomListViewModel = .init()
     @State private var createRoomMode: Bool = false
     @State private var selectedRoom: Room?
@@ -31,12 +33,11 @@ struct RoomListView: View {
                             }
                             .padding(.horizontal, 10)
                         }
-                        
-                        if viewModel.loadingType == .inline {
-                            InLineLoadingView()
-                        }
                     }
                     .padding(.vertical, 10)
+                }
+                .refreshable {
+                    await viewModel.fetchRooms(forceRefresh: true)
                 }
                 
                 HStack {
@@ -65,6 +66,10 @@ struct RoomListView: View {
                     roomId: room.id
                 )
             }
+        }
+        .onReceive(viewModel.$error) { error in
+            guard let error else { return }
+            toastManager.showErrorToast(error: error)
         }
     }
 }

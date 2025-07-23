@@ -52,10 +52,10 @@ struct RoomView: View {
                                 RoomParticipantCell(roomParticipant: user)
                             }
                         }
-                        if viewModel.loadingType == .inline {
-                            InLineLoadingView()
-                        }
                     }
+                }
+                .refreshable {
+                    await viewModel.fetchUsers(forceRefresh: true)
                 }
             }
             
@@ -64,7 +64,7 @@ struct RoomView: View {
             }
         }
         .task {
-            await viewModel.fetchUsers(forceRefresh: true)
+            await viewModel.fetchUsers()
         }
     }
 }

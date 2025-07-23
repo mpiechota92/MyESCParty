@@ -24,10 +24,10 @@ class RoomListViewModel: BaseViewModel {
     }
     
     @MainActor
-    func fetchRooms() async {
+    func fetchRooms(forceRefresh: Bool = false) async {
         performWithLoading(type: .inline) { [weak self] in
             guard let self = self else { return }
-            try await self.service.fetchRooms(forceRefresh: true)
+            try await self.service.fetchRooms(forceRefresh: forceRefresh)
         }
     }
     

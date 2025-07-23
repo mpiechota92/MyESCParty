@@ -9,6 +9,9 @@ import SwiftUI
 
 struct UserMenu: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @ObservedObject var parentViewModel: BaseViewModel
+    
+    @StateObject private var viewModel: UserMenuViewModel = UserMenuViewModel()
     @State private var showAlert = false
     
     var body: some View {
@@ -38,17 +41,21 @@ struct UserMenu: View {
                 .padding()
             
         }
-        .alert("Do you want to logout?", isPresented: $showAlert) {
-            Button("No", role: .cancel) { }
-            Button("Yes", role: .destructive) {
-                Task {
-                    await authViewModel.signOut()
-                }
+        .confirmationDialog("Do you want to logout?", isPresented: $showAlert) {
+            Button("Log out", role: .destructive) {
+                viewModel.signOut(authViewModel: authViewModel)
+            }
+            Button("Cancel", role: .cancel) { }
+        }
+        .tint(.lightNavy)
+        .onReceive(viewModel.$error) { error in
+            Task { @MainActor in
+                parentViewModel.error = error
             }
         }
     }
 }
 
 #Preview {
-    UserMenu()
+    UserMenu(parentViewModel: BaseViewModel())
 }

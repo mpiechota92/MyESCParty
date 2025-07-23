@@ -125,4 +125,5 @@ struct LoginView: View {
 #Preview {
     LoginView()
         .environmentObject(AuthViewModel())
+        .environmentObject(ToastManager())
 }
