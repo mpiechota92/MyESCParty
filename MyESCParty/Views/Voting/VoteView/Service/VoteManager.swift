@@ -57,8 +57,7 @@ class VoteManager: VoteManagerProtocol {
     }
     
     private func getListFromVote(vote: Vote, contestants: [Contestant]) -> [Contestant] {
-        let sortedRanking = vote.ranking.sorted { $0.value < $1.value }
-        
+        let sortedRanking = vote.ranking.sorted { $0.key < $1.key }
         let sortedList = sortedRanking.compactMap { _, contestantId in
             return contestants.first { $0.id == contestantId }
         }

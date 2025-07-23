@@ -105,6 +105,7 @@ class VoteService: VoteServiceProtocol, Cachable {
             return (key, $0.value)
         })
         
-        return Vote(voteStage: voteStage, ranking: voteRanking)
+        let vote = Vote(voteStage: voteStage, ranking: voteRanking)
+        return vote
     }
 }

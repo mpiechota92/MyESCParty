@@ -32,6 +32,19 @@ class ToastManager: ObservableObject {
         }
     }
     
+    func showErrorToast(error: any Error) {
+        #if DEBUG
+        print(error)
+        #endif
+        
+        currentToast = Toast(message: error.localizedDescription, type: .error)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            withAnimation {
+                self?.currentToast = nil
+            }
+        }
+    }
+    
     func dismiss() {
         withAnimation {
             currentToast = nil

@@ -60,6 +60,10 @@ struct VoteView: View {
             await viewModel.fetchContestants(stage: .favorite)
         }
         .animation(.easeInOut(duration: 0.2), value: shouldRevealOverlay)
+        .onReceive(viewModel.$error) { error in
+            guard let error else { return }
+            toastManager.showErrorToast(error: error)
+        }
     }
 }
 
