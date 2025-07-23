@@ -7,26 +7,19 @@
 
 import SwiftUI
 
-enum Field: Hashable {
+enum LoginViewField: Hashable {
     case email, password, repeatPassword, username
 }
 
 struct LoginView: View {
+    @EnvironmentObject var toastManager: ToastManager
     @EnvironmentObject var authViewModel: AuthViewModel
-    @State private var username: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var repeatPassword: String = ""
     
-    @State private var isUsernameValid: Bool = true
-    @State private var isEmailValid: Bool = true
-    @State private var isPasswordEmpty: Bool = false
-    @State private var isRepeatPasswordEmpty: Bool = false
-    @State private var isPasswordsMatch: Bool = true
+    @StateObject private var viewModel: LoginViewModel = LoginViewModel()
     
     @State private var showCreateUser = false
     
-    @FocusState private var focusedField: Field?
+    @FocusState private var focusedField: LoginViewField?
     
     var body: some View {
         GeometryReader { geometry in
@@ -40,55 +33,51 @@ struct LoginView: View {
                             Text(error.localizedDescription)
                         }
                         
-                        TextField("Email", text: $email)
+                        TextField("Email", text: $viewModel.email)
                             .focused($focusedField, equals: .email)
                             .submitLabel(.next)
                             .keyboardType(.emailAddress)
                             .textInputAutocapitalization(.never)
                             .autocorrectionDisabled()
-                            .foregroundStyle(isEmailValid ? .black : .red)
                             .padding()
                             .onSubmit {
-                                focusedField = showCreateUser ? .username : .password
+                                focusedField = viewModel.authType == .signUp ? .username : .password
                             }
                         
-                        if showCreateUser {
-                            TextField("username", text: $username)
+                        if viewModel.authType == .signUp {
+                            TextField("username", text: $viewModel.username)
                                 .focused($focusedField, equals: .username)
                                 .submitLabel(.next)
                                 .keyboardType(.emailAddress)
                                 .textInputAutocapitalization(.never)
                                 .autocorrectionDisabled()
-                                .foregroundStyle(isUsernameValid ? .black : .red)
                                 .padding()
                                 .onSubmit {
                                     focusedField = .password
                                 }
                         }
                         
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $viewModel.password)
                             .focused($focusedField, equals: .password)
                             .submitLabel(showCreateUser ? .next : .done)
-                            .foregroundStyle(isPasswordEmpty ? .red : .black)
                             .padding()
                             .onSubmit {
-                                if showCreateUser {
+                                if viewModel.authType == .signUp {
                                     focusedField = .repeatPassword
                                 } else {
                                     Task {
-                                        await signIn()
+                                        await viewModel.submit(authViewModel: authViewModel)
                                     }
                                 }
                             }
                         
-                        if showCreateUser {
-                            SecureField("Repeat password", text: $repeatPassword)
+                        if viewModel.authType == .signUp {
+                            SecureField("Repeat password", text: $viewModel.repeatPassword)
                                 .focused($focusedField, equals: .repeatPassword)
-                                .foregroundStyle(isPasswordEmpty ? .red : .black)
                                 .padding()
                                 .onSubmit {
                                     Task {
-                                        await signUp()
+                                        await viewModel.submit(authViewModel: authViewModel)
                                     }
                                 }
                         }
@@ -97,31 +86,19 @@ struct LoginView: View {
                     Spacer()
                     
                     VStack {
-                        if showCreateUser {
-                            Button("Sign up") {
-                                Task {
-                                    await signUp()
-                                }
+                        Button(viewModel.authType == .signIn ? "Sign in" : "Sign up") {
+                            Task {
+                                await viewModel.submit(authViewModel: authViewModel)
                             }
-                            .foregroundStyle(.black)
-                            .padding()
-                            Button("Already have an account") {
-                                showCreateUser = false
-                            }
-                            .foregroundStyle(.red)
-                        } else {
-                            Button("Sign in") {
-                                Task {
-                                    await signIn()
-                                }
-                            }
-                            .foregroundStyle(.black)
-                            .padding()
-                            Button("Create new user") {
-                                showCreateUser = true
-                            }
-                            .foregroundStyle(.red)
                         }
+                        .foregroundStyle(.black)
+                        .padding()
+                        
+                        Button(viewModel.authType == .signIn ? "Create new user" : "Already have an account") {
+                            viewModel.authType = viewModel.authType == .signIn ? .signUp : .signIn
+                        }
+                        .foregroundStyle(.red)
+                        
                         
                         Spacer()
                     }
@@ -129,49 +106,19 @@ struct LoginView: View {
                     
                 }
                 
-                if authViewModel.loadingType == .fullScreen {
+                if viewModel.loadingType == .fullScreen {
                     FullScreenLoadingView()
                 }
             }
+            .onReceive(authViewModel.$error) { error in
+                guard let error else { return }
+                toastManager.showErrorToast(error: error)
+            }
+            .onReceive(viewModel.$validationError) { message in
+                guard let message else { return }
+                toastManager.showToast(message: message, type: .info)
+            }
         }
-    }
-    
-    // TODO: move to viewModel + add validators
-    
-    func signIn() async {
-        guard email.isEmailValid() && !email.isEmpty else {
-            isEmailValid = email.isEmailValid()
-            isPasswordEmpty = password.isEmpty
-            return
-        }
-        
-        isEmailValid = true
-        isPasswordEmpty = false
-        
-        await authViewModel.signIn(email: email, password: password)
-    }
-    
-    func signUp() async {
-        guard email.isEmailValid(), !email.isEmpty, !password.isEmpty, !repeatPassword.isEmpty, !username.isEmpty else {
-            isEmailValid = email.isEmailValid()
-            isPasswordEmpty = password.isEmpty
-            isRepeatPasswordEmpty = repeatPassword.isEmpty
-            isUsernameValid = !username.isEmpty
-            return
-        }
-        
-        isEmailValid = true
-        isPasswordEmpty = false
-        isRepeatPasswordEmpty = false
-        
-        guard password == repeatPassword else {
-            isPasswordsMatch = false
-            return
-        }
-        
-        isPasswordsMatch = true
-        
-        await authViewModel.signUp(email: email, username: username, password: password)
     }
 }
 
