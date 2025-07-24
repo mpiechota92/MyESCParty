@@ -12,10 +12,10 @@ final class LoginViewModelTests: XCTestCase {
     let allModes: [AuthType] = [.signIn, .signUp]
     
     private func makeViewModel(
-        email: String = "",
-        userName: String = "",
-        password: String = "",
-        repeatPassword: String = "",
+        email: String = "test@test.com",
+        userName: String = "TestUser",
+        password: String = "password123",
+        repeatPassword: String = "password123",
         authType: AuthType = .signIn
     ) -> LoginViewModel {
         let vm = LoginViewModel()
@@ -80,19 +80,23 @@ final class LoginViewModelTests: XCTestCase {
         }
     }
     
-    func testSamePasswordsMatchInSignUpMode() {
-        let viewModel = makeViewModel(password: "testPassword123", repeatPassword: "testPassword123", authType: .signUp)
-        let isValid = viewModel.validate()
-        
-        XCTAssertTrue(isValid, "Validation should succeed for matching passwords in sign up mode")
-        XCTAssertNil(viewModel.validationError, "Validation error should be nil for matching passwords in sign up mode")
-    }
-    
     func testDifferentPasswordsNotMatchInSignUpModeIsInvalidAndShowsError() {
         let viewModel = makeViewModel(password: "testPassword123", repeatPassword: "differentPassword123", authType: .signUp)
         let isValid = viewModel.validate()
         
         XCTAssertFalse(isValid, "Validation should fail for not matching passwords in sign up mode")
         XCTAssertNotNil(viewModel.validationError, "Validation error should not be nil for not matching passwords in sign up mode")
+    }
+    
+    func testMatchingPasswordsInAllModesAreValidAndShowsNoError() {
+        for mode in allModes {
+            XCTContext.runActivity(named: "Testing mode \(mode)") { _ in
+                let viewModel = makeViewModel(password: "testPassword123", repeatPassword: "testPassword123", authType: mode)
+                let isValid = viewModel.validate()
+                
+                XCTAssertTrue(isValid, "Validation should succeed for matching passwords in mode \(mode)")
+                XCTAssertNil(viewModel.validationError, "Validation error should be nil for matching passwords in mode \(mode)")
+            }
+        }
     }
 }
