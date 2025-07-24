@@ -22,7 +22,15 @@ enum AuthorizationError: LocalizedError {
     }
 }
 
-class AuthManager {
+protocol AuthManagerProtocol {
+    var isSessionActive: Bool { get }
+    func signInWith(email: String, password: String) async throws -> AppUser
+    func signUpWith(email: String, username: String, password: String) async throws -> AppUser
+    func signOut() async throws
+    func getUserUUID() -> UUID?
+}
+
+class AuthManager: AuthManagerProtocol {
     private static let instance = AuthManager()
     private let databaseManager: DatabaseManager = DatabaseManager.shared
     

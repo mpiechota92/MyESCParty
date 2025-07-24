@@ -12,9 +12,10 @@ class AuthViewModel: BaseViewModel {
     @Published var isSessionActive: Bool = false
     @Published var user: AppUser? = nil
     
-    private let authManager = AuthManager.shared
+    private let authManager: AuthManagerProtocol
     
-    override init() {
+    init(authManager: AuthManagerProtocol = AuthManager.shared) {
+        self.authManager = authManager
         super.init()
         refreshSession()
     }

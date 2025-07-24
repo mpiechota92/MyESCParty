@@ -17,7 +17,7 @@ enum ToastType {
 struct Toast: Equatable {
     let message: String
     let type: ToastType
-    let duration: Int = 5
+    let duration: CGFloat = 3.0
 }
 
 class ToastManager: ObservableObject {
@@ -58,7 +58,7 @@ class ToastManager: ObservableObject {
             }
             
             self?.currentWorkItem = workItem
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: workItem)
+            DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration, execute: workItem)
         }
     }
     

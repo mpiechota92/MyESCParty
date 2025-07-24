@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -86,6 +86,16 @@
 		BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BFA3D76F2E32604C00D1D30D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF90851E2D73632200B40537 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF9085252D73632200B40537;
+			remoteInfo = MyESCParty;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		BF9085722D7379A900B40537 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -164,6 +174,7 @@
 		BF90856B2D73755700B40537 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BF90857C2D737C5600B40537 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		BF90857F2D73809000B40537 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		BFA3D76B2E32604C00D1D30D /* MyESCPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyESCPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
@@ -171,6 +182,10 @@
 		BFFDCEA22E2F916E00E91903 /* VoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteService.swift; sourceTree = "<group>"; };
 		BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppableList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BFA3D76C2E32604C00D1D30D /* MyESCPartyTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MyESCPartyTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF9085232D73632200B40537 /* Frameworks */ = {
@@ -185,6 +200,13 @@
 				BF9085412D73634400B40537 /* Storage in Frameworks */,
 				BF90853F2D73634400B40537 /* Realtime in Frameworks */,
 				BF637D5F2E2D2C0200B828E7 /* SwiftUIIntrospect in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFA3D7682E32604C00D1D30D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9085282D73632200B40537 /* MyESCParty */,
+				BFA3D76C2E32604C00D1D30D /* MyESCPartyTests */,
 				BF9085272D73632200B40537 /* Products */,
 				BF90855D2D73709A00B40537 /* Frameworks */,
 			);
@@ -427,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9085262D73632200B40537 /* MyESCParty.app */,
+				BFA3D76B2E32604C00D1D30D /* MyESCPartyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -610,6 +634,29 @@
 			productReference = BF9085262D73632200B40537 /* MyESCParty.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BFA3D76A2E32604C00D1D30D /* MyESCPartyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFA3D7732E32604C00D1D30D /* Build configuration list for PBXNativeTarget "MyESCPartyTests" */;
+			buildPhases = (
+				BFA3D7672E32604C00D1D30D /* Sources */,
+				BFA3D7682E32604C00D1D30D /* Frameworks */,
+				BFA3D7692E32604C00D1D30D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFA3D7702E32604C00D1D30D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BFA3D76C2E32604C00D1D30D /* MyESCPartyTests */,
+			);
+			name = MyESCPartyTests;
+			packageProductDependencies = (
+			);
+			productName = MyESCPartyTests;
+			productReference = BFA3D76B2E32604C00D1D30D /* MyESCPartyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -617,11 +664,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					BF9085252D73632200B40537 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					BFA3D76A2E32604C00D1D30D = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = BF9085252D73632200B40537;
 					};
 				};
 			};
@@ -644,6 +695,7 @@
 			projectRoot = "";
 			targets = (
 				BF9085252D73632200B40537 /* MyESCParty */,
+				BFA3D76A2E32604C00D1D30D /* MyESCPartyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -656,6 +708,13 @@
 				BF8E449E2E26B7C80064E6A5 /* Supabase.plist in Resources */,
 				BF9085312D73632300B40537 /* Preview Assets.xcassets in Resources */,
 				BF90852E2D73632300B40537 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFA3D7692E32604C00D1D30D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +794,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFA3D7672E32604C00D1D30D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFA3D7702E32604C00D1D30D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF9085252D73632200B40537 /* MyESCParty */;
+			targetProxy = BFA3D76F2E32604C00D1D30D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BF9085322D73632300B40537 /* Debug */ = {
@@ -929,6 +1003,42 @@
 			};
 			name = Release;
 		};
+		BFA3D7712E32604C00D1D30D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.maciej.piechota92.MyESCPartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyESCParty.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyESCParty";
+			};
+			name = Debug;
+		};
+		BFA3D7722E32604C00D1D30D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.maciej.piechota92.MyESCPartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyESCParty.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyESCParty";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -946,6 +1056,15 @@
 			buildConfigurations = (
 				BF9085352D73632300B40537 /* Debug */,
 				BF9085362D73632300B40537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFA3D7732E32604C00D1D30D /* Build configuration list for PBXNativeTarget "MyESCPartyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFA3D7712E32604C00D1D30D /* Debug */,
+				BFA3D7722E32604C00D1D30D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
