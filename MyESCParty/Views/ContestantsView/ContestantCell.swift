@@ -18,7 +18,7 @@ struct ContestantCell: View {
             showDetails = true
         }
         .navigationDestination(isPresented: $showDetails) {
-            Text("Kupa")
+            Text("Information about \(contestant.country)")
         }
         
         
