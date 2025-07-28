@@ -38,9 +38,7 @@ class RoomService: RoomServiceProtocol, Cachable {
         }
         
         #if DEBUG
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            print("Fetching users in room \(roomId)...")
-        }
+        print("Fetching users in room \(roomId)...")
         #endif
         
         let users: [RoomParticipant] = try await DatabaseManager.shared.client
@@ -60,9 +58,7 @@ class RoomService: RoomServiceProtocol, Cachable {
         }
         
         #if DEBUG
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            print("Leaving room: \(roomId) by user: \(userId)...")
-        }
+        print("Leaving room: \(roomId) by user: \(userId)...")
         #endif
         
         try await DatabaseManager.shared.client

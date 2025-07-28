@@ -56,9 +56,7 @@ class VoteService: VoteServiceProtocol, Cachable {
         }
         
         #if DEBUG
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            print("Fetching votes...")
-        }
+        print("Fetching votes...")
         #endif
         
         let votes: [Vote] = try await DatabaseManager.shared.client
@@ -86,9 +84,7 @@ class VoteService: VoteServiceProtocol, Cachable {
         let key = "vote_\(vote.voteStage.rawValue)"
         
         #if DEBUG
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            print("Saving votes from user defaults...")
-        }
+        print("Saving votes to user defaults...")
         #endif
         
         let ranking = Dictionary(uniqueKeysWithValues: vote.ranking.map {
@@ -103,9 +99,7 @@ class VoteService: VoteServiceProtocol, Cachable {
         let key = "vote_\(voteStage.rawValue)"
         
         #if DEBUG
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            print("Fetching votes from user defaults...")
-        }
+        print("Fetching votes from user defaults...")
         #endif
         
         guard let ranking = defaults.dictionary(forKey: key) as? [String: Int] else {

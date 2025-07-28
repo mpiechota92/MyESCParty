@@ -73,9 +73,7 @@ class RoomListService: RoomListServiceProtocol, Cachable {
         }
         
         #if DEBUG
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            print("Fetching rooms...")
-        }
+        print("Fetching rooms...")
         #endif
         
         let rooms: [Room] = try await DatabaseManager.shared.client

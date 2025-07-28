@@ -31,7 +31,7 @@ class VoteViewModel: BaseViewModel {
     
     @MainActor
     func fetchContestants(stage: VoteStage) async {
-        performWithLoading(type: .inline) { [weak self] in
+        await performWithLoading(type: .inline) { [weak self] in
             guard let self = self else { return }
             
             try await self.service.fetchContestants(forceRefresh: true)
@@ -44,7 +44,7 @@ class VoteViewModel: BaseViewModel {
     
     @MainActor
     func saveVote(stage: VoteStage) async {
-        performWithLoading(type: .fullScreen) { [weak self] in
+        await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             
             try await self.voteManager.saveVote(forStage: stage, self.filteredContestants)
@@ -71,7 +71,7 @@ class VoteViewModel: BaseViewModel {
     
     @MainActor
     private func loadVote(forStage stage: VoteStage) async {
-        performWithLoading(type: .fullScreen) { [weak self] in
+        await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             
             self.filteredContestants = try await self.voteManager.loadVote(forStage: stage, contestants: filteredContestants)

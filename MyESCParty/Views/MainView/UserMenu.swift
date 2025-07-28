@@ -43,7 +43,9 @@ struct UserMenu: View {
         }
         .confirmationDialog("Do you want to logout?", isPresented: $showAlert) {
             Button("Log out", role: .destructive) {
-                viewModel.signOut(authViewModel: authViewModel)
+                Task {
+                    await viewModel.signOut(authViewModel: authViewModel)
+                }
             }
             Button("Cancel", role: .cancel) { }
         }

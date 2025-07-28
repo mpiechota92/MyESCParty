@@ -23,7 +23,7 @@ class RoomCreationViewModel: BaseViewModel {
     
     @MainActor
     func createRoom(name: String, password: String) async {
-        performWithLoading(type: .fullScreen) { [weak self] in
+        await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             
             let roomId = try await self.roomCreationService.createRoom(name: name, password: password)

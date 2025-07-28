@@ -26,7 +26,7 @@ class LoginViewModel: BaseViewModel {
     func submit(authViewModel: AuthViewModel) async {
         guard validate() else { return }
         
-        performWithLoading(type: .fullScreen) { [weak self] in
+        await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             
             switch self.authType {

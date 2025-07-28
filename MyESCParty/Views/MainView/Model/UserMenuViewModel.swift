@@ -9,8 +9,8 @@ import Foundation
 
 class UserMenuViewModel: BaseViewModel {
     @MainActor
-    func signOut(authViewModel: AuthViewModel) {
-        performWithLoading(type: .fullScreen) {
+    func signOut(authViewModel: AuthViewModel) async {
+        await performWithLoading(type: .fullScreen) {
             try await authViewModel.signOut()
         }
     }

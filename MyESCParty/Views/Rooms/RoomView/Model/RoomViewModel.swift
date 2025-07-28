@@ -27,7 +27,7 @@ class RoomViewModel: BaseViewModel {
     
     @MainActor
     func fetchUsers(forceRefresh: Bool = false) async {
-        performWithLoading(type: .inline) { [weak self] in
+        await performWithLoading(type: .inline) { [weak self] in
             guard let self = self else { return }
             
             try await self.service.fetchUsers(roomId: self.roomId, forceRefresh: forceRefresh)
@@ -46,7 +46,7 @@ class RoomViewModel: BaseViewModel {
     
     @MainActor
     func leaveRoom() async {
-        performWithLoading(type: .fullScreen) { [weak self] in
+        await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             try await self.service.leaveRoom(roomId: self.roomId)
         }
@@ -54,7 +54,7 @@ class RoomViewModel: BaseViewModel {
     
     @MainActor
     func deleteRoom() async {
-        performWithLoading(type: .fullScreen) { [weak self] in
+        await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             try await self.service.deleteRoom(roomId: self.roomId)
         }
