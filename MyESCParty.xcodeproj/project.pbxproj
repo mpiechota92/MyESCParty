@@ -81,6 +81,8 @@
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
 		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
+		BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */; };
+		BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */; };
 		BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */; };
 		BFFDCEA32E2F916E00E91903 /* VoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFDCEA22E2F916E00E91903 /* VoteService.swift */; };
 		BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */; };
@@ -178,6 +180,8 @@
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSegmentedPicker.swift; sourceTree = "<group>"; };
+		BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		BFFDCEA22E2F916E00E91903 /* VoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteService.swift; sourceTree = "<group>"; };
 		BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppableList.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 				BF2A09C02E296540001AC071 /* InLineLoadingView.swift */,
 				BF2A09C22E29654C001AC071 /* FullScreenLoadingView.swift */,
 				BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */,
+				BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				BFA4EB592E1BE91E006EC79C /* Cachable.swift */,
 				BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */,
 				BF637D5B2E2D146900B828E7 /* ListOffsetKey.swift */,
+				BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -731,6 +737,7 @@
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
 				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
+				BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */,
 				BF9085582D736F1000B40537 /* Country.swift in Sources */,
 				BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */,
 				BF2A09C32E29654C001AC071 /* FullScreenLoadingView.swift in Sources */,
@@ -766,6 +773,7 @@
 				BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */,
 				BF9085562D736E1F00B40537 /* Contestant.swift in Sources */,
 				BF90854A2D73658800B40537 /* SettingsView.swift in Sources */,
+				BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */,
 				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
 				BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */,
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
