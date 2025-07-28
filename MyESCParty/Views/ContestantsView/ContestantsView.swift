@@ -7,15 +7,11 @@
 
 import SwiftUI
 
-enum ContestantsGroup: String, CaseIterable, Identifiable {
+enum ContestantsGroup: String, SegmentedPickerElement {
     case all = "All"
     case semiFinal1 = "First Semi-Final"
     case semiFinal2 = "Second Semi-Final"
     case grandFinal = "Grand Final"
-    
-    var id : String {
-        self.rawValue
-    }
 }
 
 struct ContestantsView: View {

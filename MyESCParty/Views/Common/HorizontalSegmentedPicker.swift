@@ -7,49 +7,62 @@
 
 import SwiftUI
 
-struct HorizontalSegmentedPicker<Item>: View
-where Item: Hashable & Identifiable & RawRepresentable, Item.RawValue == String {
+protocol SegmentedPickerElement:
+    CaseIterable,
+    Identifiable,
+    RawRepresentable,
+    Equatable,
+    Hashable
+where RawValue == String { }
+
+extension SegmentedPickerElement {
+    var id: String { rawValue }
+}
+
+struct HorizontalSegmentedPicker<Item: SegmentedPickerElement>: View {
     
     let items: [Item]
     @Binding var selectedItem: Item
     let onSelect: (Item) -> Void
-    
     
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(items) { item in
-                        let isSelected = selectedItem == item
-                        
-                        Button {
-                            selectedItem = item
-                            onSelect(item)
-                        } label: {
-                            Text(item.rawValue)
-                                .id(item)
-                                .font(.title2.bold())
-                                .padding(.vertical, 5)
-                                .padding(.horizontal, 5)
-                                .foregroundStyle(isSelected ? .white : .black)
-                        }
-                        .background {
-                            if isSelected {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .fill(.lightNavy)
-                            }
-                        }
+                        segmentButton(for: item)
                     }
                 }
                 .padding()
             }
             .scrollIndicators(.hidden)
             .onChange(of: selectedItem) { oldValue, newValue in
-                if oldValue != newValue {
-                    withAnimation {
-                        proxy.scrollTo(newValue, anchor: .center)
-                    }
+                withAnimation {
+                    proxy.scrollTo(newValue, anchor: .center)
                 }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func segmentButton(for item: Item) -> some View {
+        let isSelected = selectedItem == item
+        
+        Button {
+            selectedItem = item
+            onSelect(item)
+        } label: {
+            Text(item.rawValue)
+                .id(item)
+                .font(.title2.bold())
+                .padding(.vertical, 5)
+                .padding(.horizontal, 5)
+                .foregroundStyle(isSelected ? .white : .black)
+        }
+        .background {
+            if isSelected {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(.lightNavy)
             }
         }
     }
