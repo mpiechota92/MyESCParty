@@ -18,8 +18,6 @@ struct ContestantsView: View {
     @StateObject private var viewModel: ContestantsViewModel = .init()
     @State private var selectedGroup: ContestantsGroup = .all
     
-    private let groups: [ContestantsGroup] = [.all, .semiFinal1, .semiFinal2, .grandFinal]
-    
     var body: some View {
         NavigationStack {
             HorizontalSegmentedPicker(

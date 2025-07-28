@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum VoteStage: String, Codable {
-    case firstSemi = "firstSemi"
-    case secondSemi = "secondSemi"
-    case grandFinal = "grandFinal"
-    case favorite = "favorite"
+enum VoteStage: String, Codable, SegmentedPickerElement {
+    case favorite = "My Top 10"
+    case semiFinal1 = "First Semi-Final"
+    case semiFinal2 = "Second Semi-Final"
+    case grandFinal = "Grand Final"
 }
 
 struct Vote: Codable, Hashable {

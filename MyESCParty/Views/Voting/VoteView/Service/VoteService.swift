@@ -85,6 +85,12 @@ class VoteService: VoteServiceProtocol, Cachable {
         let defaults = UserDefaults.standard
         let key = "vote_\(vote.voteStage.rawValue)"
         
+        #if DEBUG
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("Saving votes from user defaults...")
+        }
+        #endif
+        
         let ranking = Dictionary(uniqueKeysWithValues: vote.ranking.map {
             (String($0.key), $0.value)
         })
@@ -95,6 +101,12 @@ class VoteService: VoteServiceProtocol, Cachable {
     private func loadVoteFromUserDefaults(forStage voteStage: VoteStage) -> Vote? {
         let defaults = UserDefaults.standard
         let key = "vote_\(voteStage.rawValue)"
+        
+        #if DEBUG
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            print("Fetching votes from user defaults...")
+        }
+        #endif
         
         guard let ranking = defaults.dictionary(forKey: key) as? [String: Int] else {
             return nil

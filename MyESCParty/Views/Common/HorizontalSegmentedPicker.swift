@@ -36,7 +36,7 @@ struct HorizontalSegmentedPicker<Item: SegmentedPickerElement>: View {
                 .padding()
             }
             .scrollIndicators(.hidden)
-            .onChange(of: selectedItem) { oldValue, newValue in
+            .onChange(of: selectedItem) { _, newValue in
                 withAnimation {
                     proxy.scrollTo(newValue, anchor: .center)
                 }
