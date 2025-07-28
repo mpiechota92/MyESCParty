@@ -83,6 +83,10 @@
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
 		BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */; };
 		BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */; };
+		BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB176D2E379A5700AB7329 /* ResultsService.swift */; };
+		BFEB17702E379AA100AB7329 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB176F2E379AA100AB7329 /* ResultsViewModel.swift */; };
+		BFEB17722E379ADF00AB7329 /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17712E379ADF00AB7329 /* LeaderboardEntry.swift */; };
+		BFEB17742E37B14100AB7329 /* LeaderboardCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17732E37B14100AB7329 /* LeaderboardCalculator.swift */; };
 		BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */; };
 		BFFDCEA32E2F916E00E91903 /* VoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFDCEA22E2F916E00E91903 /* VoteService.swift */; };
 		BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */; };
@@ -182,6 +186,10 @@
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
 		BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSegmentedPicker.swift; sourceTree = "<group>"; };
 		BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
+		BFEB176D2E379A5700AB7329 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
+		BFEB176F2E379AA100AB7329 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		BFEB17712E379ADF00AB7329 /* LeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
+		BFEB17732E37B14100AB7329 /* LeaderboardCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardCalculator.swift; sourceTree = "<group>"; };
 		BFFD10792E2A979900D7EC57 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		BFFDCEA22E2F916E00E91903 /* VoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteService.swift; sourceTree = "<group>"; };
 		BFFFC3672E2BE3E9003B3D67 /* DroppableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppableList.swift; sourceTree = "<group>"; };
@@ -495,6 +503,7 @@
 				BF8E44A62E26BB5B0064E6A5 /* Rooms */,
 				BF0B5E1F2E003F8100517B70 /* ContestantsView */,
 				BF14B8F12E2E579F00FB7253 /* Voting */,
+				BFEB176A2E379A3600AB7329 /* Results */,
 				BF2FF1C62DFB25670060E323 /* ContentView.swift */,
 			);
 			path = Views;
@@ -599,6 +608,33 @@
 				BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		BFEB176A2E379A3600AB7329 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB176C2E379A4400AB7329 /* Service */,
+				BFEB176B2E379A3F00AB7329 /* Model */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		BFEB176B2E379A3F00AB7329 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB176F2E379AA100AB7329 /* ResultsViewModel.swift */,
+				BFEB17712E379ADF00AB7329 /* LeaderboardEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFEB176C2E379A4400AB7329 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB176D2E379A5700AB7329 /* ResultsService.swift */,
+				BFEB17732E37B14100AB7329 /* LeaderboardCalculator.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		BFFD10782E2A978C00D7EC57 /* Delegates */ = {
@@ -732,8 +768,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2FF1C92DFB34A40060E323 /* StringHelpers.swift in Sources */,
+				BFEB17702E379AA100AB7329 /* ResultsViewModel.swift in Sources */,
 				BF8E44A32E26B8DD0064E6A5 /* RoomView.swift in Sources */,
 				BF90856A2D7373A500B40537 /* AppUser.swift in Sources */,
+				BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */,
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
 				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
@@ -773,10 +811,12 @@
 				BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */,
 				BF9085562D736E1F00B40537 /* Contestant.swift in Sources */,
 				BF90854A2D73658800B40537 /* SettingsView.swift in Sources */,
+				BFEB17742E37B14100AB7329 /* LeaderboardCalculator.swift in Sources */,
 				BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */,
 				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
 				BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */,
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
+				BFEB17722E379ADF00AB7329 /* LeaderboardEntry.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
 				BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */,

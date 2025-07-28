@@ -25,6 +25,7 @@ struct Vote: Codable, Hashable {
         case ranking = "vote_distribution"
     }
     
+    // TODO: (index, contestantId) instead of (contestantId, index)
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         userId = try container.decode(String.self, forKey: .userId)

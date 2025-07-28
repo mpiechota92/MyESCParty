@@ -16,7 +16,7 @@ struct VoteView: View {
     @State private var scrollObserver: RevealOverlayScrollObserver?
     @State private var selectedStage: VoteStage = .favorite
     
-    let points: [Int] = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1]
+    private let points: [Int] = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1]
     
     var body: some View {
         VStack {
