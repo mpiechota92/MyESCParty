@@ -8,17 +8,11 @@
 import Foundation
 
 protocol ResultsServiceProtocol {
-    func fetchResults(forStage stage: VoteStage, users: [RoomParticipant]) async throws
+    func fetchResults(forStage stage: VoteStage, users: [RoomParticipant]) async throws -> [Vote]
 }
 
-class ResultsService: ResultsServiceProtocol, Cachable {
-    var cacheTimestamp: Date?
-    var cacheTTL: TimeInterval? = 10
-    
-    private var votes: [Vote] = []
-    
-    func fetchResults(forStage stage: VoteStage, users: [RoomParticipant]) async throws {
-        let now = Date()
+class ResultsService: ResultsServiceProtocol {
+    func fetchResults(forStage stage: VoteStage, users: [RoomParticipant]) async throws -> [Vote] {
         let usersFilter = users.map { $0.id.uuidString }
         
         let votes: [Vote] = try await DatabaseManager.shared.client
@@ -29,9 +23,6 @@ class ResultsService: ResultsServiceProtocol, Cachable {
             .execute()
             .value
         
-        self.votes = votes
-        self.cacheTimestamp = now
+        return votes
     }
-    
-    
 }
