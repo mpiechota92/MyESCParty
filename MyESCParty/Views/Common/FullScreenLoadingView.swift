@@ -10,7 +10,7 @@ import SwiftUI
 struct FullScreenLoadingView: View {
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.3)
+            Color.gray.opacity(0.5)
                 .ignoresSafeArea()
             ProgressView()
                 .scaleEffect(1.5)

@@ -33,7 +33,7 @@ class ResultsViewModel: BaseViewModel {
     }
     
     @MainActor
-    func fetchResults(forStage stage: VoteStage, roomId: Int) async throws {
+    func fetchResults(forStage stage: VoteStage, roomId: Int) async {
         await performWithLoading(type: .fullScreen) { [weak self] in
             guard let self = self else { return }
             

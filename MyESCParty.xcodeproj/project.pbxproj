@@ -81,6 +81,7 @@
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
 		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
+		BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167072E38C30F0030A26F /* ResultsView.swift */; };
 		BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */; };
 		BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */; };
 		BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB176D2E379A5700AB7329 /* ResultsService.swift */; };
@@ -184,6 +185,7 @@
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		BFE167072E38C30F0030A26F /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSegmentedPicker.swift; sourceTree = "<group>"; };
 		BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		BFEB176D2E379A5700AB7329 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 			children = (
 				BFEB176C2E379A4400AB7329 /* Service */,
 				BFEB176B2E379A3F00AB7329 /* Model */,
+				BFE167072E38C30F0030A26F /* ResultsView.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
 				BFFDCEA32E2F916E00E91903 /* VoteService.swift in Sources */,
 				BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */,
+				BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
 				BF2A09C62E296F75001AC071 /* ValidatorManager.swift in Sources */,

@@ -33,6 +33,10 @@ struct Room: Identifiable, Decodable, Hashable {
     }
 }
 
+extension Room {
+    static let publicRoomId: Int = 3
+}
+
 #if DEBUG
 extension Room {
     static let publicRoomMock: Room = Room(
