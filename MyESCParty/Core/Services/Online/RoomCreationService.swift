@@ -8,10 +8,6 @@
 import Foundation
 import Supabase
 
-protocol RoomCreationServiceProtocol {
-    func createRoom(name: String, password: String) async throws -> Int
-}
-
 class RoomCreationService: RoomCreationServiceProtocol {
     func createRoom(name: String, password: String) async throws -> Int {
         let roomUUID = UUID()

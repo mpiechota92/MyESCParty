@@ -7,13 +7,6 @@
 
 import Foundation
 
-protocol VoteServiceProtocol {
-    func saveVote(_ vote: Vote) async throws
-    func loadVote(forStage: VoteStage) async throws -> Vote?
-    
-    var votesCachePublisher: Published<[Vote]>.Publisher { get }
-}
-
 class VoteService: VoteServiceProtocol, Cachable {
     var cacheTimestamp: Date?
     

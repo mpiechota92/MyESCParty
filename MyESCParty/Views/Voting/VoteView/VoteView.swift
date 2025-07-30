@@ -10,13 +10,17 @@ import SwiftUIIntrospect
 
 struct VoteView: View {
     @EnvironmentObject var toastManager: ToastManager
-    @StateObject private var viewModel = VoteViewModel()
+    @StateObject private var viewModel: VoteViewModel
 
     @State private var shouldRevealOverlay: Bool = true
     @State private var scrollObserver: RevealOverlayScrollObserver?
     @State private var selectedStage: VoteStage = .favorite
     
     private let points: [Int] = [12, 10, 8, 7, 6, 5, 4, 3, 2, 1]
+    
+    init(viewModel: VoteViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         VStack {
@@ -80,5 +84,5 @@ struct VoteView: View {
 }
 
 #Preview {
-    VoteView()
+    VoteView(viewModel: VoteViewModel())
 }

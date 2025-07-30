@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabBarView: View {
+    @EnvironmentObject var env: AppEnvironment
     @EnvironmentObject var toastManager: ToastManager
     @StateObject private var viewModel: MainTabBarViewModel = MainTabBarViewModel()
     
@@ -19,19 +20,19 @@ struct MainTabBarView: View {
                 UserMenu(parentViewModel: viewModel)
             }
             TabView {
-                RoomListView()
+                RoomListView(viewModel: RoomListViewModel(service: env.resolve()))
                     .tabItem {
                         Image(systemName: "person.crop.rectangle.stack")
                         Text("Voting rooms")
                     }
                 
-                ContestantsView()
+                ContestantsView(viewModel: ContestantsViewModel(service: env.resolve()))
                     .tabItem {
                         Image(systemName: "flag")
                         Text("Contestants")
                     }
                 
-                VoteView()
+                VoteView(viewModel: VoteViewModel(service: env.resolve()))
                     .tabItem {
                         Image(systemName: "pencil")
                         Text("Vote")

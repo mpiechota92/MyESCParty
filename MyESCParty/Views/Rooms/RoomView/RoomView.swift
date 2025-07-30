@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RoomView: View {
+    @EnvironmentObject var env: AppEnvironment
     @StateObject private var viewModel: RoomViewModel
     
     var roomName: String
@@ -16,10 +17,10 @@ struct RoomView: View {
     @State private var userIsAdmin: Bool = false
     @State private var showResults: Bool = false
     
-    init(roomName: String, roomType: RoomType, roomId: Int) {
+    init(viewModel: RoomViewModel, roomName: String, roomType: RoomType) {
+        _viewModel = StateObject(wrappedValue: viewModel)
         self.roomName = roomName
         self.roomType = roomType
-        _viewModel = .init(wrappedValue: .init(roomId: roomId))
     }
     
     var body: some View {
@@ -81,5 +82,5 @@ struct RoomView: View {
 }
 
 #Preview {
-    RoomView(roomName: "Global", roomType: .publicRoom, roomId: 1)
+    RoomView(viewModel: RoomViewModel(roomId: 1), roomName: "Global", roomType: .publicRoom)
 }

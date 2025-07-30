@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct RoomListView: View {
+    @EnvironmentObject var env: AppEnvironment
     @EnvironmentObject var toastManager: ToastManager
     
-    @StateObject private var viewModel: RoomListViewModel = .init()
+    @StateObject private var viewModel: RoomListViewModel
     @State private var createRoomMode: Bool = false
     @State private var selectedRoom: Room?
+    
+    init(viewModel: RoomListViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack {
@@ -57,13 +62,18 @@ struct RoomListView: View {
                 await viewModel.fetchRooms()
             }
             .navigationDestination(isPresented: $createRoomMode) {
-                RoomCreationView()
+                RoomCreationView(viewModel:
+                                    RoomCreationViewModel(
+                                        roomCreationService: env.resolve(),
+                                        roomService: env.resolve()
+                                    )
+                )
             }
             .navigationDestination(item: $selectedRoom) { room in
                 RoomView(
+                    viewModel: RoomViewModel(service: env.resolve(), roomId: room.id),
                     roomName: room.name,
-                    roomType: room.roomType,
-                    roomId: room.id
+                    roomType: room.roomType
                 )
             }
         }
@@ -75,5 +85,5 @@ struct RoomListView: View {
 }
 
 #Preview {
-    RoomListView()
+    RoomListView(viewModel: RoomListViewModel())
 }

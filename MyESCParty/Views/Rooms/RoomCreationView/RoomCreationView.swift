@@ -10,12 +10,16 @@ import SwiftUI
 struct RoomCreationView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var toastManager: ToastManager
-    @StateObject private var viewModel = RoomCreationViewModel()
+    @StateObject private var viewModel: RoomCreationViewModel
     
     @State private var roomName: String = ""
     @State private var isPrivate: Bool = false
     @State private var password: String = ""
     @State private var repeatPassword: String = ""
+    
+    init(viewModel: RoomCreationViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         ZStack {
@@ -66,5 +70,5 @@ struct RoomCreationView: View {
 }
 
 #Preview {
-    RoomCreationView()
+    RoomCreationView(viewModel: RoomCreationViewModel())
 }

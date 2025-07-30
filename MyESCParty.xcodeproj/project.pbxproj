@@ -80,6 +80,20 @@
 		BF9085802D73809000B40537 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90857F2D73809000B40537 /* ColorPalette.swift */; };
 		BF9A7B7A2E3A22E300EB56FA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF9A7B792E3A22E300EB56FA /* Settings.bundle */; };
 		BF9A7B7B2E3A22E300EB56FA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF9A7B792E3A22E300EB56FA /* Settings.bundle */; };
+		BF9A7B822E3A311000EB56FA /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B812E3A311000EB56FA /* AppEnvironment.swift */; };
+		BF9A7B882E3A4C6800EB56FA /* RoomServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B872E3A4C6800EB56FA /* RoomServiceProtocol.swift */; };
+		BF9A7B8A2E3A4C9000EB56FA /* RoomCreationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B892E3A4C9000EB56FA /* RoomCreationServiceProtocol.swift */; };
+		BF9A7B8C2E3A4CAC00EB56FA /* RoomListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B8B2E3A4CAC00EB56FA /* RoomListServiceProtocol.swift */; };
+		BF9A7B8E2E3A4CE100EB56FA /* ContestantsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B8D2E3A4CE100EB56FA /* ContestantsServiceProtocol.swift */; };
+		BF9A7B902E3A4CFA00EB56FA /* VoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B8F2E3A4CFA00EB56FA /* VoteServiceProtocol.swift */; };
+		BF9A7B922E3A4D3300EB56FA /* ResultsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B912E3A4D3300EB56FA /* ResultsServiceProtocol.swift */; };
+		BF9A7B942E3A4D4A00EB56FA /* LocalRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B932E3A4D4A00EB56FA /* LocalRoomService.swift */; };
+		BF9A7B962E3A4DA900EB56FA /* LocalRoomCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B952E3A4DA900EB56FA /* LocalRoomCreationService.swift */; };
+		BF9A7B982E3A4DCE00EB56FA /* LocalRoomListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B972E3A4DCE00EB56FA /* LocalRoomListService.swift */; };
+		BF9A7B9A2E3A4E1300EB56FA /* LocalContestantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B992E3A4E1300EB56FA /* LocalContestantsService.swift */; };
+		BF9A7B9C2E3A4E5A00EB56FA /* LocalVoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B9B2E3A4E5A00EB56FA /* LocalVoteService.swift */; };
+		BF9A7B9E2E3A4EA100EB56FA /* LocalResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7B9D2E3A4EA100EB56FA /* LocalResultsService.swift */; };
+		BF9A7BA22E3A4EF800EB56FA /* LocalAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A7BA12E3A4EF800EB56FA /* LocalAuthManager.swift */; };
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
 		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
@@ -185,6 +199,20 @@
 		BF90857C2D737C5600B40537 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		BF90857F2D73809000B40537 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		BF9A7B792E3A22E300EB56FA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BF9A7B812E3A311000EB56FA /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		BF9A7B872E3A4C6800EB56FA /* RoomServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomServiceProtocol.swift; sourceTree = "<group>"; };
+		BF9A7B892E3A4C9000EB56FA /* RoomCreationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationServiceProtocol.swift; sourceTree = "<group>"; };
+		BF9A7B8B2E3A4CAC00EB56FA /* RoomListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListServiceProtocol.swift; sourceTree = "<group>"; };
+		BF9A7B8D2E3A4CE100EB56FA /* ContestantsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsServiceProtocol.swift; sourceTree = "<group>"; };
+		BF9A7B8F2E3A4CFA00EB56FA /* VoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteServiceProtocol.swift; sourceTree = "<group>"; };
+		BF9A7B912E3A4D3300EB56FA /* ResultsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsServiceProtocol.swift; sourceTree = "<group>"; };
+		BF9A7B932E3A4D4A00EB56FA /* LocalRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRoomService.swift; sourceTree = "<group>"; };
+		BF9A7B952E3A4DA900EB56FA /* LocalRoomCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRoomCreationService.swift; sourceTree = "<group>"; };
+		BF9A7B972E3A4DCE00EB56FA /* LocalRoomListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRoomListService.swift; sourceTree = "<group>"; };
+		BF9A7B992E3A4E1300EB56FA /* LocalContestantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalContestantsService.swift; sourceTree = "<group>"; };
+		BF9A7B9B2E3A4E5A00EB56FA /* LocalVoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVoteService.swift; sourceTree = "<group>"; };
+		BF9A7B9D2E3A4EA100EB56FA /* LocalResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalResultsService.swift; sourceTree = "<group>"; };
+		BF9A7BA12E3A4EF800EB56FA /* LocalAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthManager.swift; sourceTree = "<group>"; };
 		BFA3D76B2E32604C00D1D30D /* MyESCPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyESCPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
@@ -235,7 +263,6 @@
 		BF0B5E1F2E003F8100517B70 /* ContestantsView */ = {
 			isa = PBXGroup;
 			children = (
-				BF1FB9A02E1ECE4600DF1E39 /* Service */,
 				BF1FB99F2E1ECE3F00DF1E39 /* Model */,
 				BF0B5E202E003FA000517B70 /* ContestantsView.swift */,
 				BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */,
@@ -251,17 +278,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BF0B5E272E00445200517B70 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				BF0B5E282E00445C00517B70 /* RoomListService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		BF14B8EE2E2E495500FB7253 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BFEB17732E37B14100AB7329 /* LeaderboardCalculator.swift */,
 				BF2FF1C82DFB349E0060E323 /* StringHelpers.swift */,
 				BF90857F2D73809000B40537 /* ColorPalette.swift */,
 				BF637D5B2E2D146900B828E7 /* ListOffsetKey.swift */,
@@ -278,15 +298,6 @@
 				BF9085472D73655B00B40537 /* VoteView */,
 			);
 			path = Voting;
-			sourceTree = "<group>";
-		};
-		BF14B8F42E2E655C00FB7253 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				BF14B8F52E2E656A00FB7253 /* VoteManager.swift */,
-				BFFDCEA22E2F916E00E91903 /* VoteService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		BF1FB99C2E1E9D7700DF1E39 /* MainView */ = {
@@ -307,21 +318,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BF1FB9A02E1ECE4600DF1E39 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		BF2A09BF2E296527001AC071 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		BF2A09C42E296F5F001AC071 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,19 +329,10 @@
 		BF557C532E2293AF0024F48A /* RoomCreationView */ = {
 			isa = PBXGroup;
 			children = (
-				BF557C542E2293C30024F48A /* Service */,
 				BF557C552E2293C80024F48A /* Model */,
 				BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */,
 			);
 			path = RoomCreationView;
-			sourceTree = "<group>";
-		};
-		BF557C542E2293C30024F48A /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				BF557C582E22A6070024F48A /* RoomCreationService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		BF557C552E2293C80024F48A /* Model */ = {
@@ -405,7 +392,6 @@
 		BF8E449F2E26B8C40064E6A5 /* RoomView */ = {
 			isa = PBXGroup;
 			children = (
-				BF8E44A12E26B8D10064E6A5 /* Service */,
 				BF8E44A02E26B8CD0064E6A5 /* Model */,
 				BF8E44A22E26B8DD0064E6A5 /* RoomView.swift */,
 				BF8E44B22E2798730064E6A5 /* RoomParticipantCell.swift */,
@@ -420,14 +406,6 @@
 				BF8E44A42E26BA530064E6A5 /* RoomViewModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		BF8E44A12E26B8D10064E6A5 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				BF8E44AE2E277B040064E6A5 /* RoomService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		BF8E44A62E26BB5B0064E6A5 /* Rooms */ = {
@@ -498,7 +476,6 @@
 		BF9085442D73653100B40537 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF2A09BF2E296527001AC071 /* Common */,
 				BF9085462D73654C00B40537 /* LoginScreen */,
 				BF9085452D73653A00B40537 /* Settings */,
 				BF1FB99C2E1E9D7700DF1E39 /* MainView */,
@@ -533,7 +510,6 @@
 		BF9085472D73655B00B40537 /* VoteView */ = {
 			isa = PBXGroup;
 			children = (
-				BF14B8F42E2E655C00FB7253 /* Service */,
 				BF7E3CD92DE09D0B003740BD /* Model */,
 				BF90854D2D7365D000B40537 /* VoteView.swift */,
 				BF9085512D736D8400B40537 /* VoteListCell.swift */,
@@ -544,7 +520,6 @@
 		BF9085482D73656A00B40537 /* RoomListView */ = {
 			isa = PBXGroup;
 			children = (
-				BF0B5E272E00445200517B70 /* Service */,
 				BF0B5E242E0043AA00517B70 /* Model */,
 				BF0B5E222E00419F00517B70 /* RoomListView.swift */,
 				BF0B5E322E005A9000517B70 /* RoomCell.swift */,
@@ -564,6 +539,7 @@
 		BF9085542D736E0200B40537 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BF14B8F52E2E656A00FB7253 /* VoteManager.swift */,
 				BF2A09C42E296F5F001AC071 /* Validators */,
 				BF557C5E2E2519170024F48A /* ToastManager */,
 				BF90855A2D73703100B40537 /* Database */,
@@ -590,6 +566,7 @@
 		BF9A7B7C2E3A2A6900EB56FA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BF9A7B812E3A311000EB56FA /* AppEnvironment.swift */,
 				BFA4EB592E1BE91E006EC79C /* Cachable.swift */,
 				BF9085532D736DFD00B40537 /* Model */,
 				BF9A7B802E3A2D9F00EB56FA /* ViewModels */,
@@ -597,6 +574,7 @@
 				BF9085542D736E0200B40537 /* Managers */,
 				BF9A7B7E2E3A2D1A00EB56FA /* Extensions */,
 				BF14B8EE2E2E495500FB7253 /* Utils */,
+				BF9A7B832E3A4B7F00EB56FA /* Services */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -604,8 +582,9 @@
 		BF9A7B7D2E3A2CE500EB56FA /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				BF90855B2D73704E00B40537 /* AuthManager.swift */,
+				BF9A7B9F2E3A4EDF00EB56FA /* Demo */,
 				BF2FF1C42DFB1A420060E323 /* AuthViewModel.swift */,
+				BF90855B2D73704E00B40537 /* AuthManager.swift */,
 				BF9085692D7373A500B40537 /* AppUser.swift */,
 			);
 			path = Auth;
@@ -642,10 +621,66 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		BF9A7B832E3A4B7F00EB56FA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BF9A7B862E3A4B9200EB56FA /* Protocols */,
+				BF9A7B852E3A4B8E00EB56FA /* Demo */,
+				BF9A7B842E3A4B8800EB56FA /* Online */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BF9A7B842E3A4B8800EB56FA /* Online */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E44AE2E277B040064E6A5 /* RoomService.swift */,
+				BF557C582E22A6070024F48A /* RoomCreationService.swift */,
+				BF0B5E282E00445C00517B70 /* RoomListService.swift */,
+				BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */,
+				BFFDCEA22E2F916E00E91903 /* VoteService.swift */,
+				BFEB176D2E379A5700AB7329 /* ResultsService.swift */,
+			);
+			path = Online;
+			sourceTree = "<group>";
+		};
+		BF9A7B852E3A4B8E00EB56FA /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				BF9A7B932E3A4D4A00EB56FA /* LocalRoomService.swift */,
+				BF9A7B952E3A4DA900EB56FA /* LocalRoomCreationService.swift */,
+				BF9A7B972E3A4DCE00EB56FA /* LocalRoomListService.swift */,
+				BF9A7B992E3A4E1300EB56FA /* LocalContestantsService.swift */,
+				BF9A7B9B2E3A4E5A00EB56FA /* LocalVoteService.swift */,
+				BF9A7B9D2E3A4EA100EB56FA /* LocalResultsService.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		BF9A7B862E3A4B9200EB56FA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF9A7B872E3A4C6800EB56FA /* RoomServiceProtocol.swift */,
+				BF9A7B892E3A4C9000EB56FA /* RoomCreationServiceProtocol.swift */,
+				BF9A7B8B2E3A4CAC00EB56FA /* RoomListServiceProtocol.swift */,
+				BF9A7B8D2E3A4CE100EB56FA /* ContestantsServiceProtocol.swift */,
+				BF9A7B8F2E3A4CFA00EB56FA /* VoteServiceProtocol.swift */,
+				BF9A7B912E3A4D3300EB56FA /* ResultsServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BF9A7B9F2E3A4EDF00EB56FA /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				BF9A7BA12E3A4EF800EB56FA /* LocalAuthManager.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		BFEB176A2E379A3600AB7329 /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				BFEB176C2E379A4400AB7329 /* Service */,
 				BFEB176B2E379A3F00AB7329 /* Model */,
 				BFE167072E38C30F0030A26F /* ResultsView.swift */,
 				BFE167092E38C6430030A26F /* ResultsEntryCell.swift */,
@@ -660,15 +695,6 @@
 				BFEB17712E379ADF00AB7329 /* LeaderboardEntry.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		BFEB176C2E379A4400AB7329 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				BFEB176D2E379A5700AB7329 /* ResultsService.swift */,
-				BFEB17732E37B14100AB7329 /* LeaderboardCalculator.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		BFFD10782E2A978C00D7EC57 /* Delegates */ = {
@@ -809,9 +835,11 @@
 				BF90856A2D7373A500B40537 /* AppUser.swift in Sources */,
 				BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */,
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
+				BF9A7B982E3A4DCE00EB56FA /* LocalRoomListService.swift in Sources */,
 				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
 				BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */,
+				BF9A7B8E2E3A4CE100EB56FA /* ContestantsServiceProtocol.swift in Sources */,
 				BF9085582D736F1000B40537 /* Country.swift in Sources */,
 				BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */,
 				BF2A09C32E29654C001AC071 /* FullScreenLoadingView.swift in Sources */,
@@ -823,8 +851,10 @@
 				BF8E44AB2E26BBAF0064E6A5 /* Room.swift in Sources */,
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
 				BF2A09C12E296540001AC071 /* InLineLoadingView.swift in Sources */,
+				BF9A7B822E3A311000EB56FA /* AppEnvironment.swift in Sources */,
 				BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
+				BF9A7B9E2E3A4EA100EB56FA /* LocalResultsService.swift in Sources */,
 				BFFDCEA32E2F916E00E91903 /* VoteService.swift in Sources */,
 				BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */,
 				BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */,
@@ -832,6 +862,7 @@
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
 				BF2A09C62E296F75001AC071 /* ValidatorManager.swift in Sources */,
 				BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */,
+				BF9A7BA22E3A4EF800EB56FA /* LocalAuthManager.swift in Sources */,
 				BF14B8F62E2E656A00FB7253 /* VoteManager.swift in Sources */,
 				BF0B5E332E005A9000517B70 /* RoomCell.swift in Sources */,
 				BF637D5A2E2D0FEF00B828E7 /* BaseCircleButton.swift in Sources */,
@@ -845,27 +876,36 @@
 				BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */,
 				BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */,
 				BF0B5E232E00419F00517B70 /* RoomListView.swift in Sources */,
+				BF9A7B9C2E3A4E5A00EB56FA /* LocalVoteService.swift in Sources */,
 				BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */,
 				BF9085562D736E1F00B40537 /* Contestant.swift in Sources */,
 				BF90854A2D73658800B40537 /* SettingsView.swift in Sources */,
+				BF9A7B8A2E3A4C9000EB56FA /* RoomCreationServiceProtocol.swift in Sources */,
 				BFE1670A2E38C6430030A26F /* ResultsEntryCell.swift in Sources */,
 				BFEB17742E37B14100AB7329 /* LeaderboardCalculator.swift in Sources */,
 				BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */,
 				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
 				BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */,
+				BF9A7B902E3A4CFA00EB56FA /* VoteServiceProtocol.swift in Sources */,
+				BF9A7B8C2E3A4CAC00EB56FA /* RoomListServiceProtocol.swift in Sources */,
 				BF9085802D73809000B40537 /* ColorPalette.swift in Sources */,
+				BF9A7B942E3A4D4A00EB56FA /* LocalRoomService.swift in Sources */,
+				BF9A7B962E3A4DA900EB56FA /* LocalRoomCreationService.swift in Sources */,
 				BFEB17722E379ADF00AB7329 /* LeaderboardEntry.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
 				BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */,
+				BF9A7B922E3A4D3300EB56FA /* ResultsServiceProtocol.swift in Sources */,
 				BF0B5E292E00445C00517B70 /* RoomListService.swift in Sources */,
 				BF557C592E22A6070024F48A /* RoomCreationService.swift in Sources */,
 				BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */,
 				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
+				BF9A7B882E3A4C6800EB56FA /* RoomServiceProtocol.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF14B8F02E2E497500FB7253 /* RevealOverlayScrollObserver.swift in Sources */,
 				BF75CEEB2E30EE3B00B92180 /* UserMenuViewModel.swift in Sources */,
 				BF75CEE82E30E75A00B92180 /* LoginViewModel.swift in Sources */,
+				BF9A7B9A2E3A4E1300EB56FA /* LocalContestantsService.swift in Sources */,
 				BF637D5C2E2D146900B828E7 /* ListOffsetKey.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
 				BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */,

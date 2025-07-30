@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ResultsServiceProtocol {
-    func fetchResults(forStage stage: VoteStage, users: [RoomParticipant]) async throws -> [Vote]
-}
-
 class ResultsService: ResultsServiceProtocol {
     func fetchResults(forStage stage: VoteStage, users: [RoomParticipant]) async throws -> [Vote] {
         let usersFilter = users.map { $0.id.uuidString }

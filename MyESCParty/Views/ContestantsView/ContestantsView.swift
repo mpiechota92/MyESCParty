@@ -15,8 +15,12 @@ enum ContestantsGroup: String, SegmentedPickerElement {
 }
 
 struct ContestantsView: View {
-    @StateObject private var viewModel: ContestantsViewModel = .init()
+    @StateObject private var viewModel: ContestantsViewModel
     @State private var selectedGroup: ContestantsGroup = .all
+    
+    init(viewModel: ContestantsViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationStack {
@@ -41,5 +45,5 @@ struct ContestantsView: View {
 }
 
 #Preview {
-    ContestantsView()
+    ContestantsView(viewModel: ContestantsViewModel())
 }
