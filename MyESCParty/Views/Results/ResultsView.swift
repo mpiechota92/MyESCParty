@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ResultsView: View {
-    @StateObject var viewModel: ResultsViewModel
-    
+    @StateObject private var viewModel: ResultsViewModel = ResultsViewModel()
     @State private var selectedStage: VoteStage = .favorite
     
     private let roomId: Int
     
-    init(contestants: [Contestant], roomId: Int = Room.publicRoomId) {
-        self._viewModel = StateObject(wrappedValue: ResultsViewModel(contestants: contestants))
+    init(roomId: Int = Room.publicRoomId) {
         self.roomId = roomId
     }
     
@@ -23,19 +21,20 @@ struct ResultsView: View {
         VStack {
             HorizontalSegmentedPicker(
                 items: VoteStage.allCases,
-                selectedItem: $selectedStage) { selectedStage in
-                    Task {
-                        await viewModel.fetchResults(forStage: selectedStage, roomId: roomId)
-                    }
+                selectedItem: $selectedStage) { _ in
+                    Task { await fetchResults() }
                 }
             
             ZStack(alignment: .bottom){
                 List {
-                    ForEach(viewModel.leaderboard) { entry in
-                        ContestantView(contestant: entry.contestant, cellType: .none)
+                    ForEach(Array(viewModel.leaderboard.enumerated()), id: \.element.id) { index, entry in
+                        ResultsEntryCell(leaderboardEntry: entry, index: index)
                     }
                 }
                 .listStyle(.plain)
+                .refreshable {
+                    await fetchResults()
+                }
                 
                 if viewModel.loadingType == .fullScreen {
                     FullScreenLoadingView()
@@ -43,11 +42,16 @@ struct ResultsView: View {
             }
         }
         .task {
-            await viewModel.fetchResults(forStage: selectedStage, roomId: roomId)
+            await fetchResults()
         }
+    }
+    
+    @Sendable
+    private func fetchResults() async {
+        await viewModel.fetchResults(forStage: selectedStage, roomId: roomId)
     }
 }
 
 #Preview {
-    ResultsView(contestants: [.mockFrance, .mockGermany, .mockPoland])
+    ResultsView()
 }

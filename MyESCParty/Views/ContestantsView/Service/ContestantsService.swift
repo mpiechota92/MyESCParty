@@ -14,6 +14,12 @@ protocol ContestantsServiceProtocol {
     var contestantsCachePublisher: Published<[Contestant]>.Publisher { get }
 }
 
+extension ContestantsServiceProtocol {
+    func fetchContestants(forceRefresh: Bool = false) async throws {
+        try await fetchContestants(forceRefresh: forceRefresh)
+    }
+}
+
 class ContestantsService: ContestantsServiceProtocol, Cachable {
     @Published private(set) var contestantsCache: [Contestant] = []
     var cacheTimestamp: Date?

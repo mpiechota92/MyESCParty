@@ -9,7 +9,7 @@ import Foundation
 
 class RoomViewModel: BaseViewModel {
     private let service: RoomServiceProtocol
-    private let roomId: Int
+    let roomId: Int
     
     @Published var userCount: Int = 0
     @Published var users: [RoomParticipant] = []

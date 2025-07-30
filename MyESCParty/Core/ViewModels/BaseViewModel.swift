@@ -1,0 +1,34 @@
+//
+//  BaseViewModel.swift
+//  MyESCParty
+//
+//  Created by Maciej Piechota on 17/07/2025.
+//
+
+import Foundation
+
+enum LoadingType {
+    case inline
+    case fullScreen
+    case none
+}
+
+class BaseViewModel: ObservableObject {
+    @Published var error: Error?
+    @Published var loadingType: LoadingType = .none
+    
+    @MainActor // @MainActor for closure?
+    func performWithLoading(type: LoadingType, _ operation: @MainActor @escaping () async throws -> Void) async {
+        guard loadingType == .none else { return }
+        error = nil
+        self.loadingType = type
+        defer { self.loadingType = .none }
+        
+        do {
+            try await operation()
+        } catch {
+            self.error = error
+        }
+        
+    }
+}

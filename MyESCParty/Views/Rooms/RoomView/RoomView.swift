@@ -14,6 +14,7 @@ struct RoomView: View {
     var roomType: RoomType
     
     @State private var userIsAdmin: Bool = false
+    @State private var showResults: Bool = false
     
     init(roomName: String, roomType: RoomType, roomId: Int) {
         self.roomName = roomName
@@ -54,6 +55,13 @@ struct RoomView: View {
                         }
                     }
                 }
+                .safeAreaInset(edge: .bottom) {
+                    BaseButton(title: "Show results") {
+                        showResults = true
+                    }
+                    .padding(20)
+                    .shadow(radius: 8)
+                }
                 .refreshable {
                     await viewModel.fetchUsers(forceRefresh: true)
                 }
@@ -62,6 +70,9 @@ struct RoomView: View {
             if viewModel.loadingType == .fullScreen {
                 FullScreenLoadingView()
             }
+        }
+        .navigationDestination(isPresented: $showResults) {
+            ResultsView(roomId: viewModel.roomId)
         }
         .task {
             await viewModel.fetchUsers()

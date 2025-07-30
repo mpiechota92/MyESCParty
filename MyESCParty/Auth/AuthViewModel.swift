@@ -33,7 +33,7 @@ class AuthViewModel: BaseViewModel {
     func signUp(email: String, username: String, password: String) async throws {
         let user = try await authManager.signUpWith(email: email, username: username, password: password)
         self.user = user
-        self.isSessionActive = false
+        self.isSessionActive = true
         
     }
     
