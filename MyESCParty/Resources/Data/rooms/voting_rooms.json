@@ -1,0 +1,30 @@
+[
+  {
+    "salt" : null,
+    "room_uuid" : "c1b853e0-65ba-4730-9a9e-70bb03c412f2",
+    "room_name" : "Orion Poznań",
+    "room_id" : 1,
+    "password_hash" : null
+  },
+  {
+    "salt" : null,
+    "room_uuid" : "0d743854-0152-4619-99c3-0a18593369e5",
+    "room_name" : "Poznań",
+    "room_id" : 2,
+    "password_hash" : null
+  },
+  {
+    "salt" : null,
+    "room_uuid" : "d2de59c1-cd93-4fdf-8e3a-ca4fe9a87298",
+    "room_name" : "Global",
+    "room_id" : 3,
+    "password_hash" : null
+  },
+  {
+    "salt" : null,
+    "room_uuid" : "9040bdbe-0a7a-49ba-b1fc-330ec4783324",
+    "room_name" : "Test room",
+    "room_id" : 10,
+    "password_hash" : null
+  }
+]

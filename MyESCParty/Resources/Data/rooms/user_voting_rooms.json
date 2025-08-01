@@ -1,0 +1,50 @@
+[
+  {
+    "uuid_room_id" : "c1b853e0-65ba-4730-9a9e-70bb03c412f2",
+    "user_id" : "303ffd71-5eab-44df-ad93-361ade5c7abe",
+    "is_admin" : null,
+    "room_id" : 1
+  },
+  {
+    "uuid_room_id" : "d2de59c1-cd93-4fdf-8e3a-ca4fe9a87298",
+    "user_id" : "18488edc-766a-464a-9d47-656e0a1c5cd3",
+    "is_admin" : null,
+    "room_id" : 3
+  },
+  {
+    "uuid_room_id" : "d2de59c1-cd93-4fdf-8e3a-ca4fe9a87298",
+    "user_id" : "303ffd71-5eab-44df-ad93-361ade5c7abe",
+    "is_admin" : null,
+    "room_id" : 3
+  },
+  {
+    "uuid_room_id" : "d2de59c1-cd93-4fdf-8e3a-ca4fe9a87298",
+    "user_id" : "9a1b2a35-0d07-4313-9cd5-df22f573dd1f",
+    "is_admin" : null,
+    "room_id" : 3
+  },
+  {
+    "uuid_room_id" : "0d743854-0152-4619-99c3-0a18593369e5",
+    "user_id" : "303ffd71-5eab-44df-ad93-361ade5c7abe",
+    "is_admin" : true,
+    "room_id" : 2
+  },
+  {
+    "uuid_room_id" : "c1b853e0-65ba-4730-9a9e-70bb03c412f2",
+    "user_id" : "9a1b2a35-0d07-4313-9cd5-df22f573dd1f",
+    "is_admin" : true,
+    "room_id" : 1
+  },
+  {
+    "uuid_room_id" : null,
+    "user_id" : "303ffd71-5eab-44df-ad93-361ade5c7abe",
+    "is_admin" : true,
+    "room_id" : 10
+  },
+  {
+    "uuid_room_id" : "d2de59c1-cd93-4fdf-8e3a-ca4fe9a87298",
+    "user_id" : "92ae61e3-e7bc-4490-9989-c5c3734aed54",
+    "is_admin" : false,
+    "room_id" : 3
+  }
+]

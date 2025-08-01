@@ -17,6 +17,12 @@ class LocalContestantsService: ContestantsServiceProtocol, Cachable {
     }
     
     func fetchContestants(forceRefresh: Bool) async throws {
+        let contestants: [Contestant]? = try DemoDataReader.getDataForTable(table: .contestants)
         
+        guard let contestants else {
+            throw DemoDataReaderError.couldNotRead
+        }
+        
+        contestantsCache = contestants
     }
 }

@@ -9,6 +9,6 @@ import Foundation
 
 class LocalRoomCreationService: RoomCreationService {
     override func createRoom(name: String, password: String) async throws -> Int {
-        return 0
+        return 1
     }
 }

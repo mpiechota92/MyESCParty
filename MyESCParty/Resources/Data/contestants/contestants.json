@@ -1,0 +1,326 @@
+[
+  {
+    "artist" : "Mamagama",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=upbiPJ9uA70&pp=ygUTcnVuIHdpdGggdSBtYW1hZ2FtYQ%3D%3D",
+    "country" : "Azerbaijan",
+    "id" : 5,
+    "image_url" : null,
+    "song" : "Run With U",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Red Sebastian",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=oVrsnGFmuss&pp=ygUbc3Ryb2JlIGxpZ2h0cyByZWQgc2ViYXN0aWFu",
+    "country" : "Belgium",
+    "id" : 6,
+    "image_url" : null,
+    "song" : "Strobe Lights",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Marko Bošnjak",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=xOodVfY8hCs&pp=ygUZcG9pc29uIGNha2UgbWFya28gYm9zbmphaw%3D%3D",
+    "country" : "Croatia",
+    "id" : 7,
+    "image_url" : null,
+    "song" : "Poison Cake",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Nina Žižić",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=_zs0yq39aFA&pp=ygULRG9icm9kb8WhbGk%3D",
+    "country" : "Montenegro",
+    "id" : 24,
+    "image_url" : null,
+    "song" : "Dobrodošli",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Claude",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=hEHwr5k9pd0&pp=ygUSQ-KAmWVzdCBMYSBWaWUgZXNj",
+    "country" : "Netherlands",
+    "id" : 25,
+    "image_url" : null,
+    "song" : "C’est La Vie",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Klemen",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=qTS2L0VcaVI&pp=ygUdSG93IE11Y2ggVGltZSBEbyBXZSBIYXZlIExlZnQ%3D",
+    "country" : "Slovenia",
+    "id" : 31,
+    "image_url" : null,
+    "song" : "How Much Time Do We Have Left",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Theo Evan",
+    "yt_url" : null,
+    "country" : "Cyprus",
+    "id" : 8,
+    "image_url" : null,
+    "song" : "Shh",
+    "contest_group" : 1
+  },
+  {
+    "artist" : "Zjerm",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=RNT1SmmxuIk&pp=ygUZWmplcm0gU2hrb2RyYSBFbGVrdHJvbmlrZQ%3D%3D",
+    "country" : "Albania",
+    "id" : 1,
+    "image_url" : null,
+    "song" : "Shkodra Elektronike",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Tommy Cash",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=o6aJJ6Q5zhg&pp=ygUddG9tbXkgY2FzaCBlc3ByZXNzbyBtYWNjaGlhdG8%3D",
+    "country" : "Estonia",
+    "id" : 11,
+    "image_url" : null,
+    "song" : "Espresso macchiato",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Erika Vikman",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=Kg3QoTpnqyw&pp=ygUWaWNoIGtvbW1lIGVyaWthIHZpa21hbg%3D%3D",
+    "country" : "Finland",
+    "id" : 12,
+    "image_url" : null,
+    "song" : "Ich komme",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Louane",
+    "yt_url" : null,
+    "country" : "France",
+    "id" : 13,
+    "image_url" : null,
+    "song" : "TBA",
+    "contest_group" : 4
+  },
+  {
+    "artist" : "Abor & Tynna",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=6BfRACNvdBQ&pp=ygURYmFsbGVyIGFib3IgdHlubmE%3D",
+    "country" : "Germany",
+    "id" : 14,
+    "image_url" : null,
+    "song" : "Baller",
+    "contest_group" : 4
+  },
+  {
+    "artist" : "Væb",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=LZE1WzOwtQQ&pp=ygULcsOzxbxhIHbDpmI%3D",
+    "country" : "Iceland",
+    "id" : 16,
+    "image_url" : null,
+    "song" : "Róa",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Lucio Corsi",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=mfAf9-5Oevw&pp=ygUVVm9sZXZvIGVzc2VyZSB1biBkdXJv",
+    "country" : "Italy",
+    "id" : 19,
+    "image_url" : null,
+    "song" : "Volevo essere un duro",
+    "contest_group" : 4
+  },
+  {
+    "artist" : "Kyle Alessandro",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=h7jkEmoBvU0&pp=ygULTGlnaHRlciBlc2M%3D",
+    "country" : "Norway",
+    "id" : 26,
+    "image_url" : null,
+    "song" : "Lighter",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Justyna Steczkowska",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=YXHHDjiclxA&pp=ygUYZ2FqYSBqdXN0eW5hIHN0ZWN6a293c2th",
+    "country" : "Poland",
+    "id" : 27,
+    "image_url" : null,
+    "song" : "Gaja",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Napa",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=-s1Cc2uEj3U&pp=ygUORGVzY2xvY2FkbyBlc2M%3D",
+    "country" : "Portugal",
+    "id" : 28,
+    "image_url" : null,
+    "song" : "Desclocado",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Gary Ponte",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=GLqTTp4HmBQ&pp=ygUOdHV0dGEgbCdpdGFsaWE%3D",
+    "country" : "San Marino",
+    "id" : 29,
+    "image_url" : null,
+    "song" : "Tutta L’Italia",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Melody",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=H46FB-rLh04&pp=ygUMRXNhIGRpdmEgZXNj",
+    "country" : "Spain",
+    "id" : 32,
+    "image_url" : null,
+    "song" : "Esa diva",
+    "contest_group" : 4
+  },
+  {
+    "artist" : "KAJ",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=WK3HOMhAeQY&pp=ygUPQmFyYSBiYWRhIGJhc3R1",
+    "country" : "Sweden",
+    "id" : 33,
+    "image_url" : null,
+    "song" : "Bara bada bastu",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Zoë Më",
+    "yt_url" : null,
+    "country" : "Switzerland",
+    "id" : 34,
+    "image_url" : null,
+    "song" : "Voyage",
+    "contest_group" : 4
+  },
+  {
+    "artist" : "Ziferbalt",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=Dv4Zp_FG0qg&pp=ygUQQmlyZCBvZiBQcmF5IGVzYw%3D%3D",
+    "country" : "Ukraine",
+    "id" : 35,
+    "image_url" : null,
+    "song" : "Bird of Pray",
+    "contest_group" : 5
+  },
+  {
+    "artist" : "Remember Monday",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=-hu6R3ZnOdY&pp=ygUgV2hhdCBUaGUgSGVsbCBKdXN0IEhhcHBlbmVkPyBlc2M%3D",
+    "country" : "United Kingdom",
+    "id" : 36,
+    "image_url" : null,
+    "song" : "What The Hell Just Happened?",
+    "contest_group" : 4
+  },
+  {
+    "artist" : "Part",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=RfH5o3XtI2c",
+    "country" : "Armenia",
+    "id" : 2,
+    "image_url" : null,
+    "song" : "Survivor",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Go-Jo",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=_08I6mjHSLA",
+    "country" : "Australia",
+    "id" : 3,
+    "image_url" : null,
+    "song" : "Milkshake Man",
+    "contest_group" : 2
+  },
+  {
+    "artist" : "JJ",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=-ieSTNpxvio&pp=ygUOamogd2FzdGVkIGxvdmU%3D",
+    "country" : "Austria",
+    "id" : 4,
+    "image_url" : null,
+    "song" : "Wasted Love",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Adonxs",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=Hm8CIICKAJU&pp=ygUQS2lzcyBLaXNzIEdvb2RieQ%3D%3D",
+    "country" : "Czechia",
+    "id" : 9,
+    "image_url" : null,
+    "song" : "Kiss Kiss Goodby",
+    "contest_group" : 2
+  },
+  {
+    "artist" : "Sissal",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=gdCAgiSIOUc&pp=ygUTc2lzYWwgaGFsbHVjaW5hdGlvbg%3D%3D",
+    "country" : "Denmark",
+    "id" : 10,
+    "image_url" : null,
+    "song" : "Hallucination",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Klavdia",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=UxzeTezgey4&pp=ygUTYXN0ZXJvbcOhdGEga2xhdmRpYQ%3D%3D",
+    "country" : "Greece",
+    "id" : 15,
+    "image_url" : null,
+    "song" : "Asteromáta",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Emmy",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=1nPxNykJ34U&pp=ygUQbGFpa2EgcGFydHkgZW1teQ%3D%3D",
+    "country" : "Ireland",
+    "id" : 17,
+    "image_url" : null,
+    "song" : "Laika Party",
+    "contest_group" : 2
+  },
+  {
+    "artist" : "Yuval Raphael",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=Q3BELu4z6-U&pp=ygUXbmV3IGRheSB3aWxsIHJpc2UgeXV2YWw%3D",
+    "country" : "Israel",
+    "id" : 18,
+    "image_url" : null,
+    "song" : "New Day Will Rise",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Tautumeitas",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=hBCASN-ahpc&pp=ygUYQnVyIG1hbiBsYW1lIHRhdXRlbWVpdGFz",
+    "country" : "Latvia",
+    "id" : 20,
+    "image_url" : null,
+    "song" : "Bur man lame",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Katarsis",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=at1jUGRBRig&pp=ygUTdGF2byBha3lzIGthdGhhcnNpcw%3D%3D",
+    "country" : "Lithuania",
+    "id" : 21,
+    "image_url" : null,
+    "song" : "Tavo akys",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Laura Thorn",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=LVHu_KwHiKY&pp=ygUXTGEgcG91cMOpZSBtb250ZSBsZSBzb24%3D",
+    "country" : "Luxemburg",
+    "id" : 22,
+    "image_url" : null,
+    "song" : "La poupée monte le son",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Miriana Conte",
+    "yt_url" : null,
+    "country" : "Malta",
+    "id" : 23,
+    "image_url" : null,
+    "song" : "Kant",
+    "contest_group" : 6
+  },
+  {
+    "artist" : "Princ",
+    "yt_url" : "https:\/\/www.youtube.com\/watch?v=FsCBHvjQznw&pp=ygUQbWlsYSBlc2Mgc2VyYm5pYQ%3D%3D",
+    "country" : "Serbia",
+    "id" : 30,
+    "image_url" : null,
+    "song" : "Mila",
+    "contest_group" : 2
+  }
+]

@@ -38,6 +38,8 @@ protocol RoomListServiceProtocol {
     func addUserToRoom(id: Int, isAdmin: Bool) async throws
     
     var roomListCachePublisher: Published<[Room]>.Publisher { get }
+    var userRoomsCache: [UserRoom] { get }
+    var roomCache: [Room] { get }
 }
 
 extension RoomListServiceProtocol {
@@ -51,5 +53,13 @@ extension RoomListServiceProtocol {
     
     func joinRoom(id: Int, password: String? = nil) async throws {
         try await joinRoom(id: id, password: password)
+    }
+    
+    func isUserInRoom(id: Int) -> Bool {
+        userRoomsCache.contains { $0.id == id }
+    }
+    
+    func getRoom(id: Int) -> Room? {
+        return roomCache.first(where: { $0.id == id })
     }
 }

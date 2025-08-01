@@ -1,0 +1,30 @@
+[
+  {
+    "salt" : null,
+    "user_count" : 1,
+    "room_name" : "Test room",
+    "room_id" : 10,
+    "password_hash" : null
+  },
+  {
+    "salt" : null,
+    "user_count" : 2,
+    "room_name" : "Orion Poznań",
+    "room_id" : 1,
+    "password_hash" : null
+  },
+  {
+    "salt" : null,
+    "user_count" : 4,
+    "room_name" : "Global",
+    "room_id" : 3,
+    "password_hash" : null
+  },
+  {
+    "salt" : null,
+    "user_count" : 1,
+    "room_name" : "Poznań",
+    "room_id" : 2,
+    "password_hash" : null
+  }
+]

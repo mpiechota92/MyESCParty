@@ -16,6 +16,23 @@
 		BF14B8F02E2E497500FB7253 /* RevealOverlayScrollObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */; };
 		BF14B8F32E2E64A600FB7253 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14B8F22E2E64A600FB7253 /* Vote.swift */; };
 		BF14B8F62E2E656A00FB7253 /* VoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14B8F52E2E656A00FB7253 /* VoteManager.swift */; };
+		BF1B5B622E3CD797000A9B8B /* DataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1B5B612E3CD797000A9B8B /* DataReader.swift */; };
+		BF1B5B912E3CE09A000A9B8B /* user_voting_rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8A2E3CE09A000A9B8B /* user_voting_rooms.json */; };
+		BF1B5B922E3CE09A000A9B8B /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B862E3CE09A000A9B8B /* users.json */; };
+		BF1B5B932E3CE09A000A9B8B /* voting_rooms_with_user_count.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8C2E3CE09A000A9B8B /* voting_rooms_with_user_count.json */; };
+		BF1B5B942E3CE09A000A9B8B /* votes.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8E2E3CE09A000A9B8B /* votes.json */; };
+		BF1B5B952E3CE09A000A9B8B /* contestants.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B882E3CE09A000A9B8B /* contestants.json */; };
+		BF1B5B962E3CE09A000A9B8B /* voting_rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8B2E3CE09A000A9B8B /* voting_rooms.json */; };
+		BF1B5B972E3CE09A000A9B8B /* profiles.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B852E3CE09A000A9B8B /* profiles.json */; };
+		BF1B5B982E3CE09A000A9B8B /* user_voting_rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8A2E3CE09A000A9B8B /* user_voting_rooms.json */; };
+		BF1B5B992E3CE09A000A9B8B /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B862E3CE09A000A9B8B /* users.json */; };
+		BF1B5B9A2E3CE09A000A9B8B /* voting_rooms_with_user_count.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8C2E3CE09A000A9B8B /* voting_rooms_with_user_count.json */; };
+		BF1B5B9B2E3CE09A000A9B8B /* votes.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8E2E3CE09A000A9B8B /* votes.json */; };
+		BF1B5B9C2E3CE09A000A9B8B /* contestants.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B882E3CE09A000A9B8B /* contestants.json */; };
+		BF1B5B9D2E3CE09A000A9B8B /* voting_rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B8B2E3CE09A000A9B8B /* voting_rooms.json */; };
+		BF1B5B9E2E3CE09A000A9B8B /* profiles.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5B852E3CE09A000A9B8B /* profiles.json */; };
+		BF1B5BA32E3CE155000A9B8B /* users_in_voting_rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5BA22E3CE155000A9B8B /* users_in_voting_rooms.json */; };
+		BF1B5BA42E3CE155000A9B8B /* users_in_voting_rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = BF1B5BA22E3CE155000A9B8B /* users_in_voting_rooms.json */; };
 		BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BF1B42E214DDE002F176B /* ContestantView.swift */; };
 		BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */; };
 		BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */; };
@@ -143,6 +160,15 @@
 		BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealOverlayScrollObserver.swift; sourceTree = "<group>"; };
 		BF14B8F22E2E64A600FB7253 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		BF14B8F52E2E656A00FB7253 /* VoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteManager.swift; sourceTree = "<group>"; };
+		BF1B5B612E3CD797000A9B8B /* DataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReader.swift; sourceTree = "<group>"; };
+		BF1B5B852E3CE09A000A9B8B /* profiles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profiles.json; sourceTree = "<group>"; };
+		BF1B5B862E3CE09A000A9B8B /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		BF1B5B882E3CE09A000A9B8B /* contestants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contestants.json; sourceTree = "<group>"; };
+		BF1B5B8A2E3CE09A000A9B8B /* user_voting_rooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_voting_rooms.json; sourceTree = "<group>"; };
+		BF1B5B8B2E3CE09A000A9B8B /* voting_rooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = voting_rooms.json; sourceTree = "<group>"; };
+		BF1B5B8C2E3CE09A000A9B8B /* voting_rooms_with_user_count.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = voting_rooms_with_user_count.json; sourceTree = "<group>"; };
+		BF1B5B8E2E3CE09A000A9B8B /* votes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = votes.json; sourceTree = "<group>"; };
+		BF1B5BA22E3CE155000A9B8B /* users_in_voting_rooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users_in_voting_rooms.json; sourceTree = "<group>"; };
 		BF1BF1B42E214DDE002F176B /* ContestantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantView.swift; sourceTree = "<group>"; };
 		BF1FB99D2E1E9D8E00DF1E39 /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
 		BF1FB9A12E1ED32400DF1E39 /* RoomCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreationView.swift; sourceTree = "<group>"; };
@@ -288,6 +314,7 @@
 				BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */,
 				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
 				BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */,
+				BF1B5B612E3CD797000A9B8B /* DataReader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,6 +325,61 @@
 				BF9085472D73655B00B40537 /* VoteView */,
 			);
 			path = Voting;
+			sourceTree = "<group>";
+		};
+		BF1B5B832E3CE027000A9B8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B5B902E3CE09A000A9B8B /* Data */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BF1B5B872E3CE09A000A9B8B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B5B852E3CE09A000A9B8B /* profiles.json */,
+				BF1B5B862E3CE09A000A9B8B /* users.json */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BF1B5B892E3CE09A000A9B8B /* contestants */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B5B882E3CE09A000A9B8B /* contestants.json */,
+			);
+			path = contestants;
+			sourceTree = "<group>";
+		};
+		BF1B5B8D2E3CE09A000A9B8B /* rooms */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B5BA22E3CE155000A9B8B /* users_in_voting_rooms.json */,
+				BF1B5B8A2E3CE09A000A9B8B /* user_voting_rooms.json */,
+				BF1B5B8B2E3CE09A000A9B8B /* voting_rooms.json */,
+				BF1B5B8C2E3CE09A000A9B8B /* voting_rooms_with_user_count.json */,
+			);
+			path = rooms;
+			sourceTree = "<group>";
+		};
+		BF1B5B8F2E3CE09A000A9B8B /* votes */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B5B8E2E3CE09A000A9B8B /* votes.json */,
+			);
+			path = votes;
+			sourceTree = "<group>";
+		};
+		BF1B5B902E3CE09A000A9B8B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B5B872E3CE09A000A9B8B /* Auth */,
+				BF1B5B892E3CE09A000A9B8B /* contestants */,
+				BF1B5B8D2E3CE09A000A9B8B /* rooms */,
+				BF1B5B8F2E3CE09A000A9B8B /* votes */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		BF1FB99C2E1E9D7700DF1E39 /* MainView */ = {
@@ -461,6 +543,7 @@
 				BF9A7B792E3A22E300EB56FA /* Settings.bundle */,
 				BF90852F2D73632300B40537 /* Preview Content */,
 				BF9085672D7372B200B40537 /* DependencyResolver.swift */,
+				BF1B5B832E3CE027000A9B8B /* Resources */,
 			);
 			path = MyESCParty;
 			sourceTree = "<group>";
@@ -551,7 +634,6 @@
 			isa = PBXGroup;
 			children = (
 				BF9085602D73711700B40537 /* DatabaseManager.swift */,
-				BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -593,6 +675,7 @@
 		BF9A7B7E2E3A2D1A00EB56FA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */,
 				BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */,
 			);
 			path = Extensions;
@@ -807,10 +890,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1B5B912E3CE09A000A9B8B /* user_voting_rooms.json in Resources */,
+				BF1B5B922E3CE09A000A9B8B /* users.json in Resources */,
+				BF1B5B932E3CE09A000A9B8B /* voting_rooms_with_user_count.json in Resources */,
+				BF1B5B942E3CE09A000A9B8B /* votes.json in Resources */,
+				BF1B5B952E3CE09A000A9B8B /* contestants.json in Resources */,
+				BF1B5B962E3CE09A000A9B8B /* voting_rooms.json in Resources */,
+				BF1B5B972E3CE09A000A9B8B /* profiles.json in Resources */,
 				BF9A7B7B2E3A22E300EB56FA /* Settings.bundle in Resources */,
 				BF8E449E2E26B7C80064E6A5 /* Supabase.plist in Resources */,
 				BF9085312D73632300B40537 /* Preview Assets.xcassets in Resources */,
 				BF90852E2D73632300B40537 /* Assets.xcassets in Resources */,
+				BF1B5BA32E3CE155000A9B8B /* users_in_voting_rooms.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +910,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9A7B7A2E3A22E300EB56FA /* Settings.bundle in Resources */,
+				BF1B5B982E3CE09A000A9B8B /* user_voting_rooms.json in Resources */,
+				BF1B5B992E3CE09A000A9B8B /* users.json in Resources */,
+				BF1B5B9A2E3CE09A000A9B8B /* voting_rooms_with_user_count.json in Resources */,
+				BF1B5B9B2E3CE09A000A9B8B /* votes.json in Resources */,
+				BF1B5BA42E3CE155000A9B8B /* users_in_voting_rooms.json in Resources */,
+				BF1B5B9C2E3CE09A000A9B8B /* contestants.json in Resources */,
+				BF1B5B9D2E3CE09A000A9B8B /* voting_rooms.json in Resources */,
+				BF1B5B9E2E3CE09A000A9B8B /* profiles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +944,7 @@
 				BF2A09C32E29654C001AC071 /* FullScreenLoadingView.swift in Sources */,
 				BF75CEED2E30F1AE00B92180 /* MainTabBarViewModel.swift in Sources */,
 				BF557C602E25197B0024F48A /* ToastView.swift in Sources */,
+				BF1B5B622E3CD797000A9B8B /* DataReader.swift in Sources */,
 				BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */,
 				BF557C7B2E253DFB0024F48A /* ToastHostView.swift in Sources */,
 				BF90854C2D73659800B40537 /* SettingsViewModel.swift in Sources */,

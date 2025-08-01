@@ -17,12 +17,23 @@ class LocalRoomListService: RoomListServiceProtocol, Cachable {
         $roomCache
     }
     
-    func isUserInRoom(id: Int) -> Bool {
-        true
+    func fetchRooms(forceRefresh: Bool) async throws {
+        let rooms: [Room]? = try DemoDataReader.getDataForTable(table: .votingRoomsWithUserCount)
+        let userRooms: [UserRoom]? = try DemoDataReader.getDataForTable(table: .userVotingRooms)
+        
+        guard let rooms, let userRooms else {
+            throw DemoDataReaderError.couldNotRead
+        }
+        
+        roomCache = rooms
+        userRoomsCache = userRooms
     }
     
-    func getRoom(id: Int) -> Room? {
-        nil
+    func addUserToRoom(id: Int, isAdmin: Bool) async throws {
+        
     }
     
+    func joinRoom(id: Int, password: String?) async throws {
+        
+    }
 }

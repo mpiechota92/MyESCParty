@@ -15,11 +15,33 @@ class LocalVoteService: VoteServiceProtocol, Cachable {
         $votesCache
     }
     
-    func saveVote(_ vote: Vote) async throws {
+    func fetchVotes() async throws -> [Vote] {
+        let votes: [Vote]? = try DemoDataReader.getDataForTable(table: .votes)
         
+        guard let votes else {
+            throw DemoDataReaderError.couldNotRead
+        }
+        
+        votesCache = votes
+        return votes
     }
     
-    func loadVote(forStage: VoteStage) async throws -> Vote? {
-        nil
+    func saveVote(_ vote: Vote) async throws {
+        saveVoteToUserDefaults(vote)
+    }
+    
+    func loadVote(forStage voteStage: VoteStage) async throws -> Vote? {
+        if let savedVote = loadVoteFromUserDefaults(forStage: voteStage) {
+            return savedVote
+        }
+        
+        let votes = try await fetchVotes()
+        let vote = votesCache.first { $0.voteStage == voteStage }
+        
+        guard let vote else {
+            return nil
+        }
+        
+        return vote
     }
 }
