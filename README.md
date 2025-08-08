@@ -37,6 +37,14 @@ Whether you're hosting a small party or joining an international fan group, this
 
 ## 🎥 Demo
 
+### Creating and joining rooms
+![Create Room Demo](assets/create-room.gif)
+
+### Drag-and-drop voting system
+![Voting Demo](assets/voting.gif)
+
+### Viewing results
+![Results Demo](assets/results.gif)
 
 > 📌 Note: GIFs recorded from simulator – performance may vary on real device.
 
