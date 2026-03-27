@@ -26,7 +26,8 @@ struct ContestantsView: View {
         NavigationStack {
             HorizontalSegmentedPicker(
                 items: ContestantsGroup.allCases,
-                selectedItem: $selectedGroup) { selectedGroup in
+                selectedItem: $selectedGroup
+            ) { selectedGroup in
                 viewModel.contestantsFor(group: selectedGroup)
             }
             

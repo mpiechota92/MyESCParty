@@ -10,6 +10,7 @@ import Foundation
 enum LoadingType {
     case inline
     case fullScreen
+    case scrollView
     case none
 }
 
@@ -21,6 +22,7 @@ class BaseViewModel: ObservableObject {
     func performWithLoading(type: LoadingType, _ operation: @MainActor @escaping () async throws -> Void) async {
         guard loadingType == .none else { return }
         error = nil
+        print("perform with loading \(String(describing: operation))")
         self.loadingType = type
         defer { self.loadingType = .none }
         

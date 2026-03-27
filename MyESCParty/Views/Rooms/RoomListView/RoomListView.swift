@@ -15,6 +15,7 @@ struct RoomListView: View {
     @State private var createRoomMode: Bool = false
     @State private var selectedRoom: Room?
     
+    // TODO: Why inject viewModel?
     init(viewModel: RoomListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -22,11 +23,16 @@ struct RoomListView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                //\RoomListViewModel.searchText is isolated to the main actor. Accessing it via Binding from a different actor will cause undefined behaviors, and potential data races; This warning will become a runtime crash in a future version of SwiftUI.
                 TextField("Search", text: $viewModel.searchText)
                     .padding()
                 
                 ScrollView {
                     LazyVStack {
+                        if viewModel.loadingType == .inline {
+                            ProgressView()
+                        }
+                        
                         ForEach(viewModel.rooms) { room in
                             let isUserInRoom = viewModel.isUserInRoom(room.id)
                             RoomCell(
@@ -41,7 +47,7 @@ struct RoomListView: View {
                     }
                     .padding(.vertical, 10)
                 }
-                .refreshable {
+                .refreshableTask {
                     await viewModel.fetchRooms(forceRefresh: true)
                 }
                 
@@ -58,9 +64,6 @@ struct RoomListView: View {
                 
             }
             .navigationTitle("Voting Rooms")
-            .task {
-                await viewModel.fetchRooms()
-            }
             .navigationDestination(isPresented: $createRoomMode) {
                 RoomCreationView(viewModel:
                                     RoomCreationViewModel(
@@ -76,6 +79,9 @@ struct RoomListView: View {
                     roomType: room.roomType
                 )
             }
+        }
+        .task {
+            await viewModel.fetchRooms(loadingType: .inline)
         }
         .onReceive(viewModel.$error) { error in
             guard let error else { return }

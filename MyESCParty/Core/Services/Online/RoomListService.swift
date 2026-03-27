@@ -63,6 +63,7 @@ class RoomListService: RoomListServiceProtocol, Cachable {
             .execute()
     }
     
+    // TODO: shouldn't call fetchRooms
     func joinRoom(id: Int, password: String? = nil) async throws {
         try await fetchRooms(forceRefresh: true)
         

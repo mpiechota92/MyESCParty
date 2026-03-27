@@ -12,7 +12,7 @@ struct UserMenu: View {
     @ObservedObject var parentViewModel: BaseViewModel
     
     @StateObject private var viewModel: UserMenuViewModel = UserMenuViewModel()
-    @State private var showAlert = false
+    @State private var showLogoutAlert = false
     
     var body: some View {
         Menu {
@@ -31,7 +31,7 @@ struct UserMenu: View {
             Divider()
             
             Button("Logout") {
-                showAlert = true
+                showLogoutAlert = true
             }
             
         } label: {
@@ -41,7 +41,7 @@ struct UserMenu: View {
                 .padding()
             
         }
-        .confirmationDialog("Do you want to logout?", isPresented: $showAlert) {
+        .confirmationDialog("Do you want to logout?", isPresented: $showLogoutAlert) {
             Button("Log out", role: .destructive) {
                 Task {
                     await viewModel.signOut(authViewModel: authViewModel)

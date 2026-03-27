@@ -24,8 +24,8 @@ class RoomListViewModel: BaseViewModel {
     }
     
     @MainActor
-    func fetchRooms(forceRefresh: Bool = false) async {
-        await performWithLoading(type: .inline) { [weak self] in
+    func fetchRooms(forceRefresh: Bool = false, loadingType: LoadingType = .scrollView) async {
+        await performWithLoading(type: loadingType) { [weak self] in
             guard let self = self else { return }
             try await self.service.fetchRooms(forceRefresh: forceRefresh)
         }
@@ -33,6 +33,10 @@ class RoomListViewModel: BaseViewModel {
     
     func joinRoom(id: Int, password: String? = nil) async {
         do {
+            
+            //TODO: Make a fetchRoom method to fetch specific data about single room
+            // The fetch here is to update the data about the room such as:
+            // - people in the room
             try await service.fetchRooms(forceRefresh: true)
             
             guard let room = service.getRoom(id: id) else {
@@ -54,6 +58,7 @@ class RoomListViewModel: BaseViewModel {
                 }
                 
                 guard let roomHash = room.passwordHash else {
+                    // Should not occur
                     throw RoomListServiceError.passwordMissing
                 }
                 
@@ -66,6 +71,7 @@ class RoomListViewModel: BaseViewModel {
                 try await service.addUserToRoom(id: id)
             }
             
+            // TODO: does it have to be called here when it only fetches the rooms?
             try await service.joinRoom(id: id, password: password)
         } catch {
             self.error = error

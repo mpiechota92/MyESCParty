@@ -22,6 +22,7 @@ class ContestantsService: ContestantsServiceProtocol, Cachable {
         }
         
         isFetching = true
+        defer { isFetching = false }
         
         let now = Date()
         
@@ -37,7 +38,5 @@ class ContestantsService: ContestantsServiceProtocol, Cachable {
         
         cacheTimestamp = now
         contestantsCache = contestants
-        
-        isFetching = false
     }
 }

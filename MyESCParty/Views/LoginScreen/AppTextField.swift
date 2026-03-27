@@ -18,9 +18,6 @@ struct AppTextField: View {
                 .padding(.top, 10)
                 .font(.system(size: 15.0))
             ZStack {
-//                RoundedRectangle(cornerRadius: 15.0)
-//                    .fill(.lightNavy)
-//                    .frame(height: 50)
                 TextField(promptText, text: $text)
                     .foregroundStyle(.yellow, .green, .pink)
                     .padding(.horizontal, 10)
