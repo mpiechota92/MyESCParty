@@ -15,6 +15,8 @@ struct RoomListView: View {
     @State private var createRoomMode: Bool = false
     @State private var selectedRoom: Room?
     
+    @State private var searchText: String = ""
+    
     // TODO: Why inject viewModel?
     init(viewModel: RoomListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -23,9 +25,9 @@ struct RoomListView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                //\RoomListViewModel.searchText is isolated to the main actor. Accessing it via Binding from a different actor will cause undefined behaviors, and potential data races; This warning will become a runtime crash in a future version of SwiftUI.
-                TextField("Search", text: $viewModel.searchText)
+                TextField("Search", text: $searchText)
                     .padding()
+                    .tint(.black)
                 
                 ScrollView {
                     LazyVStack {
@@ -63,6 +65,9 @@ struct RoomListView: View {
                 .padding([.horizontal, .bottom], 20)
                 
             }
+            .onChange(of: searchText) {
+                viewModel.searchText = searchText
+            }
             .navigationTitle("Voting Rooms")
             .navigationDestination(isPresented: $createRoomMode) {
                 RoomCreationView(viewModel:
@@ -92,4 +97,6 @@ struct RoomListView: View {
 
 #Preview {
     RoomListView(viewModel: RoomListViewModel())
+        .environmentObject(AppEnvironment())
+        .environmentObject(ToastManager())
 }

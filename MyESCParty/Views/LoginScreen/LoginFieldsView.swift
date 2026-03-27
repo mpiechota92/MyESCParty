@@ -82,6 +82,7 @@ struct LoginFieldsView: View {
                     }
             }
         }
+        .tint(.black)
         .onChange(of: viewModel.authType) {
             focusedField = nil
         }
