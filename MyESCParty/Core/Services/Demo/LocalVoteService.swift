@@ -35,7 +35,7 @@ class LocalVoteService: VoteServiceProtocol, Cachable {
             return savedVote
         }
         
-        let votes = try await fetchVotes()
+        let _ = try await fetchVotes()
         let vote = votesCache.first { $0.voteStage == voteStage }
         
         guard let vote else {

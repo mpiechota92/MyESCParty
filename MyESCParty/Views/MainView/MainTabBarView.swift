@@ -50,4 +50,5 @@ struct MainTabBarView: View {
 #Preview {
     MainTabBarView()
         .environmentObject(ToastManager())
+        .environmentObject(AppEnvironment())
 }

@@ -26,11 +26,14 @@ struct RoomCreationView: View {
             VStack {
                 Toggle("Private Room", isOn: $isPrivate)
                 TextField("RoomName", text: $roomName)
+                    .tint(.black)
                     .autocorrectionDisabled()
                 
                 if isPrivate {
                     SecureField("Password", text: $password)
+                        .tint(.black)
                     SecureField("Repeat password", text: $repeatPassword)
+                        .tint(.black)
                 }
                 
                 if let error = viewModel.error {

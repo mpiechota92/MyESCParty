@@ -116,6 +116,8 @@
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
 		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
+		BFC9F5252F768B2200DA757E /* ImageMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */; };
+		BFC9F5272F768C0600DA757E /* ImageDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */; };
 		BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167072E38C30F0030A26F /* ResultsView.swift */; };
 		BFE1670A2E38C6430030A26F /* ResultsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167092E38C6430030A26F /* ResultsEntryCell.swift */; };
 		BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */; };
@@ -247,6 +249,8 @@
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryCache.swift; sourceTree = "<group>"; };
+		BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDiskCache.swift; sourceTree = "<group>"; };
 		BFE167072E38C30F0030A26F /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		BFE167092E38C6430030A26F /* ResultsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsEntryCell.swift; sourceTree = "<group>"; };
 		BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSegmentedPicker.swift; sourceTree = "<group>"; };
@@ -653,6 +657,7 @@
 		BF9A7B7C2E3A2A6900EB56FA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BFC9F5232F768B1200DA757E /* Data */,
 				BF9A7B812E3A311000EB56FA /* AppEnvironment.swift */,
 				BFA4EB592E1BE91E006EC79C /* Cachable.swift */,
 				BF9085532D736DFD00B40537 /* Model */,
@@ -765,6 +770,15 @@
 				BF9A7BA12E3A4EF800EB56FA /* LocalAuthManager.swift */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		BFC9F5232F768B1200DA757E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */,
+				BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		BFEB176A2E379A3600AB7329 /* Results */ = {
@@ -967,6 +981,7 @@
 				BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
+				BFC9F5252F768B2200DA757E /* ImageMemoryCache.swift in Sources */,
 				BF2A09C62E296F75001AC071 /* ValidatorManager.swift in Sources */,
 				BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */,
 				BF9A7BA22E3A4EF800EB56FA /* LocalAuthManager.swift in Sources */,
@@ -1012,6 +1027,7 @@
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF14B8F02E2E497500FB7253 /* RevealOverlayScrollObserver.swift in Sources */,
 				BF75CEEB2E30EE3B00B92180 /* UserMenuViewModel.swift in Sources */,
+				BFC9F5272F768C0600DA757E /* ImageDiskCache.swift in Sources */,
 				BF75CEE82E30E75A00B92180 /* LoginViewModel.swift in Sources */,
 				BF9A7B9A2E3A4E1300EB56FA /* LocalContestantsService.swift in Sources */,
 				BF637D5C2E2D146900B828E7 /* ListOffsetKey.swift in Sources */,

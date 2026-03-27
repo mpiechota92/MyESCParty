@@ -9,6 +9,10 @@ import Foundation
 
 class ContestantsService: ContestantsServiceProtocol, Cachable {
     @Published private(set) var contestantsCache: [Contestant] = []
+    @Published private(set) var contestantImagesCache: [Int: Data] = [:]
+    
+    private let imageMemoryCache = ImageMemoryCache()
+    
     var cacheTimestamp: Date?
     var isFetching: Bool = false
     
@@ -38,5 +42,16 @@ class ContestantsService: ContestantsServiceProtocol, Cachable {
         
         cacheTimestamp = now
         contestantsCache = contestants
+    }
+    
+    func getContestantImage(for id: Int) async -> Data? {
+        let contestant = contestantsCache.first(where: { $0.id == id })
+        let imageUrl = contestant?.imageUrl ?? "https://picsum.photos/200"
+        
+        guard let url = URL(string: imageUrl) else { return nil }
+        
+        let data = try? Data(contentsOf: url)
+        
+        return nil
     }
 }
