@@ -97,6 +97,6 @@ struct RoomListView: View {
 
 #Preview {
     RoomListView(viewModel: RoomListViewModel())
-        .environmentObject(AppEnvironment())
+        .environmentObject(AppEnvironment.shared)
         .environmentObject(ToastManager())
 }

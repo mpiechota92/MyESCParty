@@ -8,16 +8,16 @@
 import Foundation
 
 class ContestantsService: ContestantsServiceProtocol, Cachable {
-    @Published private(set) var contestantsCache: [Contestant] = []
-    @Published private(set) var contestantImagesCache: [Int: Data] = [:]
+    @Published private(set) var contestants: [Contestant] = []
+    @Published private(set) var contestantsImages: [Int: Data] = [:]
     
-    private let imageMemoryCache = ImageMemoryCache()
+    private let imageManager: ImageManager = ImageManager()
     
     var cacheTimestamp: Date?
     var isFetching: Bool = false
     
     var contestantsCachePublisher: Published<[Contestant]>.Publisher {
-        $contestantsCache
+        $contestants
     }
     
     func fetchContestants(forceRefresh: Bool = false) async throws {
@@ -41,17 +41,15 @@ class ContestantsService: ContestantsServiceProtocol, Cachable {
             .value
         
         cacheTimestamp = now
-        contestantsCache = contestants
+        self.contestants = contestants
     }
     
-    func getContestantImage(for id: Int) async -> Data? {
-        let contestant = contestantsCache.first(where: { $0.id == id })
-        let imageUrl = contestant?.imageUrl ?? "https://picsum.photos/200"
-        
-        guard let url = URL(string: imageUrl) else { return nil }
-        
-        let data = try? Data(contentsOf: url)
-        
-        return nil
-    }
+//    func getContestantImage(for id: Int) async throws -> Data {
+//        let contestant = contestants.first(where: { $0.id == id })
+//        let imageUrl = contestant?.imageUrl ?? "https://picsum.photos/200"
+//        
+//        let data = try await imageManager.image(for: imageUrl)
+//        
+//        return data
+//    }
 }

@@ -14,7 +14,7 @@ struct MyESCPartyApp: App {
     @StateObject private var authViewModel: AuthViewModel
     
     init() {
-        let env = AppEnvironment()
+        let env = AppEnvironment.shared
         _env = StateObject(wrappedValue: env)
         _authViewModel = StateObject(wrappedValue: AuthViewModel(authManager: env.resolve()))
     }

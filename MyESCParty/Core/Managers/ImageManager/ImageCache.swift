@@ -29,9 +29,9 @@ final class ImageCache {
         return nil
     }
     
-    func saveImage(_ data: Data, fileName key: String) {
-        memory.set(data, for: key)
-        disk.save(data, for: key)
+    func saveImage(_ data: Data, fileName url: String) {
+        memory.set(data, for: url)
+        disk.save(data, for: cacheKey(for: url))
     }
     
     private func cacheKey(for url: String) -> String {

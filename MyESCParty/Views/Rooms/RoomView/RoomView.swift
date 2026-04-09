@@ -83,4 +83,5 @@ struct RoomView: View {
 
 #Preview {
     RoomView(viewModel: RoomViewModel(roomId: 1), roomName: "Global", roomType: .publicRoom)
+        .environmentObject(AppEnvironment.shared)
 }

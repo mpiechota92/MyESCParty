@@ -8,10 +8,12 @@
 import Foundation
 
 final class AppEnvironment: ObservableObject {
+    static let shared = AppEnvironment()
+    
     private var services: [ObjectIdentifier: Any] = [:]
     private let isDemo: Bool
     
-    init() {
+    private init() {
         self.isDemo = UserDefaults.standard.bool(forKey: "demo_mode")
         registerServices()
     }
@@ -22,7 +24,8 @@ final class AppEnvironment: ObservableObject {
             registerRoomServices,
             registerContestantServices,
             registerVoteServices,
-            registerResultsServices
+            registerResultsServices,
+            registerImageServices
         ]
         
         factories.forEach { $0() }
@@ -65,6 +68,11 @@ final class AppEnvironment: ObservableObject {
             online: ResultsService()) as ResultsServiceProtocol)
     }
     
+    private func registerImageServices() {
+        register(resolveService(
+            demo: LocalImageService(),
+            online: ImageService()) as ImageServiceProtocol)
+    }
     // MARK: - Helpers
     
     private func resolveService<T>(demo: T, online: T) -> T {

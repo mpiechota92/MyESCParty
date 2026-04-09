@@ -32,7 +32,7 @@ struct MainTabBarView: View {
                         Text("Contestants")
                     }
                 
-                VoteView(viewModel: VoteViewModel(service: env.resolve()))
+                VoteView(viewModel: VoteViewModel(service: env.resolve(), voteManager: env.resolve()))
                     .tabItem {
                         Image(systemName: "pencil")
                         Text("Vote")
@@ -44,11 +44,12 @@ struct MainTabBarView: View {
             guard let error else { return }
             toastManager.showErrorToast(error: error)
         }
+        .environmentObject(ImageManager(service: env.resolve()))
     }
 }
 
 #Preview {
     MainTabBarView()
         .environmentObject(ToastManager())
-        .environmentObject(AppEnvironment())
+        .environmentObject(AppEnvironment.shared)
 }

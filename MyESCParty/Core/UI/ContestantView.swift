@@ -14,31 +14,34 @@ enum ContestantViewCellType: String {
 }
 
 struct ContestantView: View {
+    @EnvironmentObject private var imageManager: ImageManager
+    @EnvironmentObject private var toastManager: ToastManager
+    
     var contestant: Contestant
     let cellType: ContestantViewCellType
-    let imageUrl: URL = URL(string: "https://picsum.photos/200")!
+    
+    @State private var image: UIImage?
     
     var body: some View {
         ZStack {
             HStack {
-                AsyncImage(url: imageUrl) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                    case .failure(_):
-                        Image(systemName: "questionmark")
-                            .font(.headline)
-                    @unknown default:
-                        Image(systemName: "questionmark")
-                            .font(.headline)
-                    }
+                if let image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .frame(width: 75, height: 75)
+                } else {
+                    ProgressView()
+                        .frame(width: 75, height: 75)
+                        .task {
+                            do {
+                                // TODO: change after updating images in db
+                                let imageUrl = "https://picsum.photos/seed/\(contestant.id)/200"
+                                image = try await imageManager.image(for: imageUrl)
+                            } catch {
+                                toastManager.showToast(message: error.localizedDescription, type: .error)
+                            }
+                        }
                 }
-                .frame(width: 75, height: 75)
-                .background(.red)
                 
                 VStack(alignment: .leading) {
                     Text(contestant.country)
@@ -72,4 +75,5 @@ struct ContestantView: View {
 
 #Preview {
     ContestantView(contestant: .mockSweeden, cellType: .details)
+        .environmentObject(ImageManager())
 }

@@ -13,6 +13,9 @@ struct RoomParticipant: Identifiable, Decodable {
     var username: String
     var isAdmin: Bool?
     
+    // TODO: Add version of the image so if it's updated,
+    // the new one is downloaded right away
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case roomId = "room_id"

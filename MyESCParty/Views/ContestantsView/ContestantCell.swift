@@ -20,8 +20,6 @@ struct ContestantCell: View {
         .navigationDestination(isPresented: $showDetails) {
             Text("Information about \(contestant.country)")
         }
-        
-        
     }
 }
 

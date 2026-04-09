@@ -41,6 +41,10 @@
 		BF1FB9A62E1EEC1100DF1E39 /* ContestantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */; };
 		BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */; };
 		BF2437C82F7E97FB00387E50 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2437C72F7E97F900387E50 /* ImageCache.swift */; };
+		BF2437CB2F7EA9CE00387E50 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2437CA2F7EA9CE00387E50 /* ImageService.swift */; };
+		BF2437CD2F7EA9E400387E50 /* ImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2437CC2F7EA9E400387E50 /* ImageServiceProtocol.swift */; };
+		BF2437CF2F7EA9F800387E50 /* LocalImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2437CE2F7EA9F800387E50 /* LocalImageService.swift */; };
+		BF2437D22F7EAE0900387E50 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2437D12F7EAE0900387E50 /* ImageManager.swift */; };
 		BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */; };
 		BF2A09C12E296540001AC071 /* InLineLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09C02E296540001AC071 /* InLineLoadingView.swift */; };
 		BF2A09C32E29654C001AC071 /* FullScreenLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2A09C22E29654C001AC071 /* FullScreenLoadingView.swift */; };
@@ -182,6 +186,10 @@
 		BF1FB9A52E1EEC1100DF1E39 /* ContestantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsViewModel.swift; sourceTree = "<group>"; };
 		BF1FB9A72E1EF32700DF1E39 /* ContestantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantCell.swift; sourceTree = "<group>"; };
 		BF2437C72F7E97F900387E50 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		BF2437CA2F7EA9CE00387E50 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		BF2437CC2F7EA9E400387E50 /* ImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceProtocol.swift; sourceTree = "<group>"; };
+		BF2437CE2F7EA9F800387E50 /* LocalImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageService.swift; sourceTree = "<group>"; };
+		BF2437D12F7EAE0900387E50 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		BF2A09BD2E295DD1001AC071 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BF2A09C02E296540001AC071 /* InLineLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InLineLoadingView.swift; sourceTree = "<group>"; };
 		BF2A09C22E29654C001AC071 /* FullScreenLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoadingView.swift; sourceTree = "<group>"; };
@@ -410,6 +418,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BF2437D02F7EADE900387E50 /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				BF2437C72F7E97F900387E50 /* ImageCache.swift */,
+				BF2437D12F7EAE0900387E50 /* ImageManager.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
 		BF2A09C42E296F5F001AC071 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +653,7 @@
 				BF14B8F52E2E656A00FB7253 /* VoteManager.swift */,
 				BF2A09C42E296F5F001AC071 /* Validators */,
 				BF557C5E2E2519170024F48A /* ToastManager */,
+				BF2437D02F7EADE900387E50 /* ImageManager */,
 				BF90855A2D73703100B40537 /* Database */,
 			);
 			path = Managers;
@@ -736,6 +754,7 @@
 				BF1FB9A32E1EE96600DF1E39 /* ContestantsService.swift */,
 				BFFDCEA22E2F916E00E91903 /* VoteService.swift */,
 				BFEB176D2E379A5700AB7329 /* ResultsService.swift */,
+				BF2437CA2F7EA9CE00387E50 /* ImageService.swift */,
 			);
 			path = Online;
 			sourceTree = "<group>";
@@ -749,6 +768,7 @@
 				BF9A7B992E3A4E1300EB56FA /* LocalContestantsService.swift */,
 				BF9A7B9B2E3A4E5A00EB56FA /* LocalVoteService.swift */,
 				BF9A7B9D2E3A4EA100EB56FA /* LocalResultsService.swift */,
+				BF2437CE2F7EA9F800387E50 /* LocalImageService.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -762,6 +782,7 @@
 				BF9A7B8D2E3A4CE100EB56FA /* ContestantsServiceProtocol.swift */,
 				BF9A7B8F2E3A4CFA00EB56FA /* VoteServiceProtocol.swift */,
 				BF9A7B912E3A4D3300EB56FA /* ResultsServiceProtocol.swift */,
+				BF2437CC2F7EA9E400387E50 /* ImageServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -777,7 +798,6 @@
 		BFC9F5232F768B1200DA757E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BF2437C72F7E97F900387E50 /* ImageCache.swift */,
 				BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */,
 				BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */,
 			);
@@ -978,6 +998,7 @@
 				BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */,
 				BF0A76BD2F7596AD002804CC /* View+RefreshableTask.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
+				BF2437CD2F7EA9E400387E50 /* ImageServiceProtocol.swift in Sources */,
 				BF9A7B9E2E3A4EA100EB56FA /* LocalResultsService.swift in Sources */,
 				BFFDCEA32E2F916E00E91903 /* VoteService.swift in Sources */,
 				BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */,
@@ -994,12 +1015,14 @@
 				BF9085522D736D8400B40537 /* VoteListCell.swift in Sources */,
 				BF90856C2D73755700B40537 /* LoginView.swift in Sources */,
 				BF8E44AD2E26BBCD0064E6A5 /* UserRoom.swift in Sources */,
+				BF2437CB2F7EA9CE00387E50 /* ImageService.swift in Sources */,
 				BF2FF1C72DFB25670060E323 /* ContentView.swift in Sources */,
 				BF637D582E2D0F5A00B828E7 /* BaseButton.swift in Sources */,
 				BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */,
 				BF14B8F32E2E64A600FB7253 /* Vote.swift in Sources */,
 				BF2FF1C52DFB1A420060E323 /* AuthViewModel.swift in Sources */,
 				BF7E3CDD2DE09D31003740BD /* VoteViewModel.swift in Sources */,
+				BF2437D22F7EAE0900387E50 /* ImageManager.swift in Sources */,
 				BF0B5E232E00419F00517B70 /* RoomListView.swift in Sources */,
 				BF9A7B9C2E3A4E5A00EB56FA /* LocalVoteService.swift in Sources */,
 				BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */,
@@ -1021,6 +1044,7 @@
 				BFEB17722E379ADF00AB7329 /* LeaderboardEntry.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
+				BF2437CF2F7EA9F800387E50 /* LocalImageService.swift in Sources */,
 				BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */,
 				BF9A7B922E3A4D3300EB56FA /* ResultsServiceProtocol.swift in Sources */,
 				BF0B5E292E00445C00517B70 /* RoomListService.swift in Sources */,
