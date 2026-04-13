@@ -10,6 +10,8 @@ import SwiftUI
 struct MainTabBarView: View {
     @EnvironmentObject var env: AppEnvironment
     @EnvironmentObject var toastManager: ToastManager
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     @StateObject private var viewModel: MainTabBarViewModel = MainTabBarViewModel()
     
     var body: some View {
@@ -33,11 +35,12 @@ struct MainTabBarView: View {
                         Text("Vote")
                     }
                 
-                UserSettingsView()
+                UserSettingsView(viewModel: UserSettingsViewModel(service: env.resolve()))
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("You")
                     }
+                
             }
             .tint(.lightNavy)
         }
@@ -51,6 +54,7 @@ struct MainTabBarView: View {
 
 #Preview {
     MainTabBarView()
+        .environmentObject(AuthViewModel())
         .environmentObject(ToastManager())
         .environmentObject(AppEnvironment.shared)
 }

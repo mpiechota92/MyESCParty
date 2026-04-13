@@ -9,26 +9,41 @@ import SwiftUI
 
 struct UserSettingsView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var imageManager: ImageManager
+    @EnvironmentObject var toastManager: ToastManager
+    
+    @StateObject private var viewModel: UserSettingsViewModel
     
     @State private var showLogout: Bool = false
+    @State private var showUserEditScreen: Bool = false
+    
+    init(viewModel: UserSettingsViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Image("cat")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 150)
-                    .clipShape(Circle())
-                    .padding(.top, 50)
-                    .overlay(alignment: .bottomTrailing) {
-                        Image(systemName: "camera")
-                    }
-                
-                Text("Maciej")
-                    .font(.largeTitle)
+                VStack(spacing: 20) {
+                    Image("cat")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                        .padding(.top, 50)
+                        .overlay(alignment: .bottomTrailing) {
+                            Image(systemName: "camera")
+                        }
+                    
+                    Text(viewModel.userName)
+                        .font(.largeTitle)
+                }
+                .onTapGesture {
+                    showUserEditScreen.toggle()
+                }
                 
                 List {
-                    Section {
+                    Section("Account") {
                         NavigationLink {
                             Text("Privacy")
                         } label: {
@@ -42,7 +57,7 @@ struct UserSettingsView: View {
                         }
                     }
                     
-                    Section {
+                    Section("App") {
                         NavigationLink {
                             Text("Settings")
                         } label: {
@@ -77,17 +92,27 @@ struct UserSettingsView: View {
                 .scrollDisabled(true)
                 .tint(.black)
             }
+            .navigationTitle("User Settings")
+            .toolbar(.hidden)
+            .navigationDestination(isPresented: $showUserEditScreen) {
+                UserEditScreenView(viewModel: viewModel)
+            }
+        }
+        .task {
+            do {
+                try await viewModel.getUser(userId: authViewModel.getUserID())
+            } catch {
+                toastManager.showErrorToast(error: error)
+            }
         }
         .sheet(isPresented: $showLogout) {
             // TODO: Separate View
             VStack(spacing: 10) {
                 Text("Are you sure you want to logout?")
                 Button("Yes", role: .destructive) {
-                    
                     showLogout.toggle()
                 }
                 Button("No") {
-                    
                     showLogout.toggle()
                 }
             }
@@ -97,6 +122,8 @@ struct UserSettingsView: View {
 }
 
 #Preview {
-    UserSettingsView()
+    UserSettingsView(viewModel: UserSettingsViewModel())
+        .environmentObject(ImageManager())
+        .environmentObject(ToastManager())
         .environmentObject(AuthViewModel())
 }

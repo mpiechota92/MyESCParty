@@ -12,6 +12,7 @@ class AuthViewModel: BaseViewModel {
     @Published var isSessionActive: Bool = false
     @Published var user: AppUser? = nil
     
+    
     private let authManager: AuthManagerProtocol
     
     init(authManager: AuthManagerProtocol = AuthManager.shared) {
@@ -41,5 +42,9 @@ class AuthViewModel: BaseViewModel {
         try await authManager.signOut()
         self.isSessionActive = false
         self.user = nil
+    }
+    
+    func getUserID() -> String? {
+        return authManager.getUserUUID()?.uuidString
     }
 }

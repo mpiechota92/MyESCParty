@@ -23,3 +23,7 @@ struct Profile: Codable {
     let id: String
     let username: String
 }
+
+extension AppUser {
+    static let mock: AppUser = AppUser(uid: "123", email: "email@mock.com", username: "Maciej")
+}

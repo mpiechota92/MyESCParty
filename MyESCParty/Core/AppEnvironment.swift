@@ -25,7 +25,8 @@ final class AppEnvironment: ObservableObject {
             registerContestantServices,
             registerVoteServices,
             registerResultsServices,
-            registerImageServices
+            registerImageServices,
+            registerUserSettingsServices
         ]
         
         factories.forEach { $0() }
@@ -73,6 +74,13 @@ final class AppEnvironment: ObservableObject {
             demo: LocalImageService(),
             online: ImageService()) as ImageServiceProtocol)
     }
+    
+    private func registerUserSettingsServices() {
+        register(resolveService(
+            demo: LocalUserSettingsService(),
+            online: UserSettingsService()) as UserSettingsServiceProtocol)
+    }
+    
     // MARK: - Helpers
     
     private func resolveService<T>(demo: T, online: T) -> T {

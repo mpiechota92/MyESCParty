@@ -101,4 +101,15 @@ class AuthManager: AuthManagerProtocol {
         
         return databaseManager.client.auth.currentUser?.id
     }
+    
+    func getUser(id: String) async throws -> AppUser? {
+        let profiles: [Profile] = try await databaseManager.client
+            .from(.profiles)
+            .select()
+            .eq("id", value: id)
+            .execute()
+            .value
+        
+        return AppUser(uid: id, email: "", username: profiles.first?.username ?? "")
+    }
 }

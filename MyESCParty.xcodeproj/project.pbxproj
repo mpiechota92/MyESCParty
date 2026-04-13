@@ -126,6 +126,13 @@
 		BFC9F5272F768C0600DA757E /* ImageDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */; };
 		BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167072E38C30F0030A26F /* ResultsView.swift */; };
 		BFE1670A2E38C6430030A26F /* ResultsEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167092E38C6430030A26F /* ResultsEntryCell.swift */; };
+		BFE811E12F8D275D004DB827 /* UserEditScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811E02F8D275D004DB827 /* UserEditScreenView.swift */; };
+		BFE811E32F8D336F004DB827 /* NameChangeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811E22F8D336F004DB827 /* NameChangeSheetView.swift */; };
+		BFE811E52F8D33A0004DB827 /* ImageChangeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811E42F8D33A0004DB827 /* ImageChangeSheetView.swift */; };
+		BFE811E72F8D3634004DB827 /* UserSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811E62F8D3634004DB827 /* UserSettingsViewModel.swift */; };
+		BFE811E92F8D3FEA004DB827 /* UserSettingsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811E82F8D3FEA004DB827 /* UserSettingsServiceProtocol.swift */; };
+		BFE811EB2F8D403E004DB827 /* LocalUserSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811EA2F8D403E004DB827 /* LocalUserSettingsService.swift */; };
+		BFE811ED2F8D405A004DB827 /* UserSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE811EC2F8D405A004DB827 /* UserSettingsService.swift */; };
 		BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */; };
 		BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */; };
 		BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB176D2E379A5700AB7329 /* ResultsService.swift */; };
@@ -265,6 +272,13 @@
 		BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDiskCache.swift; sourceTree = "<group>"; };
 		BFE167072E38C30F0030A26F /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		BFE167092E38C6430030A26F /* ResultsEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsEntryCell.swift; sourceTree = "<group>"; };
+		BFE811E02F8D275D004DB827 /* UserEditScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditScreenView.swift; sourceTree = "<group>"; };
+		BFE811E22F8D336F004DB827 /* NameChangeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeSheetView.swift; sourceTree = "<group>"; };
+		BFE811E42F8D33A0004DB827 /* ImageChangeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChangeSheetView.swift; sourceTree = "<group>"; };
+		BFE811E62F8D3634004DB827 /* UserSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewModel.swift; sourceTree = "<group>"; };
+		BFE811E82F8D3FEA004DB827 /* UserSettingsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsServiceProtocol.swift; sourceTree = "<group>"; };
+		BFE811EA2F8D403E004DB827 /* LocalUserSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserSettingsService.swift; sourceTree = "<group>"; };
+		BFE811EC2F8D405A004DB827 /* UserSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsService.swift; sourceTree = "<group>"; };
 		BFEB17662E37693800AB7329 /* HorizontalSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSegmentedPicker.swift; sourceTree = "<group>"; };
 		BFEB17682E376D7500AB7329 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		BFEB176D2E379A5700AB7329 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
@@ -680,6 +694,7 @@
 		BF97EC9E2F8BD700008BD149 /* UserSettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				BFE811DF2F8D273D004DB827 /* UserEditScreen */,
 				BF97EC9F2F8BD70F008BD149 /* Model */,
 				BF97ECA02F8BD72C008BD149 /* UserSettingsView.swift */,
 			);
@@ -689,6 +704,7 @@
 		BF97EC9F2F8BD70F008BD149 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFE811E62F8D3634004DB827 /* UserSettingsViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -774,6 +790,7 @@
 				BFFDCEA22E2F916E00E91903 /* VoteService.swift */,
 				BFEB176D2E379A5700AB7329 /* ResultsService.swift */,
 				BF2437CA2F7EA9CE00387E50 /* ImageService.swift */,
+				BFE811EC2F8D405A004DB827 /* UserSettingsService.swift */,
 			);
 			path = Online;
 			sourceTree = "<group>";
@@ -788,6 +805,7 @@
 				BF9A7B9B2E3A4E5A00EB56FA /* LocalVoteService.swift */,
 				BF9A7B9D2E3A4EA100EB56FA /* LocalResultsService.swift */,
 				BF2437CE2F7EA9F800387E50 /* LocalImageService.swift */,
+				BFE811EA2F8D403E004DB827 /* LocalUserSettingsService.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -802,6 +820,7 @@
 				BF9A7B8F2E3A4CFA00EB56FA /* VoteServiceProtocol.swift */,
 				BF9A7B912E3A4D3300EB56FA /* ResultsServiceProtocol.swift */,
 				BF2437CC2F7EA9E400387E50 /* ImageServiceProtocol.swift */,
+				BFE811E82F8D3FEA004DB827 /* UserSettingsServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -821,6 +840,16 @@
 				BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BFE811DF2F8D273D004DB827 /* UserEditScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BFE811E02F8D275D004DB827 /* UserEditScreenView.swift */,
+				BFE811E22F8D336F004DB827 /* NameChangeSheetView.swift */,
+				BFE811E42F8D33A0004DB827 /* ImageChangeSheetView.swift */,
+			);
+			path = UserEditScreen;
 			sourceTree = "<group>";
 		};
 		BFEB176A2E379A3600AB7329 /* Results */ = {
@@ -997,6 +1026,7 @@
 				BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */,
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
 				BF9A7B982E3A4DCE00EB56FA /* LocalRoomListService.swift in Sources */,
+				BFE811E12F8D275D004DB827 /* UserEditScreenView.swift in Sources */,
 				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
 				BF1FB99E2E1E9D8E00DF1E39 /* UserMenu.swift in Sources */,
 				BFEB17692E376D7500AB7329 /* StatefulPreviewWrapper.swift in Sources */,
@@ -1020,11 +1050,15 @@
 				BF2437CD2F7EA9E400387E50 /* ImageServiceProtocol.swift in Sources */,
 				BF9A7B9E2E3A4EA100EB56FA /* LocalResultsService.swift in Sources */,
 				BFFDCEA32E2F916E00E91903 /* VoteService.swift in Sources */,
+				BFE811EB2F8D403E004DB827 /* LocalUserSettingsService.swift in Sources */,
 				BFFD107A2E2A979900D7EC57 /* DropViewDelegate.swift in Sources */,
+				BFE811ED2F8D405A004DB827 /* UserSettingsService.swift in Sources */,
 				BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */,
 				BF0B5E362E005CA400517B70 /* EscButton.swift in Sources */,
 				BF90854E2D7365D000B40537 /* VoteView.swift in Sources */,
 				BFC9F5252F768B2200DA757E /* ImageMemoryCache.swift in Sources */,
+				BFE811E72F8D3634004DB827 /* UserSettingsViewModel.swift in Sources */,
+				BFE811E92F8D3FEA004DB827 /* UserSettingsServiceProtocol.swift in Sources */,
 				BF2A09C62E296F75001AC071 /* ValidatorManager.swift in Sources */,
 				BF8E44B12E278D5D0064E6A5 /* RoomParticipant.swift in Sources */,
 				BF9A7BA22E3A4EF800EB56FA /* LocalAuthManager.swift in Sources */,
@@ -1072,6 +1106,7 @@
 				BFFFC3682E2BE3E9003B3D67 /* DroppableList.swift in Sources */,
 				BF1FB9A42E1EE96600DF1E39 /* ContestantsService.swift in Sources */,
 				BF9A7B882E3A4C6800EB56FA /* RoomServiceProtocol.swift in Sources */,
+				BFE811E32F8D336F004DB827 /* NameChangeSheetView.swift in Sources */,
 				BF7E3CDF2DE09D4C003740BD /* VoteListItem.swift in Sources */,
 				BF14B8F02E2E497500FB7253 /* RevealOverlayScrollObserver.swift in Sources */,
 				BF75CEEB2E30EE3B00B92180 /* UserMenuViewModel.swift in Sources */,
@@ -1080,6 +1115,7 @@
 				BF9A7B9A2E3A4E1300EB56FA /* LocalContestantsService.swift in Sources */,
 				BF637D5C2E2D146900B828E7 /* ListOffsetKey.swift in Sources */,
 				BF9085432D73651E00B40537 /* MainTabBarView.swift in Sources */,
+				BFE811E52F8D33A0004DB827 /* ImageChangeSheetView.swift in Sources */,
 				BF1BF1B52E214DDE002F176B /* ContestantView.swift in Sources */,
 				BF557C622E2519820024F48A /* ToastManager.swift in Sources */,
 				BF8E44AF2E277B040064E6A5 /* RoomService.swift in Sources */,
