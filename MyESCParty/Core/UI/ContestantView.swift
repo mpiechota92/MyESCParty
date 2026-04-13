@@ -19,6 +19,7 @@ struct ContestantView: View {
     
     var contestant: Contestant
     let cellType: ContestantViewCellType
+    let size: Double
     
     @State private var image: UIImage?
     
@@ -28,10 +29,11 @@ struct ContestantView: View {
                 if let image {
                     Image(uiImage: image)
                         .resizable()
-                        .frame(width: 75, height: 75)
+                        .frame(width: size, height: size)
                 } else {
                     ProgressView()
-                        .frame(width: 75, height: 75)
+                        .tint(.navy)
+                        .frame(width: size, height: size)
                         .task {
                             do {
                                 // TODO: change after updating images in db
@@ -68,12 +70,13 @@ struct ContestantView: View {
                 .scaledToFit()
                 .frame(width: 30, height: 30)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 60)
+                .padding(.leading, (size - 15))
         }
     }
 }
 
 #Preview {
-    ContestantView(contestant: .mockSweeden, cellType: .details)
+    ContestantView(contestant: .mockSweeden, cellType: .details, size: 100)
         .environmentObject(ImageManager())
+        .environmentObject(ToastManager())
 }

@@ -56,15 +56,15 @@ struct RoomView: View {
                         }
                     }
                 }
+                .refreshableTask {
+                    await viewModel.fetchUsers(forceRefresh: true)
+                }
                 .safeAreaInset(edge: .bottom) {
                     BaseButton(title: "Show results") {
                         showResults = true
                     }
                     .padding(20)
                     .shadow(radius: 8)
-                }
-                .refreshable {
-                    await viewModel.fetchUsers(forceRefresh: true)
                 }
             }
             

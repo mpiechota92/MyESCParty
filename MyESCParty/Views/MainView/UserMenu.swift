@@ -60,4 +60,5 @@ struct UserMenu: View {
 
 #Preview {
     UserMenu(parentViewModel: BaseViewModel())
+        .environmentObject(AuthViewModel())
 }

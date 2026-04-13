@@ -17,7 +17,6 @@ struct RoomListView: View {
     
     @State private var searchText: String = ""
     
-    // TODO: Why inject viewModel?
     init(viewModel: RoomListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -33,6 +32,7 @@ struct RoomListView: View {
                     LazyVStack {
                         if viewModel.loadingType == .inline {
                             ProgressView()
+                                .tint(.navy)
                         }
                         
                         ForEach(viewModel.rooms) { room in
@@ -68,6 +68,7 @@ struct RoomListView: View {
             .onChange(of: searchText) {
                 viewModel.searchText = searchText
             }
+            .toolbar(.hidden)
             .navigationTitle("Voting Rooms")
             .navigationDestination(isPresented: $createRoomMode) {
                 RoomCreationView(viewModel:

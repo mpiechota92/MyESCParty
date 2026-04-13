@@ -21,6 +21,7 @@ class RoomViewModel: BaseViewModel {
         super.init()
         
         service.usersCachePublisher
+            .map { $0[roomId] ?? [] }
             .receive(on: DispatchQueue.main)
             .assign(to: &$users)
     }

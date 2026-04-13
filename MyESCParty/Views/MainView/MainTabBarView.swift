@@ -14,11 +14,6 @@ struct MainTabBarView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                
-                UserMenu(parentViewModel: viewModel)
-            }
             TabView {
                 RoomListView(viewModel: RoomListViewModel(service: env.resolve()))
                     .tabItem {
@@ -37,8 +32,14 @@ struct MainTabBarView: View {
                         Image(systemName: "pencil")
                         Text("Vote")
                     }
+                
+                UserSettingsView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("You")
+                    }
             }
-            .tint(.navy)
+            .tint(.lightNavy)
         }
         .onReceive(viewModel.$error) { error in
             guard let error else { return }

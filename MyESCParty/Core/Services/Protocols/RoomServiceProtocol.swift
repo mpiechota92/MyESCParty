@@ -8,11 +8,13 @@
 import Foundation
 
 protocol RoomServiceProtocol {
+    typealias RoomID = Int
+    
     func fetchUsers(roomId: Int, forceRefresh: Bool) async throws
     func leaveRoom(roomId: Int) async throws
     func deleteRoom(roomId: Int) async throws
     
-    var usersCachePublisher: Published<[RoomParticipant]>.Publisher { get }
+    var usersCachePublisher: Published<[RoomID: [RoomParticipant]]>.Publisher { get }
 }
 
 extension RoomServiceProtocol {

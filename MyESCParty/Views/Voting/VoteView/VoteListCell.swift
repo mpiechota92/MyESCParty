@@ -26,7 +26,7 @@ struct VoteListCell: View {
     
     var body: some View {
         ZStack(alignment: .trailing) {
-            ContestantView(contestant: contestant, cellType: .dragAndDrop)
+            ContestantView(contestant: contestant, cellType: .dragAndDrop, size: 75)
             
             if points > 0 {
                 Text("\(points)")

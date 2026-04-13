@@ -10,9 +10,9 @@ import Foundation
 class LocalRoomService: RoomServiceProtocol, Cachable {
     var cacheTimestamp: Date?
     
-    @Published private var usersCache: [RoomParticipant] = []
+    @Published private var usersCache: [RoomID: [RoomParticipant]] = [:]
     
-    var usersCachePublisher: Published<[RoomParticipant]>.Publisher {
+    var usersCachePublisher: Published<[RoomID: [RoomParticipant]]>.Publisher {
         $usersCache
     }
     
@@ -22,7 +22,7 @@ class LocalRoomService: RoomServiceProtocol, Cachable {
         }
         
         let filteredUsers = users.filter { $0.roomId == roomId }
-        usersCache = filteredUsers
+        usersCache[roomId] = filteredUsers
     }
     
     func leaveRoom(roomId: Int) async throws {

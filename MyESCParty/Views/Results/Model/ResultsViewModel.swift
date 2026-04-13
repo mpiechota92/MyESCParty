@@ -14,7 +14,7 @@ class ResultsViewModel: BaseViewModel {
     private let roomService: RoomServiceProtocol
     private let contestantsService: ContestantsServiceProtocol
     
-    @Published private var users: [RoomParticipant] = []
+    @Published private var users: [Int: [RoomParticipant]] = [:]
     @Published private var contestants: [Contestant] = []
     
     @Published var leaderboard: Leaderboard = []
@@ -43,7 +43,7 @@ class ResultsViewModel: BaseViewModel {
             
             try await self.roomService.fetchUsers(roomId: roomId, forceRefresh: true)
             try await self.contestantsService.fetchContestants()
-            let votes = try await self.resultsService.fetchResults(forStage: stage, users: self.users)
+            let votes = try await self.resultsService.fetchResults(forStage: stage, users: self.users[roomId] ?? [])
             
             self.leaderboard = LeaderboardCalculator.calculate(from: votes, contestants: self.contestantsFor(stage: stage))
         }

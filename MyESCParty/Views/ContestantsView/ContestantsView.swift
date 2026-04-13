@@ -47,4 +47,5 @@ struct ContestantsView: View {
 
 #Preview {
     ContestantsView(viewModel: ContestantsViewModel())
+        .environmentObject(ImageManager())
 }

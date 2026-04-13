@@ -17,12 +17,14 @@ struct MyESCPartyApp: App {
         let env = AppEnvironment.shared
         _env = StateObject(wrappedValue: env)
         _authViewModel = StateObject(wrappedValue: AuthViewModel(authManager: env.resolve()))
+        
+        UIRefreshControl.appearance().tintColor = .navy
     }
     
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView()
+                MainView()
                     .environmentObject(authViewModel)
                     .environmentObject(env)
                 

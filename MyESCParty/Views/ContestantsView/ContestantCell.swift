@@ -13,7 +13,7 @@ struct ContestantCell: View {
     @State private var showDetails = false
     
     var body: some View {
-        ContestantView(contestant: contestant, cellType: .details)
+        ContestantView(contestant: contestant, cellType: .details, size: 100)
         .onTapGesture {
             showDetails = true
         }
@@ -25,4 +25,5 @@ struct ContestantCell: View {
 
 #Preview {
     ContestantCell(contestant: .mockSweeden)
+        .environmentObject(ImageManager())
 }

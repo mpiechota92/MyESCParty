@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  MyESCParty
 //
 //  Created by Maciej Piechota on 12/06/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
@@ -20,6 +20,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
         .environmentObject(AuthViewModel())
 }

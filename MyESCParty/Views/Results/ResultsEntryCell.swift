@@ -26,17 +26,24 @@ struct ResultsEntryCell: View {
     
     var body: some View {
         ZStack(alignment: .trailing) {
-            ContestantView(contestant: leaderboardEntry.contestant, cellType: .none)
+            ContestantView(contestant: leaderboardEntry.contestant, cellType: .none, size: 100)
+                .overlay(alignment: .bottomTrailing) {
+                    Text("\(index + 1).")
+                        .font(.caption)
+                        .padding(5)
+                }
             
             Text("\(leaderboardEntry.score)")
                 .foregroundStyle(color)
                 .font(.title)
                 .bold()
                 .padding(.trailing, 50)
+            
         }
     }
 }
 
 #Preview {
     ResultsEntryCell(leaderboardEntry: LeaderboardEntry(contestant: .mockFrance, score: 321), index: 0)
+        .environmentObject(ImageManager())
 }

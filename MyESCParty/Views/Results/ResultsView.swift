@@ -35,10 +35,6 @@ struct ResultsView: View {
                 .refreshable {
                     await fetchResults()
                 }
-                
-                if viewModel.loadingType == .fullScreen {
-                    FullScreenLoadingView()
-                }
             }
         }
         .task {
@@ -54,4 +50,5 @@ struct ResultsView: View {
 
 #Preview {
     ResultsView()
+        .environmentObject(ImageManager())
 }

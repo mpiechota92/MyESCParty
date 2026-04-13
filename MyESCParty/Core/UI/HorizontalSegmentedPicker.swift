@@ -53,11 +53,12 @@ struct HorizontalSegmentedPicker<Item: SegmentedPickerElement>: View {
             onSelect(item)
         } label: {
             Text(item.rawValue)
-                .id(item)
+                .padding(.horizontal, 15)
+                .frame(minWidth: 55)
                 .font(.title2.bold())
-                .padding(.vertical, 5)
-                .padding(.horizontal, 5)
+                .padding(5)
                 .foregroundStyle(isSelected ? .white : .black)
+                .id(item)
         }
         .background {
             if isSelected {

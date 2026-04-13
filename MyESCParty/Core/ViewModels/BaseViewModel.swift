@@ -30,6 +30,7 @@ class BaseViewModel: ObservableObject {
             try await operation()
         } catch {
             self.error = error
+            print(error.localizedDescription)
         }
         
     }

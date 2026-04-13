@@ -10,16 +10,17 @@ import Foundation
 class RoomService: RoomServiceProtocol, Cachable {
     var cacheTimestamp: Date?
     
-    @Published private var usersCache: [RoomParticipant] = []
+    @Published private var usersCache: [RoomID: [RoomParticipant]] = [:]
+    private var cacheTimestamps: [RoomID: Date] = [:]
     
-    var usersCachePublisher: Published<[RoomParticipant]>.Publisher {
+    var usersCachePublisher: Published<[RoomID: [RoomParticipant]]>.Publisher {
         $usersCache
     }
     
     func fetchUsers(roomId: Int, forceRefresh: Bool = false) async throws {
         let now = Date()
         
-        if !forceRefresh, let timestamp = cacheTimestamp, now.timeIntervalSince(timestamp) < cacheTTL {
+        if !forceRefresh, let timestamp = cacheTimestamps[roomId], now.timeIntervalSince(timestamp) < cacheTTL {
             return
         }
         
@@ -34,8 +35,8 @@ class RoomService: RoomServiceProtocol, Cachable {
             .execute()
             .value
         
-        cacheTimestamp = now
-        usersCache = users
+        cacheTimestamps[roomId] = now
+        usersCache[roomId] = users
     }
     
     func leaveRoom(roomId: Int) async throws {
