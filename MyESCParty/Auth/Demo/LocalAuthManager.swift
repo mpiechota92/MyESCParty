@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Supabase
 
 class LocalAuthManager: AuthManagerProtocol {
     private let appUser = AppUser(
@@ -36,5 +37,10 @@ class LocalAuthManager: AuthManagerProtocol {
     func getUserUUID() -> UUID? {
         let uuid = UUID(uuidString: appUser.uid)
         return uuid
+    }
+    
+    func getCurrentSession() -> Session? {
+        // TODO: change? mock session?
+        return nil
     }
 }

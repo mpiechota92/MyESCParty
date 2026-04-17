@@ -8,8 +8,8 @@
 import Foundation
 
 class LocalUserSettingsService: UserSettingsServiceProtocol {
-    func changeName(newName: String) async throws {
-        
+    func changeName(newName: String, for userID: String?) async throws -> Profile {
+        return Profile(id: "123", username: "Maciej")
     }
     
     func changeProfilePicture(newProfilePicture: Data) async throws {

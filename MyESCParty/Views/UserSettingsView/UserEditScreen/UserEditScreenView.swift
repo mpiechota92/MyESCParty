@@ -72,6 +72,6 @@ struct UserEditScreenView: View {
 }
 
 #Preview {
-    UserEditScreenView(viewModel: UserSettingsViewModel())
+    UserEditScreenView(viewModel: UserSettingsViewModel(userID: "123"))
         .environmentObject(AuthViewModel())
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserSettingsServiceProtocol {
-    func changeName(newName: String) async throws
+    func changeName(newName: String, for userID: String?) async throws  -> Profile
     func changeProfilePicture(newProfilePicture: Data) async throws
     func getUserData(userId id: String) async throws -> String
 }

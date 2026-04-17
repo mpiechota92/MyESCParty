@@ -35,7 +35,7 @@ struct MainTabBarView: View {
                         Text("Vote")
                     }
                 
-                UserSettingsView(viewModel: UserSettingsViewModel(service: env.resolve()))
+                UserSettingsView(viewModel: UserSettingsViewModel(service: env.resolve(), userID: authViewModel.getUserID()))
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("You")

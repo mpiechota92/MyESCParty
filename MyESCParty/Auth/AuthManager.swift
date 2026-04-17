@@ -27,6 +27,7 @@ protocol AuthManagerProtocol {
     func signInWith(email: String, password: String) async throws -> AppUser
     func signUpWith(email: String, username: String, password: String) async throws -> AppUser
     func signOut() async throws
+    func getCurrentSession() -> Session?
     func getUserUUID() -> UUID?
 }
 
@@ -111,5 +112,9 @@ class AuthManager: AuthManagerProtocol {
             .value
         
         return AppUser(uid: id, email: "", username: profiles.first?.username ?? "")
+    }
+    
+    func getCurrentSession() -> Session? {
+        return databaseManager.client.auth.currentSession
     }
 }

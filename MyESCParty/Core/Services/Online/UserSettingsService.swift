@@ -7,11 +7,49 @@
 
 import Foundation
 
+enum UserSettingsServiceError: Error {
+    case nameDuplicated
+    case nameUpdateFailure
+    case missingUserID
+}
+
 class UserSettingsService: UserSettingsServiceProtocol {
     private let databaseManager: DatabaseManager = DatabaseManager.shared
     
-    func changeName(newName: String) async throws {
+    func changeName(newName: String, for userID: String?) async throws -> Profile {
+        guard let userID else {
+            throw UserSettingsServiceError.missingUserID
+        }
+        print(userID)
         
+        let profiles: [Profile] = try await databaseManager.client
+            .from(.profiles)
+            .select()
+            .eq("username", value: newName)
+            .execute()
+            .value
+        
+        guard profiles.isEmpty else {
+            throw UserSettingsServiceError.nameDuplicated
+        }
+        
+        let updateData: [String: String] = [
+            "username": newName
+        ]
+        
+        let updatedProfiles: [Profile] = try await databaseManager.client
+            .from(.profiles)
+            .update(updateData)
+            .eq("id", value: UUID(uuidString: userID))
+            .select()
+            .execute()
+            .value
+        
+        guard let profile = updatedProfiles.first else {
+            throw UserSettingsServiceError.nameUpdateFailure
+        }
+        
+        return profile
     }
     
     func changeProfilePicture(newProfilePicture: Data) async throws {

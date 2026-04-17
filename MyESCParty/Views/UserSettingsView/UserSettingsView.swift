@@ -100,7 +100,7 @@ struct UserSettingsView: View {
         }
         .task {
             do {
-                try await viewModel.getUser(userId: authViewModel.getUserID())
+                try await viewModel.fetchUser(userId: authViewModel.getUserID())
             } catch {
                 toastManager.showErrorToast(error: error)
             }
@@ -122,7 +122,7 @@ struct UserSettingsView: View {
 }
 
 #Preview {
-    UserSettingsView(viewModel: UserSettingsViewModel())
+    UserSettingsView(viewModel: UserSettingsViewModel(userID: "123"))
         .environmentObject(ImageManager())
         .environmentObject(ToastManager())
         .environmentObject(AuthViewModel())

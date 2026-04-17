@@ -47,4 +47,5 @@ class AuthViewModel: BaseViewModel {
     func getUserID() -> String? {
         return authManager.getUserUUID()?.uuidString
     }
+    
 }

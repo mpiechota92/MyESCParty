@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NameChangeSheetView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var toastManager: ToastManager
     
     @ObservedObject var viewModel: UserSettingsViewModel
     @Binding var isPresented: Bool
@@ -32,8 +33,11 @@ struct NameChangeSheetView: View {
                         Task {
                             try await viewModel.changeName(newName: newName)
                             
-                            if viewModel.error != nil {
+                            if let error = viewModel.error {
+                                toastManager.showErrorToast(error: error)
+                            } else {
                                 isPresented = false
+                                toastManager.showToast(message: "Name change successful!", type: .success)
                             }
                         }
                     }
@@ -70,6 +74,6 @@ struct NameChangeSheetView: View {
 }
 
 #Preview {
-    NameChangeSheetView(viewModel: UserSettingsViewModel(), isPresented: .constant(true))
+    NameChangeSheetView(viewModel: UserSettingsViewModel(userID: "123"), isPresented: .constant(true))
         .environmentObject(AuthViewModel())
 }
