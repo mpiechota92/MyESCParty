@@ -85,4 +85,5 @@ struct VoteView: View {
 
 #Preview {
     VoteView(viewModel: VoteViewModel())
+        .environmentObject(ImageManager())
 }

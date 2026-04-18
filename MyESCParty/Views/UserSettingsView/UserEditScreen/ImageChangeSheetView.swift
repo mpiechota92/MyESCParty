@@ -11,6 +11,7 @@ struct ImageChangeSheetView: View {
     var body: some View {
         VStack(spacing: 10) {
             Text("Edit profile picture")
+                .bold()
                 .padding(.top, 15)
             
             List {
@@ -34,6 +35,7 @@ struct ImageChangeSheetView: View {
                     }
                 }
             }
+            
         }
         .foregroundStyle(.black)
     }

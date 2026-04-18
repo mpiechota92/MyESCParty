@@ -24,7 +24,7 @@ struct RoomListView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Search", text: $searchText)
+                BaseTextField("Search", text: $searchText)
                     .padding()
                     .tint(.black)
                 
@@ -53,6 +53,10 @@ struct RoomListView: View {
                     await viewModel.fetchRooms(forceRefresh: true)
                 }
                 
+                
+                
+            }
+            .safeAreaInset(edge: .bottom) {
                 HStack {
                     BaseButton(title: "Join a room") {
                         
@@ -63,7 +67,6 @@ struct RoomListView: View {
                     }
                 }
                 .padding([.horizontal, .bottom], 20)
-                
             }
             .onChange(of: searchText) {
                 viewModel.searchText = searchText

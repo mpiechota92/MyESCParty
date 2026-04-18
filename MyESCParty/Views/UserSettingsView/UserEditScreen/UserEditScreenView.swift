@@ -60,6 +60,7 @@ struct UserEditScreenView: View {
                 .scrollDisabled(true)
                 .sheet(isPresented: $showNameChange) {
                     NameChangeSheetView(viewModel: viewModel, isPresented: $showNameChange)
+                        .presentationDetents([.fraction(0.20)])
                 }
             }
             
