@@ -20,30 +20,23 @@ struct LoginFieldsView: View {
                 Text(error.localizedDescription)
             }
             
-            TextField("Email", text: $viewModel.email)
-                .frame(width: 200)
-                .focused($focusedField, equals: .email)
-                .submitLabel(.next)
-                .keyboardType(.emailAddress)
-                .textContentType(.emailAddress)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .padding(.bottom)
+            BaseTextField("Email", text: $viewModel.email)
                 .onSubmit {
                     DispatchQueue.main.async {
                         focusedField = viewModel.authType == .signUp ? .username : .password
                     }
                 }
+                .emailFieldStyle()
+                .frame(width: 200)
+                .focused($focusedField, equals: .email)
+                .padding(.bottom)
             
             if viewModel.authType == .signUp {
-                TextField("username", text: $viewModel.username)
+                BaseTextField("username", text: $viewModel.username)
+                    .submitLabel(.next)
+                    .textContentType(.username)
                     .frame(width: 200)
                     .focused($focusedField, equals: .username)
-                    .submitLabel(.next)
-                    .keyboardType(.default)
-                    .textContentType(.username)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
                     .padding(.bottom)
                     .onSubmit {
                         DispatchQueue.main.async {
@@ -52,12 +45,9 @@ struct LoginFieldsView: View {
                     }
             }
             
-            SecureField("Password", text: $viewModel.password)
-                .frame(width: 200)
+            BaseSecureField("Password", text: $viewModel.password)
                 .textContentType(viewModel.authType == .signIn ? .password : .newPassword)
-                .focused($focusedField, equals: .password)
                 .submitLabel(viewModel.authType == .signUp ? .next : .done)
-                .padding(.bottom)
                 .onSubmit {
                     if viewModel.authType == .signUp {
                         DispatchQueue.main.async {
@@ -69,17 +59,20 @@ struct LoginFieldsView: View {
                         }
                     }
                 }
+                .frame(width: 200)
+                .focused($focusedField, equals: .password)
+                .padding(.bottom)
             
             if viewModel.authType == .signUp {
-                SecureField("Repeat password", text: $viewModel.repeatPassword)
-                    .frame(width: 200)
+                BaseSecureField("Repeat password", text: $viewModel.repeatPassword)
                     .textContentType(.newPassword)
-                    .focused($focusedField, equals: .repeatPassword)
                     .onSubmit {
                         Task {
                             await viewModel.submit(authViewModel: authViewModel)
                         }
                     }
+                    .frame(width: 200)
+                    .focused($focusedField, equals: .repeatPassword)
             }
         }
         .tint(.black)

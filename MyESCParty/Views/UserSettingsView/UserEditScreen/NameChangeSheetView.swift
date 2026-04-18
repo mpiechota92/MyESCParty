@@ -46,7 +46,7 @@ struct NameChangeSheetView: View {
                 }
                 .padding(.horizontal)
                 
-                TextField("New name", text: $newName)
+                BaseTextField("New name", text: $newName)
                     .padding()
                 
                 Text("People will see this name in the voting rooms you are in.")

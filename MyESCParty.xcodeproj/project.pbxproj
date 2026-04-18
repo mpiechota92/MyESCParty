@@ -122,6 +122,10 @@
 		BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */; };
 		BFA4EB582E1BDD06006EC79C /* SecurityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */; };
 		BFA4EB5A2E1BE91E006EC79C /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA4EB592E1BE91E006EC79C /* Cachable.swift */; };
+		BFC625D12F9295CB0047D247 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625D02F9295CB0047D247 /* BaseTextField.swift */; };
+		BFC625DD2F93961C0047D247 /* BaseSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625DC2F93961C0047D247 /* BaseSecureField.swift */; };
+		BFC625E02F93993D0047D247 /* View+applyIfLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625DF2F93993D0047D247 /* View+applyIfLet.swift */; };
+		BFC625E32F93A90E0047D247 /* EmailFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625E22F93A90E0047D247 /* EmailFieldStyle.swift */; };
 		BFC9F5252F768B2200DA757E /* ImageMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */; };
 		BFC9F5272F768C0600DA757E /* ImageDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */; };
 		BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167072E38C30F0030A26F /* ResultsView.swift */; };
@@ -268,6 +272,10 @@
 		BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseExtensions.swift; sourceTree = "<group>"; };
 		BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHelper.swift; sourceTree = "<group>"; };
 		BFA4EB592E1BE91E006EC79C /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		BFC625D02F9295CB0047D247 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		BFC625DC2F93961C0047D247 /* BaseSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSecureField.swift; sourceTree = "<group>"; };
+		BFC625DF2F93993D0047D247 /* View+applyIfLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+applyIfLet.swift"; sourceTree = "<group>"; };
+		BFC625E22F93A90E0047D247 /* EmailFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldStyle.swift; sourceTree = "<group>"; };
 		BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryCache.swift; sourceTree = "<group>"; };
 		BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDiskCache.swift; sourceTree = "<group>"; };
 		BFE167072E38C30F0030A26F /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
@@ -743,6 +751,7 @@
 				BFA4EB552E1BD6A1006EC79C /* SupabaseExtensions.swift */,
 				BF8E449B2E2695630064E6A5 /* Bundle+decode.swift */,
 				BF0A76BC2F7596AD002804CC /* View+RefreshableTask.swift */,
+				BFC625DF2F93993D0047D247 /* View+applyIfLet.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -750,6 +759,7 @@
 		BF9A7B7F2E3A2D7400EB56FA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BFC625DE2F9396CB0047D247 /* TextFields */,
 				BFFD10782E2A978C00D7EC57 /* Delegates */,
 				BF1BF1B42E214DDE002F176B /* ContestantView.swift */,
 				BF0B5E352E005CA400517B70 /* EscButton.swift */,
@@ -831,6 +841,24 @@
 				BF9A7BA12E3A4EF800EB56FA /* LocalAuthManager.swift */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		BFC625DE2F9396CB0047D247 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				BFC625E12F93A9010047D247 /* Styles */,
+				BFC625D02F9295CB0047D247 /* BaseTextField.swift */,
+				BFC625DC2F93961C0047D247 /* BaseSecureField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		BFC625E12F93A9010047D247 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				BFC625E22F93A90E0047D247 /* EmailFieldStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		BFC9F5232F768B1200DA757E /* Data */ = {
@@ -1025,6 +1053,7 @@
 				BF90856A2D7373A500B40537 /* AppUser.swift in Sources */,
 				BFEB176E2E379A5700AB7329 /* ResultsService.swift in Sources */,
 				BF9085612D73711700B40537 /* DatabaseManager.swift in Sources */,
+				BFC625DD2F93961C0047D247 /* BaseSecureField.swift in Sources */,
 				BF9A7B982E3A4DCE00EB56FA /* LocalRoomListService.swift in Sources */,
 				BFE811E12F8D275D004DB827 /* UserEditScreenView.swift in Sources */,
 				BF1FB9A22E1ED32400DF1E39 /* RoomCreationView.swift in Sources */,
@@ -1044,6 +1073,7 @@
 				BF9085682D7372B200B40537 /* DependencyResolver.swift in Sources */,
 				BF2A09C12E296540001AC071 /* InLineLoadingView.swift in Sources */,
 				BF9A7B822E3A311000EB56FA /* AppEnvironment.swift in Sources */,
+				BFC625E32F93A90E0047D247 /* EmailFieldStyle.swift in Sources */,
 				BF8E44B32E2798730064E6A5 /* RoomParticipantCell.swift in Sources */,
 				BF0A76BD2F7596AD002804CC /* View+RefreshableTask.swift in Sources */,
 				BF1FB9A82E1EF32700DF1E39 /* ContestantCell.swift in Sources */,
@@ -1082,12 +1112,14 @@
 				BFA4EB562E1BD6A1006EC79C /* SupabaseExtensions.swift in Sources */,
 				BF9085562D736E1F00B40537 /* Contestant.swift in Sources */,
 				BF90854A2D73658800B40537 /* SettingsView.swift in Sources */,
+				BFC625E02F93993D0047D247 /* View+applyIfLet.swift in Sources */,
 				BF9A7B8A2E3A4C9000EB56FA /* RoomCreationServiceProtocol.swift in Sources */,
 				BFE1670A2E38C6430030A26F /* ResultsEntryCell.swift in Sources */,
 				BFEB17742E37B14100AB7329 /* LeaderboardCalculator.swift in Sources */,
 				BFEB17672E37693800AB7329 /* HorizontalSegmentedPicker.swift in Sources */,
 				BF557C572E22A0A20024F48A /* RoomCreationViewModel.swift in Sources */,
 				BF62A1E62F092B7F003D352E /* LoginFieldsView.swift in Sources */,
+				BFC625D12F9295CB0047D247 /* BaseTextField.swift in Sources */,
 				BF2A09BE2E295DD1001AC071 /* BaseViewModel.swift in Sources */,
 				BF9A7B902E3A4CFA00EB56FA /* VoteServiceProtocol.swift in Sources */,
 				BF9A7B8C2E3A4CAC00EB56FA /* RoomListServiceProtocol.swift in Sources */,
