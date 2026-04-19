@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct UserEditScreenView: View {
     @EnvironmentObject var imageManager: ImageManager
     
     @ObservedObject var viewModel: UserSettingsViewModel
-    @State private var showNameChange: Bool = false
-    @State private var showImageChange: Bool = false
+    @State private var showNameChangeSheet: Bool = false
+    @State private var showImageChangeSheet: Bool = false
+    @State private var selectedImage: UIImage?
+    @State private var showCropView: Bool = false
     
     var body: some View {
         ZStack {
@@ -22,11 +25,11 @@ struct UserEditScreenView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 150, height: 150)
-                        .clipShape(Circle())
+                        .clipShape(.circle)
                         .padding(.top, -5)
                     
                     Button() {
-                        showImageChange.toggle()
+                        showImageChangeSheet.toggle()
                     } label: {
                         Text("Edit")
                             .foregroundStyle(.lightNavy)
@@ -34,15 +37,19 @@ struct UserEditScreenView: View {
                     }
                     .padding(.bottom, 15)
                 }
-                .sheet(isPresented: $showImageChange) {
-                    ImageChangeSheetView()
-                        .presentationDetents([.fraction(0.25)])
+                .sheet(isPresented: $showImageChangeSheet) {
+                    ImageChangeSheetView(isPresented: $showImageChangeSheet) { selectedItem in
+                        Task {
+                            try? await processImage(selectedItem)
+                        }
+                    }
+                    .presentationDetents([.fraction(0.25)])
                 }
                 
                 List {
                     Section("Name") {
                         Button {
-                            showNameChange.toggle()
+                            showNameChangeSheet.toggle()
                         } label: {
                             HStack {
                                 Text(viewModel.userName)
@@ -58,9 +65,9 @@ struct UserEditScreenView: View {
                     }
                 }
                 .scrollDisabled(true)
-                .sheet(isPresented: $showNameChange) {
-                    NameChangeSheetView(viewModel: viewModel, isPresented: $showNameChange)
-                        .presentationDetents([.fraction(0.20)])
+                .sheet(isPresented: $showNameChangeSheet) {
+                    NameChangeSheetView(viewModel: viewModel, isPresented: $showNameChangeSheet)
+                        .presentationDetents([.fraction(0.25)])
                 }
             }
             
@@ -69,6 +76,20 @@ struct UserEditScreenView: View {
             }
         }
         .toolbarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $showCropView) {
+            Text("Crop view")
+        }
+    }
+    
+    private func processImage(_ item: PhotosPickerItem) async throws {
+        viewModel.loadingType = .fullScreen
+        defer { viewModel.loadingType = .none }
+        
+        if let data = try? await item.loadTransferable(type: Data.self),
+           let image = UIImage(data: data) {
+            selectedImage = image
+            showCropView = true
+        }
     }
 }
 

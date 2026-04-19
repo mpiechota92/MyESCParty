@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ImageChangeSheetView: View {
+    @Binding var isPresented: Bool
+    let onPhotoPicked: (PhotosPickerItem) -> Void
+    
+    @State private var avatarPhotoItem: PhotosPickerItem?
+    @State private var showPhotoPicker: Bool = false
+    
     var body: some View {
         VStack(spacing: 10) {
             Text("Edit profile picture")
@@ -25,22 +32,25 @@ struct ImageChangeSheetView: View {
                     }
                 }
                 
-                Button {
-                    
-                } label: {
-                    HStack {
-                        Text("Choose photo")
-                        Spacer()
-                        Image(systemName: "photo")
-                    }
+                HStack {
+                    PhotosPicker("Choose image", selection: $avatarPhotoItem, matching: .images)
+                    Spacer()
+                    Image(systemName: "photo")
                 }
+                
             }
-            
         }
         .foregroundStyle(.black)
+        .onChange(of: avatarPhotoItem) { _, newItem in
+            guard let newItem else { return }
+            onPhotoPicked(newItem)
+            isPresented = false
+        }
+        
     }
 }
 
 #Preview {
-    ImageChangeSheetView()
+    ImageChangeSheetView(isPresented: .constant(true)) { _ in
+    }
 }

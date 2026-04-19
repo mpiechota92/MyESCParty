@@ -11,6 +11,7 @@ class UserSettingsViewModel: BaseViewModel {
     private let service: UserSettingsServiceProtocol
     
     @Published var userName: String = ""
+    
     private let userID: String?
     
     init(service: UserSettingsServiceProtocol = UserSettingsService(), userID: String?) {

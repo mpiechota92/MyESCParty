@@ -126,6 +126,7 @@
 		BFC625DD2F93961C0047D247 /* BaseSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625DC2F93961C0047D247 /* BaseSecureField.swift */; };
 		BFC625E02F93993D0047D247 /* View+applyIfLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625DF2F93993D0047D247 /* View+applyIfLet.swift */; };
 		BFC625E32F93A90E0047D247 /* EmailFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625E22F93A90E0047D247 /* EmailFieldStyle.swift */; };
+		BFC625F02F951DC60047D247 /* AvatarCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC625EF2F951DC60047D247 /* AvatarCropView.swift */; };
 		BFC9F5252F768B2200DA757E /* ImageMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */; };
 		BFC9F5272F768C0600DA757E /* ImageDiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */; };
 		BFE167082E38C30F0030A26F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE167072E38C30F0030A26F /* ResultsView.swift */; };
@@ -276,6 +277,7 @@
 		BFC625DC2F93961C0047D247 /* BaseSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSecureField.swift; sourceTree = "<group>"; };
 		BFC625DF2F93993D0047D247 /* View+applyIfLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+applyIfLet.swift"; sourceTree = "<group>"; };
 		BFC625E22F93A90E0047D247 /* EmailFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldStyle.swift; sourceTree = "<group>"; };
+		BFC625EF2F951DC60047D247 /* AvatarCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCropView.swift; sourceTree = "<group>"; };
 		BFC9F5242F768B2200DA757E /* ImageMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryCache.swift; sourceTree = "<group>"; };
 		BFC9F5262F768C0600DA757E /* ImageDiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDiskCache.swift; sourceTree = "<group>"; };
 		BFE167072E38C30F0030A26F /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 				BFE811E02F8D275D004DB827 /* UserEditScreenView.swift */,
 				BFE811E22F8D336F004DB827 /* NameChangeSheetView.swift */,
 				BFE811E42F8D33A0004DB827 /* ImageChangeSheetView.swift */,
+				BFC625EF2F951DC60047D247 /* AvatarCropView.swift */,
 			);
 			path = UserEditScreen;
 			sourceTree = "<group>";
@@ -1127,6 +1130,7 @@
 				BF2437C82F7E97FB00387E50 /* ImageCache.swift in Sources */,
 				BF9A7B942E3A4D4A00EB56FA /* LocalRoomService.swift in Sources */,
 				BF9A7B962E3A4DA900EB56FA /* LocalRoomCreationService.swift in Sources */,
+				BFC625F02F951DC60047D247 /* AvatarCropView.swift in Sources */,
 				BFEB17722E379ADF00AB7329 /* LeaderboardEntry.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
