@@ -5,14 +5,15 @@
 //  Created by Maciej Piechota on 21/04/2026.
 //
 
-import Foundation
+import UIKit
 
 enum AvatarCropHelper {
-    static func clampedOffset(for proposedOffset: CGSize,
-                              inImage image: CGSize,
-                              withScale scale: CGFloat,
-                              cropDiameter: CGFloat) -> CGSize {
-        
+    static func clampedOffset(
+        for proposedOffset: CGSize,
+        inImage image: CGSize,
+        withScale scale: CGFloat,
+        cropDiameter: CGFloat
+    ) -> CGSize {
         let halfDisplayedWidth = (image.width * scale) / 2
         let halfDisplayedHeight = (image.height * scale) / 2
         
@@ -47,5 +48,45 @@ enum AvatarCropHelper {
                 width: translation.width + lastOffset.width,
                 height: translation.height + lastOffset.height
             )
+    }
+    
+    static func getCroppedImageData(
+        _ image: UIImage,
+        scale: CGFloat,
+        offset: CGSize,
+        cropDiameter: CGFloat
+    ) -> Data? {
+        let cropSizeInImage = cropDiameter / scale
+        
+        let cropRect = CGRect(
+            x: ((image.size.width - cropSizeInImage) / 2) - (offset.width / scale),
+            y: ((image.size.height - cropSizeInImage) / 2) - (offset.height / scale),
+            width: cropSizeInImage,
+            height: cropSizeInImage
+        ).integral
+        
+        guard let croppedCGImage = image.cgImage?.cropping(to: cropRect) else { return nil }
+        
+        let croppedImage = UIImage(
+            cgImage: croppedCGImage,
+            scale: image.scale,
+            orientation: image.imageOrientation
+        )
+        
+        let resized = resizedImage(croppedImage, to: CGSize(width: 256, height: 256))
+        return resized.jpegData(compressionQuality: 0.9)
+    }
+    
+    private static func resizedImage(_ image: UIImage, to targetSize: CGSize) -> UIImage {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        format.opaque = false
+        
+        let renderer = UIGraphicsImageRenderer(size: targetSize, format: format)
+        
+        return renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+        
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct UserEditScreenView: View {
+    @EnvironmentObject var toastManager: ToastManager
     @EnvironmentObject var imageManager: ImageManager
     
     @ObservedObject var viewModel: UserSettingsViewModel
@@ -78,7 +79,15 @@ struct UserEditScreenView: View {
         .toolbarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $showCropView) {
             if let selectedImage {
-                AvatarCropView(image: selectedImage)
+                AvatarCropView(image: selectedImage) { imageData in
+                    Task {
+                        do {
+                            try await viewModel.changePicture(newPicture: imageData)
+                        } catch {
+                            toastManager.showErrorToast(error: error)
+                        }
+                    }
+                }
             }
         }
     }
@@ -98,4 +107,5 @@ struct UserEditScreenView: View {
 #Preview {
     UserEditScreenView(viewModel: UserSettingsViewModel(userID: "123"))
         .environmentObject(AuthViewModel())
+        .environmentObject(ToastManager())
 }

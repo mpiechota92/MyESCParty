@@ -11,6 +11,7 @@ struct AvatarCropView: View {
     private let cropDiameter: CGFloat = 300.0
     
     let image: UIImage
+    let onSaveAction: (Data) -> Void
     
     @State private var initialScale: CGFloat = 0.0
     
@@ -86,6 +87,19 @@ struct AvatarCropView: View {
                 )
             )
         }
+        .safeAreaInset(edge: .bottom) {
+            BaseButton(title: "Save") {
+                if let imageData = AvatarCropHelper.getCroppedImageData(
+                    image,
+                    scale: scale,
+                    offset: offset,
+                    cropDiameter: cropDiameter
+                ) {
+                    onSaveAction(imageData)
+                }
+            }
+            .frame(width: 200)
+        }
         .ignoresSafeArea()
         .onAppear {
             let baseScale = AvatarCropHelper.computeInitialScale(for: image.size, cropDiameter: cropDiameter)
@@ -110,5 +124,7 @@ struct AvatarCropView: View {
 }
 
 #Preview {
-    AvatarCropView(image: UIImage(named: "cat")!)
+    AvatarCropView(image: UIImage(named: "cat")!) { data in
+        
+    }
 }
