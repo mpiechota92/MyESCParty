@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UserSettingsViewModel: BaseViewModel {
     private let service: UserSettingsServiceProtocol
@@ -45,4 +46,9 @@ class UserSettingsViewModel: BaseViewModel {
             self.userName = try await self.service.getUserData(userId: id)
         }
     }
+}
+
+struct SelectedAvatarImage: Identifiable, Hashable {
+    let id = UUID()
+    let image: UIImage
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF01F2012F9747CE00F7D396 /* AvatarCropHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF01F2002F9747CE00F7D396 /* AvatarCropHelper.swift */; };
 		BF0A76BD2F7596AD002804CC /* View+RefreshableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A76BC2F7596AD002804CC /* View+RefreshableTask.swift */; };
 		BF0B5E212E003FA000517B70 /* ContestantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E202E003FA000517B70 /* ContestantsView.swift */; };
 		BF0B5E232E00419F00517B70 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B5E222E00419F00517B70 /* RoomListView.swift */; };
@@ -173,6 +174,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF01F2002F9747CE00F7D396 /* AvatarCropHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCropHelper.swift; sourceTree = "<group>"; };
 		BF0A76BC2F7596AD002804CC /* View+RefreshableTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RefreshableTask.swift"; sourceTree = "<group>"; };
 		BF0B5E202E003FA000517B70 /* ContestantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestantsView.swift; sourceTree = "<group>"; };
 		BF0B5E222E00419F00517B70 /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				BFA4EB572E1BDD06006EC79C /* SecurityHelper.swift */,
 				BF14B8EF2E2E497500FB7253 /* RevealOverlayScrollObserver.swift */,
 				BF1B5B612E3CD797000A9B8B /* DataReader.swift */,
+				BF01F2002F9747CE00F7D396 /* AvatarCropHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1134,6 +1137,7 @@
 				BFEB17722E379ADF00AB7329 /* LeaderboardEntry.swift in Sources */,
 				BF0B5E262E0043CB00517B70 /* RoomListViewModel.swift in Sources */,
 				BF8E44A52E26BA530064E6A5 /* RoomViewModel.swift in Sources */,
+				BF01F2012F9747CE00F7D396 /* AvatarCropHelper.swift in Sources */,
 				BF2437CF2F7EA9F800387E50 /* LocalImageService.swift in Sources */,
 				BF8E44A92E26BB9B0064E6A5 /* RoomType.swift in Sources */,
 				BF9A7B922E3A4D3300EB56FA /* ResultsServiceProtocol.swift in Sources */,

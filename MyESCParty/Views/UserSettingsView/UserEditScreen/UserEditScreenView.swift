@@ -77,7 +77,9 @@ struct UserEditScreenView: View {
         }
         .toolbarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $showCropView) {
-            Text("Crop view")
+            if let selectedImage {
+                AvatarCropView(image: selectedImage)
+            }
         }
     }
     
