@@ -10,6 +10,7 @@ import SwiftUI
 struct AvatarCropView: View {
     private let cropDiameter: CGFloat = 300.0
     
+    @Binding var isPresented: Bool
     let image: UIImage
     let onSaveAction: (Data) -> Void
     
@@ -86,24 +87,29 @@ struct AvatarCropView: View {
                         }
                 )
             )
-        }
-        .safeAreaInset(edge: .bottom) {
-            BaseButton(title: "Save") {
-                if let imageData = AvatarCropHelper.getCroppedImageData(
-                    image,
-                    scale: scale,
-                    offset: offset,
-                    cropDiameter: cropDiameter
-                ) {
-                    onSaveAction(imageData)
+            
+            ZStack {
+                BaseButton(title: "Save") {
+                    if let imageData = AvatarCropHelper.getCroppedImageData(
+                        image,
+                        scale: scale,
+                        offset: offset,
+                        cropDiameter: cropDiameter
+                    ) {
+                        onSaveAction(imageData)
+                        isPresented = false
+                    }
                 }
+                .frame(width: 200)
+                .padding(.top, 550)
             }
-            .frame(width: 200)
         }
-        .ignoresSafeArea()
         .onAppear {
             let baseScale = AvatarCropHelper.computeInitialScale(for: image.size, cropDiameter: cropDiameter)
             setInitialScale(baseScale)
+        }
+        .onDisappear {
+            isPresented = false
         }
     }
     
@@ -124,7 +130,7 @@ struct AvatarCropView: View {
 }
 
 #Preview {
-    AvatarCropView(image: UIImage(named: "cat")!) { data in
+    AvatarCropView(isPresented: .constant(true), image: UIImage(named: "cat")!) { data in
         
     }
 }

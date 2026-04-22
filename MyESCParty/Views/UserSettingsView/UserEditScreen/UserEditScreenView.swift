@@ -17,12 +17,13 @@ struct UserEditScreenView: View {
     @State private var showImageChangeSheet: Bool = false
     @State private var selectedImage: UIImage?
     @State private var showCropView: Bool = false
+    @State private var image: UIImage = UIImage(named: "cat")!
     
     var body: some View {
         ZStack {
             VStack(spacing: 10) {
                 Group {
-                    Image("cat")
+                    Image(uiImage: image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 150, height: 150)
@@ -79,7 +80,7 @@ struct UserEditScreenView: View {
         .toolbarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $showCropView) {
             if let selectedImage {
-                AvatarCropView(image: selectedImage) { imageData in
+                AvatarCropView(isPresented: $showCropView, image: selectedImage) { imageData in
                     Task {
                         do {
                             try await viewModel.changePicture(newPicture: imageData)
