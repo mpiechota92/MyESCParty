@@ -14,15 +14,15 @@ final class ImageCache {
     private let memory = ImageMemoryCache()
     private let disk = ImageDiskCache()
     
-    func image(for imageUrl: String) -> Data? {
-        let memoryData = memory.get(for: imageUrl)
+    func image(for path: String) -> Data? {
+        let memoryData = memory.get(for: path)
         if let memoryData {
             return memoryData
         }
         
-        let diskData = disk.load(for: cacheKey(for: imageUrl))
+        let diskData = disk.load(for: cacheKey(for: path))
         if let diskData {
-            memory.set(diskData, for: imageUrl)
+            memory.set(diskData, for: path)
             return diskData
         }
         
@@ -32,6 +32,21 @@ final class ImageCache {
     func saveImage(_ data: Data, fileName url: String) {
         memory.set(data, for: url)
         disk.save(data, for: cacheKey(for: url))
+    }
+    
+    func saveProfilePicture(_ data: Data, profile: Profile) {
+        let version = profile.avatarVersion + 1
+        let url = "\(profile.id)_\(version)"
+        saveImage(data, fileName: url)
+    }
+    
+    func profilePicture(for profile: Profile) -> Data? {
+        let url = "\(profile.id)_\(profile.avatarVersion)"
+        return image(for: url)
+    }
+    
+    private func deleteOldVersion(for profile: Profile) {
+        //TODO
     }
     
     private func cacheKey(for url: String) -> String {

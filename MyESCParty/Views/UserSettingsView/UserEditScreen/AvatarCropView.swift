@@ -88,21 +88,20 @@ struct AvatarCropView: View {
                 )
             )
             
-            ZStack {
-                BaseButton(title: "Save") {
-                    if let imageData = AvatarCropHelper.getCroppedImageData(
-                        image,
-                        scale: scale,
-                        offset: offset,
-                        cropDiameter: cropDiameter
-                    ) {
-                        onSaveAction(imageData)
-                        isPresented = false
-                    }
+            BaseButton(title: "Save") {
+                if let imageData = AvatarCropHelper.getCroppedImageData(
+                    image,
+                    scale: scale,
+                    offset: offset,
+                    cropDiameter: cropDiameter
+                ) {
+                    onSaveAction(imageData)
+                    isPresented = false
                 }
-                .frame(width: 200)
-                .padding(.top, 550)
             }
+            .frame(width: 200)
+            .padding(.top, 550)
+            
         }
         .onAppear {
             let baseScale = AvatarCropHelper.computeInitialScale(for: image.size, cropDiameter: cropDiameter)

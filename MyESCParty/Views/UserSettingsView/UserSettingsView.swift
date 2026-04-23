@@ -100,7 +100,7 @@ struct UserSettingsView: View {
         }
         .task {
             do {
-                try await viewModel.fetchUser(userId: authViewModel.getUserID())
+                try await viewModel.fetchUserData()
             } catch {
                 toastManager.showErrorToast(error: error)
             }

@@ -41,3 +41,7 @@ enum DBTable: String {
     case profiles = "profiles"
     case usersInVotingRooms = "users_in_voting_rooms"
 }
+
+enum DBStorageBucket: String {
+    case profilePictures = "pfp"
+}

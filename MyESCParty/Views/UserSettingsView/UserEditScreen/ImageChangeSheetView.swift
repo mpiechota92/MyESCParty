@@ -31,6 +31,7 @@ struct ImageChangeSheetView: View {
                         Image(systemName: "camera")
                     }
                 }
+                .disabled(true)
                 
                 HStack {
                     PhotosPicker("Choose image", selection: $avatarPhotoItem, matching: .images)

@@ -5,18 +5,22 @@
 //  Created by Maciej Piechota on 13/04/2026.
 //
 
-import Foundation
+import UIKit
 
 class LocalUserSettingsService: UserSettingsServiceProtocol {
     func changeName(newName: String, for userID: String?) async throws -> Profile {
-        return Profile(id: "123", username: "Maciej")
+        return Profile(id: "123", username: "Maciej", avatarVersion: 0)
     }
     
-    func changeProfilePicture(newProfilePicture: Data) async throws {
+    func uploadProfilePicture(imageJpegData: Data, for profile: Profile?) async throws {
         
     }
     
-    func getUserData(userId id: String) async throws -> String {
-        return "Maciej"
+    func getUserData(for userID: String?) async throws -> Profile {
+        return Profile(id: "123", username: "Maciej", avatarVersion: 0)
+    }
+    
+    func getProfilePicture(for userID: String?) async throws -> UIImage? {
+        return UIImage(named: "cat")!
     }
 }

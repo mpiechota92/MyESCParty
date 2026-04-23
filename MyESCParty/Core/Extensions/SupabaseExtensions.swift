@@ -13,3 +13,9 @@ extension SupabaseClient {
         self.from(table.rawValue)
     }
 }
+
+extension SupabaseStorageClient {
+    func from(_ table: DBStorageBucket) -> StorageFileApi {
+        self.from(table.rawValue)
+    }
+}

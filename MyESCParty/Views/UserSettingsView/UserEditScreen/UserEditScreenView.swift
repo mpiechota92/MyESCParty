@@ -23,12 +23,34 @@ struct UserEditScreenView: View {
         ZStack {
             VStack(spacing: 10) {
                 Group {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 150)
-                        .clipShape(.circle)
-                        .padding(.top, -5)
+                    // TODO: separate view and add it to the Settings screen
+                    switch viewModel.profilePictureState {
+                    case .none:
+                        Image("cat")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 150, height: 150)
+                            .clipShape(.circle)
+                            .padding(.top, -5)
+                    case .loading:
+                        ProgressView()
+                            .frame(width: 100, height: 100)
+                            .padding(.top, -5)
+                    case .failedLoading:
+                        Image(systemName: "cross.circle")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 150, height: 150)
+                            .clipShape(.circle)
+                            .padding(.top, -5)
+                    case .loaded(let profileImage):
+                        Image(uiImage: profileImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 150, height: 150)
+                            .clipShape(.circle)
+                            .padding(.top, -5)
+                    }
                     
                     Button() {
                         showImageChangeSheet.toggle()
@@ -84,6 +106,7 @@ struct UserEditScreenView: View {
                     Task {
                         do {
                             try await viewModel.changePicture(newPicture: imageData)
+                            
                         } catch {
                             toastManager.showErrorToast(error: error)
                         }

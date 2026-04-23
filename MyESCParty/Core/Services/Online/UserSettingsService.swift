@@ -5,22 +5,20 @@
 //  Created by Maciej Piechota on 13/04/2026.
 //
 
-import Foundation
-
-enum UserSettingsServiceError: Error {
-    case nameDuplicated
-    case nameUpdateFailure
-    case missingUserID
-}
+import UIKit
+import Storage
 
 class UserSettingsService: UserSettingsServiceProtocol {
     private let databaseManager: DatabaseManager = DatabaseManager.shared
+    private let imageCache: ImageCache = ImageCache.shared
     
-    func changeName(newName: String, for userID: String?) async throws -> Profile {
+    func changeName(
+        newName: String,
+        for userID: String?
+    ) async throws -> Profile {
         guard let userID else {
             throw UserSettingsServiceError.missingUserID
         }
-        print(userID)
         
         let profiles: [Profile] = try await databaseManager.client
             .from(.profiles)
@@ -40,7 +38,7 @@ class UserSettingsService: UserSettingsServiceProtocol {
         let updatedProfiles: [Profile] = try await databaseManager.client
             .from(.profiles)
             .update(updateData)
-            .eq("id", value: UUID(uuidString: userID))
+            .eq("id", value: userID)
             .select()
             .execute()
             .value
@@ -52,22 +50,66 @@ class UserSettingsService: UserSettingsServiceProtocol {
         return profile
     }
     
-    func changeProfilePicture(newProfilePicture: Data) async throws {
+    func uploadProfilePicture(
+        imageJpegData data: Data,
+        for profile: Profile?
+    ) async throws {
+        guard let lowercasedUserID = profile?.id.lowercased() else {
+            throw UserSettingsServiceError.missingUserID
+        }
         
+        let fileOptions = FileOptions(
+            cacheControl: "3600",
+            contentType: "image/jpeg",
+            upsert: true
+        )
+        
+        try await databaseManager.client.storage
+            .from(.profilePictures)
+            .upload(
+                "\(lowercasedUserID).jpeg",
+                data: data,
+                options: fileOptions
+            )
+        
+        imageCache.saveImage(data, fileName: lowercasedUserID)
     }
     
-    func getUserData(userId id: String) async throws -> String {
+    func getProfilePicture(for userID: String?) async throws -> UIImage? {
+        guard let lowercasedUserID = userID?.lowercased() else {
+            throw UserSettingsServiceError.missingUserID
+        }
+        
+        if let cachedImageData = imageCache.image(for: lowercasedUserID) {
+            // the uiImage can fail when there's data
+            return UIImage(data: cachedImageData)
+        }
+        
+        let imageData = try await databaseManager.client.storage
+            .from(.profilePictures)
+            .download(path: "\(lowercasedUserID).jpeg")
+        
+        imageCache.saveImage(imageData, fileName: lowercasedUserID)
+        
+        return UIImage(data: imageData)
+    }
+    
+    func getUserData(for userID: String?) async throws -> Profile {
+        guard let userID else {
+            throw UserSettingsServiceError.missingUserID
+        }
+        
         let profiles: [Profile] = try await databaseManager.client
             .from(.profiles)
             .select()
-            .eq("id", value: id)
+            .eq("id", value: userID)
             .execute()
             .value
         
-        guard let userName = profiles.first?.username else {
-            throw NSError(domain: "Couldn't load user data", code: 0, userInfo: nil)
+        guard let profile = profiles.first else {
+            throw UserSettingsServiceError.couldNotLoadUserData
         }
         
-        return userName
+        return profile
     }
 }

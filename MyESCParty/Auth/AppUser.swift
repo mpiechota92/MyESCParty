@@ -21,7 +21,14 @@ struct AppUser {
 
 struct Profile: Codable {
     let id: String
-    let username: String
+    var username: String
+    var avatarVersion: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case username
+        case avatarVersion = "avatar_version"
+    }
 }
 
 extension AppUser {
