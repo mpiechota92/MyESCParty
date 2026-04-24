@@ -12,6 +12,7 @@ enum UserSettingsServiceError: Error, LocalizedError {
     case nameUpdateFailure
     case missingUserID
     case couldNotLoadUserData
+    case couldNotLoadProfilePicture
     
     var errorDescription: String? {
         switch self {
@@ -23,13 +24,15 @@ enum UserSettingsServiceError: Error, LocalizedError {
             return "Missing user ID"
         case .couldNotLoadUserData:
             return "Could not load user data"
+        case .couldNotLoadProfilePicture:
+            return "Could not load user profile picture"
         }
     }
 }
 
 protocol UserSettingsServiceProtocol {
     func changeName(newName: String, for userID: String?) async throws  -> Profile
-    func uploadProfilePicture(imageJpegData: Data, for profile: Profile?) async throws
+    func uploadProfilePicture(imageJpegData: Data, for profile: Profile?) async throws -> Profile
     func getUserData(for userID: String?) async throws -> Profile
     func getProfilePicture(for userID: String?) async throws -> UIImage?
 }

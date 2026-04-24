@@ -17,4 +17,8 @@ final class ImageMemoryCache {
     func set(_ data: Data, for imageUrl: String) {
         cache.setObject(NSData(data: data), forKey: NSString(string: imageUrl))
     }
+    
+    func remove(for imageUrl: String) {
+        cache.removeObject(forKey: NSString(string: imageUrl))
+    }
 }

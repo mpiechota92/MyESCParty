@@ -13,6 +13,7 @@ struct NameChangeSheetView: View {
     
     @ObservedObject var viewModel: UserSettingsViewModel
     @Binding var isPresented: Bool
+    let oldName: String
     
     @State private var newName: String = ""
     
@@ -56,7 +57,7 @@ struct NameChangeSheetView: View {
         }
         .padding()
         .onAppear {
-            newName = viewModel.userName
+            newName = viewModel.userProfile?.username ?? ""
         }
         .scrollDisabled(true)
         .ignoresSafeArea(.all, edges: .bottom)
@@ -67,11 +68,11 @@ struct NameChangeSheetView: View {
             return false
         }
         
-        return newName != viewModel.userName
+        return newName != oldName
     }
 }
 
 #Preview {
-    NameChangeSheetView(viewModel: UserSettingsViewModel(userID: "123"), isPresented: .constant(true))
+    NameChangeSheetView(viewModel: UserSettingsViewModel(userID: "123"), isPresented: .constant(true), oldName: "Maciej")
         .environmentObject(AuthViewModel())
 }

@@ -28,7 +28,7 @@ final class ImageDiskCache {
         do {
             try data.write(to: url)
         } catch {
-            print(error.localizedDescription)
+            print(error)
         }
     }
     
@@ -37,6 +37,15 @@ final class ImageDiskCache {
         if isExpired(url) { return nil }
         
         return try? Data(contentsOf: url)
+    }
+    
+    func remove(for key: String) {
+        let url = fileURL(for: key)
+        do {
+            try FileManager.default.removeItem(at: url)
+        } catch {
+            print(error)
+        }
     }
     
     func isExpired(_ fileURL: URL) -> Bool {

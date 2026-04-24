@@ -38,6 +38,7 @@ final class ImageCache {
         let version = profile.avatarVersion + 1
         let url = "\(profile.id)_\(version)"
         saveImage(data, fileName: url)
+        removeOldVersion(for: profile)
     }
     
     func profilePicture(for profile: Profile) -> Data? {
@@ -45,8 +46,10 @@ final class ImageCache {
         return image(for: url)
     }
     
-    private func deleteOldVersion(for profile: Profile) {
-        //TODO
+    private func removeOldVersion(for profile: Profile) {
+        let path = "\(profile.id)_\(profile.avatarVersion)"
+        memory.remove(for: path)
+        disk.remove(for: cacheKey(for: path))
     }
     
     private func cacheKey(for url: String) -> String {

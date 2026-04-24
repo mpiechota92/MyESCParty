@@ -44,7 +44,7 @@ class UserSettingsViewModel: BaseViewModel {
         await performWithLoading(type: .none) { [weak self] in
             guard let self = self else { return }
             do {
-                try await self.service.uploadProfilePicture(imageJpegData: newPicture, for: userProfile)
+                self.userProfile = try await self.service.uploadProfilePicture(imageJpegData: newPicture, for: userProfile)
                 
                 if let image = UIImage(data: newPicture) {
                     self.profilePictureState = .loaded(image)
@@ -81,13 +81,6 @@ class UserSettingsViewModel: BaseViewModel {
                 self.profilePictureState = .failedLoading
                 throw error
             }
-        }
-    }
-    
-    func updateProfilePicture() async throws {
-        await performWithLoading(type: .fullScreen) { [weak self] in
-            guard let self = self else { return }
-            
         }
     }
     

@@ -25,18 +25,12 @@ struct UserSettingsView: View {
         NavigationStack {
             VStack(spacing: 20) {
                 VStack(spacing: 20) {
-                    Image("cat")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                        .padding(.top, 50)
-                        .overlay(alignment: .bottomTrailing) {
-                            Image(systemName: "camera")
-                        }
+                    ProfilePictureView(profilePictureState: $viewModel.profilePictureState)
                     
-                    Text(viewModel.userName)
-                        .font(.largeTitle)
+                    if let userName = viewModel.userProfile?.username {
+                        Text(userName)
+                            .font(.largeTitle)
+                    }
                 }
                 .onTapGesture {
                     showUserEditScreen.toggle()

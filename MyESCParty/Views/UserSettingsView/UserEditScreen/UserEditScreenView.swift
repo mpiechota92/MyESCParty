@@ -23,34 +23,7 @@ struct UserEditScreenView: View {
         ZStack {
             VStack(spacing: 10) {
                 Group {
-                    // TODO: separate view and add it to the Settings screen
-                    switch viewModel.profilePictureState {
-                    case .none:
-                        Image("cat")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 150, height: 150)
-                            .clipShape(.circle)
-                            .padding(.top, -5)
-                    case .loading:
-                        ProgressView()
-                            .frame(width: 100, height: 100)
-                            .padding(.top, -5)
-                    case .failedLoading:
-                        Image(systemName: "cross.circle")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 150, height: 150)
-                            .clipShape(.circle)
-                            .padding(.top, -5)
-                    case .loaded(let profileImage):
-                        Image(uiImage: profileImage)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 150, height: 150)
-                            .clipShape(.circle)
-                            .padding(.top, -5)
-                    }
+                    ProfilePictureView(profilePictureState: $viewModel.profilePictureState)
                     
                     Button() {
                         showImageChangeSheet.toggle()
@@ -76,8 +49,10 @@ struct UserEditScreenView: View {
                             showNameChangeSheet.toggle()
                         } label: {
                             HStack {
-                                Text(viewModel.userName)
-                                    .foregroundStyle(.black)
+                                if let userName = viewModel.userProfile?.username {
+                                    Text(userName)
+                                        .foregroundStyle(.black)
+                                }
                                 
                                 Spacer()
                                 
@@ -85,13 +60,20 @@ struct UserEditScreenView: View {
                                     .foregroundStyle(.gray)
                             }
                         }
+                        .disabled(viewModel.userProfile == nil)
                         
                     }
                 }
                 .scrollDisabled(true)
                 .sheet(isPresented: $showNameChangeSheet) {
-                    NameChangeSheetView(viewModel: viewModel, isPresented: $showNameChangeSheet)
+                    if let userName = viewModel.userProfile?.username {
+                        NameChangeSheetView(
+                            viewModel: viewModel,
+                            isPresented: $showNameChangeSheet,
+                            oldName: userName
+                        )
                         .presentationDetents([.fraction(0.25)])
+                    }
                 }
             }
             

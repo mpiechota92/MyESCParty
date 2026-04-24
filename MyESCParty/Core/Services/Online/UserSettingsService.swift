@@ -53,8 +53,8 @@ class UserSettingsService: UserSettingsServiceProtocol {
     func uploadProfilePicture(
         imageJpegData data: Data,
         for profile: Profile?
-    ) async throws {
-        guard let lowercasedUserID = profile?.id.lowercased() else {
+    ) async throws -> Profile {
+        guard let profile else {
             throw UserSettingsServiceError.missingUserID
         }
         
@@ -64,15 +64,24 @@ class UserSettingsService: UserSettingsServiceProtocol {
             upsert: true
         )
         
+        let userID = profile.id.lowercased()
+        
         try await databaseManager.client.storage
             .from(.profilePictures)
             .upload(
-                "\(lowercasedUserID).jpeg",
+                "\(userID).jpeg",
                 data: data,
                 options: fileOptions
             )
         
-        imageCache.saveImage(data, fileName: lowercasedUserID)
+        let updatedProfile: Profile = try await databaseManager.client
+            .rpc(.updateProfilePictureVersion)
+            .execute()
+            .value
+        
+        imageCache.saveImage(data, fileName: userID)
+        
+        return updatedProfile
     }
     
     func getProfilePicture(for userID: String?) async throws -> UIImage? {
@@ -81,8 +90,11 @@ class UserSettingsService: UserSettingsServiceProtocol {
         }
         
         if let cachedImageData = imageCache.image(for: lowercasedUserID) {
-            // the uiImage can fail when there's data
-            return UIImage(data: cachedImageData)
+            if let image = UIImage(data: cachedImageData) {
+                return image
+            }
+            
+            throw UserSettingsServiceError.couldNotLoadProfilePicture
         }
         
         let imageData = try await databaseManager.client.storage

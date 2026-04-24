@@ -45,3 +45,7 @@ enum DBTable: String {
 enum DBStorageBucket: String {
     case profilePictures = "pfp"
 }
+
+enum DBFunction: String {
+    case updateProfilePictureVersion = "update_profile_picture_version"
+}

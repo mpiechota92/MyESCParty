@@ -12,8 +12,8 @@ class LocalUserSettingsService: UserSettingsServiceProtocol {
         return Profile(id: "123", username: "Maciej", avatarVersion: 0)
     }
     
-    func uploadProfilePicture(imageJpegData: Data, for profile: Profile?) async throws {
-        
+    func uploadProfilePicture(imageJpegData: Data, for profile: Profile?) async throws -> Profile {
+        return Profile(id: "123", username: "Maciej", avatarVersion: 0)
     }
     
     func getUserData(for userID: String?) async throws -> Profile {
