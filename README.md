@@ -1,17 +1,103 @@
-# MyESCParty
+# MyESCParty - Real-time Eurovision Voting Experience
 
-**MyESCParty** is a private Eurovision voting app that allows you to vote together with friends or larger communities — just like a real jury!
+**MyESCParty** is a multi-user iOS app that recreates the Eurovision voting experience in private groups - allowing users to vote, rank performances, and see live results together.
 
-Whether you're hosting a small party or joining an international fan group, this app helps you bring the excitement of Eurovision voting into your own circle.
+It transforms traditional, manual score tracking into a **real-time, interactive social experience**.
 
+---
+
+## 🚀 Why I built this
+
+Watching Eurovision with friends often involves:
+- manual spreadsheets  
+- inconsistent scoring  
+- delayed results  
+
+👉 I wanted to design a system that enables **synchronized, real-time voting across multiple users**, while keeping the experience simple and engaging.
+
+---
+
+## ✨ Key Features
+
+- 👥 **Private & public voting rooms**  
+  Users can create or join rooms to vote together in groups  
+
+- 🗳️ **Drag-and-drop voting system**  
+  Intuitive ranking mechanism mapped to Eurovision scoring (12–1 points)  
+
+- 🔄 **Real-time vote synchronization**  
+  Votes are shared across participants using Supabase  
+
+- 📊 **Results per room & global results**  
+  Compare group preferences with overall trends  
+
+- 👤 **User authentication & profiles**  
+  Secure login and personalized experience
+  
+---
+
+## 🎥 Demo
+
+### Creating and joining rooms
+![Create Room Demo](assets/create-room.gif)
+
+### Drag-and-drop voting system
+![Voting Demo](assets/voting.gif)
+
+### Viewing results
+![Results Demo](assets/results.gif)
+
+> 📌 Note: GIFs recorded from simulator.
+
+---
+
+## 🧠 Technical Highlights
+
+### Architecture
+- MVVM with clear separation of concerns  
+- Scalable structure for features like rooms, voting stages, and user management  
+
+### State Management
+- SwiftUI-driven reactive UI (`@StateObject`, `@EnvironmentObject`)  
+- Clean data flow between views and business logic  
+
+### Backend & Data
+- Supabase (PostgreSQL + Auth)  
+- PostgREST API integration  
+- Designed for **multi-user data consistency**  
+
+### Real-time Communication
+- Synchronization of votes across users  
+- Foundation prepared for live updates and reactive results  
+
+---
+
+## 🧩 Challenges & Solutions
+
+**Synchronizing votes across multiple users**  
+→ Designed a room-based data model with shared state to ensure consistency between participants  
+
+**Mapping Eurovision scoring into intuitive UX**  
+→ Implemented drag-and-drop ranking that directly translates into the 12–1 scoring system  
+
+**Maintaining clean architecture with growing features**  
+→ Separated concerns into ViewModels and Services to keep the codebase maintainable  
+
+---
+
+## 🛠 Tech Stack
+
+- Swift  
+- SwiftUI  
+- Supabase (PostgreSQL, Auth)  
+- PostgREST  
+- SwiftUIIntrospect  
 ---
 
 ## 📱 Requirements
 
 - iOS 17.6+
 - Xcode 15+
-
----
 
 ## 🚀 Installation
 
@@ -27,51 +113,9 @@ Whether you're hosting a small party or joining an international fan group, this
 
 ---
 
-## ✨ Features
-
-- 🔐 Create and join **public or private** voting rooms
-- 🗳 Vote across **each stage** of the Eurovision contest
-- 📊 View **results per room** and compare with **global** results
-
----
-
-## 🎥 Demo
-
-### Creating and joining rooms
-![Create Room Demo](assets/create-room.gif)
-
-### Drag-and-drop voting system
-![Voting Demo](assets/voting.gif)
-
-### Viewing results
-![Results Demo](assets/results.gif)
-
-> 📌 Note: GIFs recorded from simulator – performance may vary on real device.
-
----
-
-## 🧱 Tech Stack
-
-- **Swift**, **SwiftUI**
-- **Supabase** (PostgreSQL backend with authentication)
-- **PostgREST**
-- **SwiftUIIntrospect** (UI customization layer)
-
----
-
-## 🧠 Architecture
-
-The app follows the **MVVM** (Model-View-ViewModel) pattern:
-
-- Views are implemented with SwiftUI
-- ViewModels contain state logic and user interactions
-- Services are responsible for communicating with the Supabase backend (fetching data, authentication, real-time updates)
-
----
-
 ## 📌 To Do / Roadmap
 
-- [ ] User profile editing
-- [ ] Voting animations
-- [ ] Live voting results with auto-refresh
+- [x] User profile editing
+- [x] Voting animations
+- [x] Live voting results with auto-refresh
 - [ ] QR code invitations for private rooms
